@@ -1,0 +1,11 @@
+{
+  "name": "xunzi-pd-evidence-qa-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.36.0"
+  }
+}

@@ -1,0 +1,16 @@
+name = "xunzi-pd-evidence-qa"
+main = "src/worker.js"
+compatibility_date = "2026-09-20"
+
+# Non-secret configuration only. Keep AI_ENABLED false until every deployment-gate
+# item in ../docs/AI_QA_SECURITY_DESIGN.md has been checked by a human.
+[vars]
+AI_ENABLED = "false"
+ALLOWED_ORIGIN = "https://pc-wang-ai.github.io"
+
+# Replace namespace_id with an integer unique in the owner's Cloudflare account before
+# deploying. The Worker fails closed when this binding is absent.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 10, period = 60 }
