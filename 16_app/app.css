@@ -621,6 +621,7 @@ html[data-mode="expert"] details.techFold{display:none}   /* experts see the fie
 .reportBox{width:100%;background:#0b0f14;color:#c9d5e3;border:1px solid var(--line);
   border-radius:9px;padding:12px;font-family:var(--mono);font-size:12px;line-height:1.55;
   resize:vertical}
+.localOnlyHint{margin-top:7px;color:var(--dim);font-size:11.5px;line-height:1.45}
 .funnel{display:flex;flex-direction:column;align-items:center;gap:0;padding:6px 0}
 .fnStep{background:var(--panel2);border:1px solid var(--line);border-radius:9px;
   padding:8px 18px;min-width:240px;text-align:center}

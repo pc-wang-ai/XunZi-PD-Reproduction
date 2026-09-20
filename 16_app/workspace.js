@@ -32,6 +32,10 @@ const Workspace = (() => {
       compareN: 'candidates',
       maxNote: 'Up to four at a time.',
       remove: 'Remove',
+      savedHint: 'Saved in this browser only. It is not uploaded and never enters a calculation.',
+      share: 'Copy share link',
+      shareDone: 'Share link copied',
+      exportMd: 'Export Markdown',
 
       /* First screen: the reader's own candidate list, one card per gene. */
       mineTitle: 'My research candidates',
@@ -119,6 +123,10 @@ const Workspace = (() => {
       compareN: '个候选',
       maxNote: '一次最多四个。',
       remove: '移除',
+      savedHint: '仅保存在当前浏览器中，不会上传，也不会进入任何计算。',
+      share: '复制分享链接',
+      shareDone: '分享链接已复制',
+      exportMd: '导出 Markdown',
 
       /* 首屏：读者自己的候选清单，每个基因一张卡片。 */
       mineTitle: '我的研究候选',
@@ -200,6 +208,26 @@ const Workspace = (() => {
   };
   const cell = (v, fmt) => (v === null || v === undefined || Number.isNaN(v))
     ? `<span class="na">NA</span>` : (fmt ? fmt(v) : esc(v));
+
+  /* The reader's selected candidates are product state, not scientific data. Keeping
+   * them locally makes My Research useful across refreshes without an account, server,
+   * cookie, upload or new database. A share URL is explicit and contains node indexes
+   * only; notes are deliberately excluded. */
+  const SAVED = (() => {
+    const KEY = 'xz.workspace.v1';
+    const clean = xs => Array.from(new Set((Array.isArray(xs) ? xs : [])
+      .map(Number).filter(n => Number.isInteger(n) && n >= 0 && n < 15688))).slice(0, MAX_COMPARE);
+    const get = () => {
+      try { return clean(JSON.parse(localStorage.getItem(KEY) || '[]')); }
+      catch (e) { return []; }
+    };
+    const set = xs => {
+      const v = clean(xs);
+      try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {}
+      return v;
+    };
+    return { get, set };
+  })();
 
   /* ------------------------------------------------------------ evidence matrix
    * Rows are evidence fields, columns are genes. ✓ / — / NA only. Deliberately no
@@ -505,8 +533,10 @@ const Workspace = (() => {
         <div class="searchWrap"><input id="wsq" ${full ? 'disabled' : ''}
           placeholder="${esc(S('addHint'))}" style="min-width:300px"></div>
         <button type="button" id="wsFromSL">${esc(S('addFromSL'))}</button>
+        <button type="button" id="wsShare" ${genes.length ? '' : 'disabled'}>${esc(S('share'))}</button>
         <span class="spacer">${esc(S('maxNote'))}</span>
       </div>
+      <div class="localOnlyHint" id="wsLocalHint">${esc(S('savedHint'))}</div>
       ${genes.length ? genes.map(mineCard).join('')
         : `<div class="emptyState">
              <div class="esT">${esc(S('mineEmpty'))}</div>
@@ -619,7 +649,10 @@ const Workspace = (() => {
 
   /* --------------------------------------------------------------------- page */
   function render(host, state) {
+    const hasExplicitGenes = !!state && Object.prototype.hasOwnProperty.call(state, 'genes');
     state = Object.assign({ genes: [], topK: 100, sel: null }, state || {});
+    // A deep link is authoritative. A bare #workspace restores this browser's list.
+    state.genes = hasExplicitGenes ? SAVED.set(state.genes) : SAVED.get();
     // Session state lives on the module so navigating away and back keeps the selection.
     render._state = state;
 
@@ -668,6 +701,7 @@ const Workspace = (() => {
               <button type="button" id="wsPrint">${esc(S('print'))}</button>
               <button type="button" id="wsTxt">${esc(S('exportTxt'))}</button>
               <button type="button" id="wsCsv">${esc(S('exportCsv'))}</button>
+              <button type="button" id="wsMd">${esc(S('exportMd'))}</button>
             </div>
           </div></details>
         ` : emptyNote()}
@@ -704,7 +738,7 @@ const Workspace = (() => {
 
     function addGene(i) {
       if (state.genes.includes(i) || state.genes.length >= MAX_COMPARE) return;
-      state.genes.push(i); paint();
+      state.genes.push(i); state.genes = SAVED.set(state.genes); paint();
     }
 
     function wire(genes) {
@@ -717,9 +751,21 @@ const Workspace = (() => {
       };
       host.querySelectorAll('[data-wsrm]').forEach(b => {
         b.onclick = () => {
-          state.genes = state.genes.filter(x => x !== +b.dataset.wsrm); paint();
+          state.genes = SAVED.set(state.genes.filter(x => x !== +b.dataset.wsrm)); paint();
         };
       });
+      const share = host.querySelector('#wsShare');
+      if (share) share.onclick = async () => {
+        const url = new URL(location.href);
+        url.hash = '#workspace/' + state.genes.join(',');
+        try { await navigator.clipboard.writeText(url.href); }
+        catch (e) {
+          const ta = document.createElement('textarea');
+          ta.value = url.href; ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+        }
+        share.textContent = S('shareDone');
+      };
       // The reader's own notes. Written on input, never read by anything scientific.
       host.querySelectorAll('[data-note]').forEach(inp => {
         inp.oninput = () => NOTES.set(Number(inp.dataset.note), inp.value);
@@ -745,6 +791,17 @@ const Workspace = (() => {
       const cv = host.querySelector('#wsCsv');
       if (cv) cv.onclick = () => download('xunzi-pd-research-summary.csv',
         reportCsv(genes), 'text/csv');
+      const md = host.querySelector('#wsMd');
+      if (md) md.onclick = () => download('xunzi-pd-research-summary.md',
+        reportMarkdown(genes, state.topK), 'text/markdown');
+    }
+
+    function reportMarkdown(genes, topK) {
+      const title = I18N.getLang() === 'zh' ? '# XunZi-PD 研究摘要' : '# XunZi-PD Research Summary';
+      const boundary = I18N.getLang() === 'zh'
+        ? '> 研究候选不等于已验证靶点。本文件由冻结数据字段按规则生成。'
+        : '> A research candidate is not a validated target. This file is rule-generated from frozen data fields.';
+      return `${title}\n\n${boundary}\n\n\`\`\`text\n${reportText(genes, topK)}\n\`\`\`\n`;
     }
 
     function reportCsv(genes) {
@@ -805,5 +862,5 @@ const Workspace = (() => {
   }
 
   return { render, MAX_COMPARE, MATRIX_ROWS, MATRIX_LABEL, reportText, whyCautions,
-           compareTable, matrix, funnelHtml, WS };
+           compareTable, matrix, funnelHtml, WS, SAVED };
 })();
