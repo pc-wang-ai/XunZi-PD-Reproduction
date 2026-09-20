@@ -52,8 +52,8 @@ No local secret is required for these tests because no model call exists.
 
 1. In the DeepSeek API Platform, create an API key and configure a small prepaid balance or usage limit. Keep the key private.
 2. In Cloudflare Workers for `xunzi-pd-reproduction`, add the key as encrypted secret `DEEPSEEK_API_KEY`; never paste it into GitHub, this repository, or the browser.
-3. Choose a pinned DeepSeek text model suitable for the project budget and set `DEEPSEEK_MODEL` to its exact API name in the Worker environment/configuration.
-4. Review the public privacy page and deployment gate, then explicitly set `AI_ENABLED` to `true` only after a human test of refusals, citations and mobile UI.
+3. The deployment pins `DEEPSEEK_MODEL=deepseek-flash`. Review the budget for that model before use.
+4. Review the public privacy page and deployment gate, then explicitly ask to set `AI_ENABLED` to `true` only after a human test of refusals, citations and mobile UI.
 
 Until every step is complete, `/v1/answer` returns a safe error and cannot call a model.
 

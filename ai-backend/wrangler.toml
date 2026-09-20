@@ -8,8 +8,9 @@ compatibility_date = "2026-09-20"
 [vars]
 AI_ENABLED = "false"
 ALLOWED_ORIGIN = "https://pc-wang-ai.github.io"
-# Intentionally blank: a human must choose and pin a DeepSeek model before AI can be enabled.
-DEEPSEEK_MODEL = ""
+# Pinned DeepSeek Responses API model. AI remains disabled until the owner adds the
+# encrypted DEEPSEEK_API_KEY secret and explicitly enables it after budget review.
+DEEPSEEK_MODEL = "deepseek-flash"
 
 # Replace namespace_id with an integer unique in the owner's Cloudflare account before
 # deploying. The Worker fails closed when this binding is absent.
