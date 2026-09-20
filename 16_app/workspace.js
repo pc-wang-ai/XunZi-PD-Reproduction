@@ -54,6 +54,7 @@ const Workspace = (() => {
       todoDone: 'all seven evidence surfaces visited',
       todoNone: 'no evidence surface visited yet',
       todoRest: 'not looked at yet:',
+      todoGo: 'Open',
       funnelMore: 'See how this list was filtered',
       j_expression: 'Expression', j_ranking: 'Ranking', j_network: 'Protein network',
       j_pairs: 'MPTP / PFF', j_pathways: 'Pathways', j_pd: 'PD evidence',
@@ -145,6 +146,7 @@ const Workspace = (() => {
       todoDone: '七层证据都已查看',
       todoNone: '还没有查看任何一层证据',
       todoRest: '还没看：',
+      todoGo: '查看',
       funnelMore: '查看筛选流程',
       j_expression: '表达', j_ranking: '排名', j_network: '蛋白网络',
       j_pairs: 'MPTP / PFF', j_pathways: '通路', j_pd: 'PD 证据',
@@ -481,13 +483,30 @@ const Workspace = (() => {
     return esc(inSL ? S('whyShortlist') : S('whySearch'));
   }
 
+  /* A pending reading step is navigation, not a biological recommendation.  Keep this
+   * map alongside the workspace card so the reader can resume the exact guided route
+   * without having to remember which tab contains each evidence layer. */
+  function journeyLink(g, step) {
+    const href = {
+      expression: '#gene/' + g.i,
+      ranking: '#gene/' + g.i,
+      network: '#network/' + g.i + '/1',
+      pairs: '#gene/' + g.i,
+      pathways: '#pathway/' + g.i,
+      pd: '#pd/' + g.i,
+      research: '#workspace/' + g.i,
+    }[step.id];
+    return `<a class="todoChip todoLink" href="${href}" data-wsjump="${g.i}"
+      data-wsstep="${step.id}">${esc(S('j_' + step.id))}<span>${esc(S('todoGo'))} →</span></a>`;
+  }
+
   /** One candidate card: the gene, why it is here, what is known so far, what is left. */
   function mineCard(g) {
     const zh = I18N.getLang() === 'zh';
     const beg = (document.documentElement.dataset.mode || 'beginner') === 'beginner';
     const pr = (typeof Journey !== 'undefined') ? Journey.progress(g.i)
       : { done: 0, total: 0, steps: [] };
-    const todo = pr.steps.filter(s => !s.seen).map(s => S('j_' + s.id));
+    const todo = pr.steps.filter(s => !s.seen);
     const vs = DataService.validation_state(g);
     const stLabel = { non_near_zero: S('valNonNearZero'), near_zero: S('valNearZero'),
                       not_comparable: S('valNotComparable') }[vs.id];
@@ -517,7 +536,7 @@ const Workspace = (() => {
       <div class="mrRow"><span class="mrK">${esc(S('kTodo'))}</span>
         <span class="mrV">${todo.length === 0 ? esc(S('todoDone'))
           : (pr.done === 0 ? esc(S('todoNone')) : esc(S('todoRest'))) + (todo.length === 0 ? '' : ' '
-            + todo.map(x => `<span class="todoChip">${esc(x)}</span>`).join(''))}</span></div>
+            + todo.map(s => journeyLink(g, s)).join(''))}</span></div>
       <div class="mrRow"><span class="mrK">${esc(S('kNote'))}</span>
         <span class="mrV"><input type="text" class="mrNote" data-note="${g.i}"
           value="${esc(NOTES.get(g.i))}" placeholder="${esc(S('noteHint'))}"></span></div>
@@ -769,6 +788,11 @@ const Workspace = (() => {
       // The reader's own notes. Written on input, never read by anything scientific.
       host.querySelectorAll('[data-note]').forEach(inp => {
         inp.oninput = () => NOTES.set(Number(inp.dataset.note), inp.value);
+      });
+      // This uses the same meaning as the candidate-page stepper: "opened by the
+      // reader", never "scientifically confirmed". Let the link still navigate.
+      host.querySelectorAll('[data-wsjump]').forEach(a => {
+        a.onclick = () => Journey.mark(Number(a.dataset.wsjump), a.dataset.wsstep);
       });
 
       const box = host.querySelector('#wsReport');

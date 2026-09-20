@@ -943,6 +943,9 @@ details.techFold>summary,details.why>summary{font-size:12px;padding:6px 0}
 .mrV{flex:1 1 auto;min-width:0;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
 .todoChip{display:inline-block;margin-right:5px;padding:1px 7px;border-radius:6px;
   background:#1b232c;color:var(--dim);font-size:11.5px}
+.todoLink{margin-top:3px;text-decoration:none;border:1px solid #2b4159}
+.todoLink:hover,.todoLink:focus-visible{color:#cfe3ff;border-color:var(--accent);outline:none}
+.todoLink span{margin-left:5px;color:#83b8ff}
 .mrNote{width:100%;background:#0f141a;border:1px solid var(--line);border-radius:7px;
   color:var(--txt);padding:6px 9px;font-size:12.5px}
 .mrNote:focus{border-color:var(--accent);outline:none}
