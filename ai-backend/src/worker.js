@@ -7,6 +7,8 @@
  * Never add OPENAI_API_KEY to this repository, wrangler.toml, or browser code.
  */
 
+import { evidenceFor, loadFrozenEvidence } from './evidence.js';
+
 const MAX_QUESTION_CHARS = 600;
 const ALLOWED_GENE = /^(?:ENSG\d{11}|ENSMUSG\d{11}|[A-Za-z][A-Za-z0-9-]{0,31})$/;
 const MEDICAL_PATTERN = /\b(?:diagnos(?:is|e)|prognos(?:is|e)|treat(?:ment)?|drug|dose|medication|symptom|cure|prescri(?:be|ption))\b|诊断|治疗|药物|用药|剂量|症状|处方|治愈/i;
@@ -81,6 +83,23 @@ export default {
     if (url.pathname === '/health' && request.method === 'GET') {
       return json({ status: env.AI_ENABLED === 'true' ? 'not_ready' : 'disabled' }, 200, c.headers);
     }
+    if (url.pathname === '/v1/evidence' && request.method === 'POST') {
+      if (!env.RATE_LIMITER) return json({ error: 'rate_limit_not_configured' }, 503, c.headers);
+      const limited = await env.RATE_LIMITER.limit({ key: await rateKey(request) });
+      if (!limited.success) return json({ error: 'rate_limited' }, 429, c.headers);
+      if (request.headers.get('content-type')?.split(';')[0] !== 'application/json') return json({ error: 'json_required' }, 415, c.headers);
+      let body;
+      try { body = await request.json(); } catch { return json({ error: 'invalid_json' }, 400, c.headers); }
+      const geneId = typeof body?.gene_id === 'string' ? body.gene_id.trim() : '';
+      if (!geneId || !ALLOWED_GENE.test(geneId)) return json({ error: 'invalid_gene_id' }, 400, c.headers);
+      try {
+        const result = evidenceFor(await getSnapshot(), geneId);
+        return result ? json({ status: 'evidence_loaded', ...result }, 200, c.headers)
+          : json({ status: 'insufficient_evidence', evidence: [], boundary: 'The frozen public evidence bundle has no record for that gene.' }, 404, c.headers);
+      } catch {
+        return json({ error: 'frozen_evidence_unavailable' }, 503, c.headers);
+      }
+    }
     if (url.pathname !== '/v1/answer' || request.method !== 'POST') {
       return json({ error: 'not_found' }, 404, c.headers);
     }
@@ -108,3 +127,9 @@ export default {
 };
 
 export { validateBody, cors };
+
+let snapshotPromise;
+function getSnapshot() {
+  snapshotPromise ||= loadFrozenEvidence();
+  return snapshotPromise;
+}

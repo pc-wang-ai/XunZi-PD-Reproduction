@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import worker, { validateBody } from '../src/worker.js';
+import { evidenceFor } from '../src/evidence.js';
 
 const env = {
   AI_ENABLED: 'false',
@@ -37,4 +38,25 @@ test('stays unavailable until an explicit deployment enablement and evidence ret
   const response = await worker.fetch(req({ gene_id: 'SNCA', question: 'What happened in MPTP?' }), env);
   assert.equal(response.status, 503);
   assert.equal((await response.json()).error, 'ai_not_enabled');
+});
+
+test('attaches backend-generated citations from a frozen evidence record', () => {
+  const result = evidenceFor({
+    byGene: new Map([['SNCA', {
+      gene_id: 'ENSG00000145335', gene_symbol: 'SNCA', mouse_gene_id: 'ENSMUSG00000025889',
+      lfc_shrunk_primary: '0.42', padj_primary: '0.01', stat_de_v1_rank: '8',
+      string_rwr_v1_rank: '3', graph_degree: '5', lfc_shrunk_validation: 'NA', padj_validation: 'NA',
+    }], ['sym:SNCA', {
+      gene_id: 'ENSG00000145335', gene_symbol: 'SNCA', mouse_gene_id: 'ENSMUSG00000025889',
+      lfc_shrunk_primary: '0.42', padj_primary: '0.01', stat_de_v1_rank: '8',
+      string_rwr_v1_rank: '3', graph_degree: '5', lfc_shrunk_validation: 'NA', padj_validation: 'NA',
+    }]]),
+    pathways: new Map([['ENSG00000145335', { reactome: 'R-HSA-1', gobp: '' }]]),
+    pathwayNames: new Map([['R-HSA-1', 'Example process']]),
+    pd: { ENSG00000145335: { gwas_associations: 2, studies: ['GCST000001'] } },
+  }, 'SNCA');
+  assert.equal(result.gene.symbol, 'SNCA');
+  assert.equal(result.evidence.find(x => x.label === 'MPTP log2FC').value, '0.42');
+  assert.equal(result.pd_reference.studies[0], 'GCST000001');
+  assert.match(result.boundary, /does not establish/);
 });
