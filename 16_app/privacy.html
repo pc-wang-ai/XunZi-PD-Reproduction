@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XunZi-PD — 隐私与科研边界</title>
+<link rel="stylesheet" href="app.css?v=1.12">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a class="mark notranslate" translate="no" href="index.html#overview">XunZi-PD</a>
+    <span class="sub">隐私与科研边界 / Privacy and research boundary</span></div>
+</header>
+<main>
+  <h1>隐私与科研边界</h1>
+  <p class="lede">最后更新：2026-09-20。XunZi-PD 是公开、冻结研究结果的浏览工具，不是医疗服务。</p>
+
+  <section class="panel"><h2>目前会发送什么</h2>
+    <p>大部分页面在浏览器本地读取公开的冻结数据。只有你在单基因页面主动点击“核验证据与引用”时，浏览器才会向 XunZi-PD 的服务器发送<strong>当前公开的 gene ID</strong>，例如 <code>ENSG00000145335</code>。服务器据此从固定的公开数据快照读取并校验引用。</p>
+    <p>该操作不发送候选清单、研究笔记、浏览历史、姓名、邮箱、个人资料或健康信息。请不要在任何输入框中填写个人或健康信息。</p>
+  </section>
+
+  <section class="panel"><h2>目前不会发生什么</h2>
+    <ul>
+      <li>不会要求账户、登录、姓名、邮箱或病历。</li>
+      <li>不会重新运行 RNA-seq、重算排名或修改冻结的科学结果。</li>
+      <li>不会提供诊断、治疗、用药建议或经过验证的治疗靶点结论。</li>
+      <li>AI 问答目前<strong>未启用</strong>：没有 API Key、没有模型调用，也不会发送自由文本问题。</li>
+    </ul>
+  </section>
+
+  <section class="boundaryLayer" aria-label="Research interpretation boundary">
+    <div class="boundaryItem means"><div class="boundaryK">这些结果表示什么</div><p>固定分析框架内的研究优先级和已加载的背景证据。</p></div>
+    <div class="boundaryItem notMeans"><div class="boundaryK">这些结果不表示什么</div><p>它们不构成临床诊断，不证明疾病因果，也不代表已验证治疗靶点。</p></div>
+    <div class="boundaryItem limits"><div class="boundaryK">使用限制</div><p>任何后续实验、临床或治疗决定都必须由适当的专业人员和独立证据支持。</p></div>
+  </section>
+
+  <section class="panel"><h2>未来如启用 AI 问答</h2>
+    <p>只有在完成独立人工审查、限流和预算设置、服务器端密钥保护，以及引用和拒答测试后，才可能启用。届时页面会在发送前明确说明：仅发送短问题与当前 gene ID，且不得包含个人或健康信息。</p>
+    <p><a href="../docs/AI_QA_SECURITY_DESIGN.md">查看公开的安全设计</a> · <a href="index.html#overview">返回研究平台</a></p>
+  </section>
+
+  <section class="panel"><h2>English summary</h2>
+    <p>Most XunZi-PD pages read public frozen data locally. Clicking “Verify evidence and citations” sends only the selected public gene ID to the server. AI Q&amp;A is disabled: no model call, no API key, and no free-text question is transmitted. This research tool does not provide medical advice or establish causality or validated therapeutic targets.</p>
+  </section>
+</main>
+</body>
+</html>
