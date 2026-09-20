@@ -1,4 +1,4 @@
-/* Server-only OpenAI Responses adapter. Never put a key or model name in browser code. */
+/* Server-only DeepSeek Responses adapter. Never put a key or model name in browser code. */
 const MAX_ANSWER_CHARS = 1600;
 
 function outputText(payload) {
@@ -12,7 +12,7 @@ export function isAllowedResearchQuestion(question) {
 }
 
 export async function askEvidenceModel({ question, evidence, language, env, fetchImpl = fetch }) {
-  if (!env.OPENAI_API_KEY || !env.OPENAI_MODEL) return { error: 'model_not_configured' };
+  if (!env.DEEPSEEK_API_KEY || !env.DEEPSEEK_MODEL) return { error: 'model_not_configured' };
   const context = {
     gene: evidence.gene,
     evidence: evidence.evidence,
@@ -25,9 +25,11 @@ export async function askEvidenceModel({ question, evidence, language, env, fetc
 Use ONLY the supplied JSON evidence. Do not use tools, web search, outside knowledge, or unstated inference.
 Do not diagnose, discuss symptoms, treatment, drugs, prognosis, disease causality, or validated therapeutic targets.
 If evidence is missing, say that the loaded snapshot cannot answer it. Preserve gene symbols, identifiers, pathway IDs and study accessions exactly. Keep the answer under 180 words and end with the supplied research boundary.`;
-  const response = await fetchImpl('https://api.openai.com/v1/responses', {
+  // DeepSeek documents a Responses API compatible with this endpoint. No tools,
+  // web search, file search, or browser capabilities are requested.
+  const response = await fetchImpl('https://api.deepseek.com/v1/responses', {
     method: 'POST',
-    headers: { authorization: `Bearer ${env.OPENAI_API_KEY}`, 'content-type': 'application/json' },
+    headers: { authorization: `Bearer ${env.DEEPSEEK_API_KEY}`, 'content-type': 'application/json' },
     body: JSON.stringify({ model: env.OPENAI_MODEL, store: false, max_output_tokens: 450, instructions,
       input: `Question: ${question}\n\nFrozen evidence JSON:\n${JSON.stringify(context)}` }),
   });
