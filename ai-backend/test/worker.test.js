@@ -78,6 +78,7 @@ test('model adapter is server-only, disables storage, and returns only model tex
   });
   assert.equal(result.answer, 'Evidence-only answer. boundary');
   const body = JSON.parse(request.body);
+  assert.equal(body.model, 'test-model');
   assert.equal(body.store, false);
   assert.equal(body.tools, undefined);
   assert.match(request.headers.authorization, /^Bearer test-secret$/);

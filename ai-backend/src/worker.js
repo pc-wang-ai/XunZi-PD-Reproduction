@@ -4,7 +4,7 @@
  * boundary before an evidence retriever and model adapter are attached: CORS,
  * input size, out-of-scope refusals, and required platform rate limiting.
  *
- * Never add OPENAI_API_KEY to this repository, wrangler.toml, or browser code.
+ * Never add DEEPSEEK_API_KEY to this repository, wrangler.toml, or browser code.
  */
 
 import { evidenceFor, loadFrozenEvidence } from './evidence.js';

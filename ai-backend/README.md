@@ -29,7 +29,7 @@ includes the same non-causality/non-validated-target boundary used by the app.
 
 ## Do not add a key to this repository
 
-`OPENAI_API_KEY` must be created as an encrypted Cloudflare Worker Secret only after a human has reviewed the deployment gate in [../docs/AI_QA_SECURITY_DESIGN.md](../docs/AI_QA_SECURITY_DESIGN.md). Do not create `.dev.vars` unless testing locally; it is ignored by Git.
+`DEEPSEEK_API_KEY` must be created as an encrypted Cloudflare Worker Secret only after a human has reviewed the deployment gate in [../docs/AI_QA_SECURITY_DESIGN.md](../docs/AI_QA_SECURITY_DESIGN.md). Do not create `.dev.vars` unless testing locally; it is ignored by Git.
 
 ## Local checks
 
