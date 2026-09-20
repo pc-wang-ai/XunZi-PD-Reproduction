@@ -76,7 +76,10 @@ export function evidenceFor(snapshot, requestedGene) {
   const memberships = snapshot.pathways.get(gene.gene_id);
   const ids = memberships ? [memberships.reactome, memberships.gobp].filter(Boolean).flatMap(x => x.split('|')) : [];
   const pathwayMembership = ids.slice(0, 50).map(id => ({ id, name: snapshot.pathwayNames.get(id) || null }));
-  if (pathwayMembership.length) add('Pathway membership identifiers', SOURCES.pathways.layer, pathwayMembership.map(x => x.id).join('|'));
+  // The complete identifiers remain in `pathway_membership`; keep the citation
+  // compact so it remains readable on a phone and does not turn an ID list into a
+  // new ranking or interpretation.
+  if (pathwayMembership.length) add('Pathway membership annotations', SOURCES.pathways.layer, pathwayMembership.length);
 
   const pd = snapshot.pd[gene.gene_id] || null;
   if (pd) {
