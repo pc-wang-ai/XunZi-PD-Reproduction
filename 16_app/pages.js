@@ -1639,6 +1639,19 @@ const Pages = (() => {
     </section>`;
   }
 
+  function researchQa(g) {
+    const zh = I18N.getLang() === 'zh';
+    return `<section class="researchQa beginnerOnly" aria-label="${esc(zh ? '研究证据问答' : 'Research evidence Q&A')}">
+      <div class="summaryK">${esc(zh ? '研究证据问答' : 'Research evidence Q&A')}</div>
+      <p class="qaAvailability">${esc(zh ? '正在检查服务状态…' : 'Checking service status…')}</p>
+      <div class="qaForm" hidden>
+        <label for="qaQuestion">${esc(zh ? '仅询问此基因的 MPTP、PFF、排名、网络、通路或 PD 参考证据。不要输入个人或健康信息。' : 'Ask only about this gene’s MPTP, PFF, ranking, network, pathway, or PD-reference evidence. Do not enter personal or health information.')}</label>
+        <textarea id="qaQuestion" maxlength="600" rows="3" placeholder="${esc(zh ? '例如：它在 MPTP 模型中发生了什么？' : 'For example: What happened in the MPTP model?')}"></textarea>
+        <button type="button" class="qaAsk">${esc(zh ? '询问研究证据' : 'Ask about research evidence')}</button>
+      </div><div class="qaResult" role="status" aria-live="polite"></div>
+    </section>`;
+  }
+
   function gene(host, i) {
     const zh = I18N.getLang() === 'zh';
     const g = DataService.get_gene_detail(Number(i));
@@ -1704,6 +1717,7 @@ const Pages = (() => {
       ${quickEvidenceGuide(g, pathwayN, ev, limitationText)}
 
       ${frozenEvidenceLookup(g)}
+      ${researchQa(g)}
 
       <details class="geneEvidenceDetails" ${beginner() ? '' : 'open'}>
       <summary class="beginnerOnly">${esc(zh ? '查看完整证据与技术详情' : 'View full evidence and technical details')}</summary>
@@ -1784,6 +1798,27 @@ const Pages = (() => {
             ? '暂时无法核验服务器端证据。当前页面中的冻结本地证据不受影响。'
             : 'Server-side evidence cannot be verified right now. The frozen local evidence already shown on this page is unaffected.';
         } finally { lookup.disabled = false; }
+      };
+    }
+    const qa = host.querySelector('.researchQa');
+    if (qa) {
+      const availability = qa.querySelector('.qaAvailability'), form = qa.querySelector('.qaForm'), result = qa.querySelector('.qaResult');
+      const base = 'https://xunzi-pd-reproduction.3474119431pcw.workers.dev';
+      fetch(base + '/health').then(r => r.json()).then(status => {
+        if (status.status === 'ready') { availability.textContent = zh ? '服务已就绪。' : 'Service is ready.'; form.hidden = false; }
+        else availability.textContent = zh ? 'AI 问答尚未启用。可继续使用上方的非 AI 证据核验。' : 'AI Q&A is not enabled. You can still use the non-AI evidence check above.';
+      }).catch(() => { availability.textContent = zh ? '暂时无法检查 AI 服务状态。' : 'AI service status is temporarily unavailable.'; });
+      qa.querySelector('.qaAsk').onclick = async () => {
+        const question = qa.querySelector('#qaQuestion').value.trim();
+        if (!question) { result.textContent = zh ? '请先输入一个研究证据问题。' : 'Enter a research-evidence question first.'; return; }
+        const ask = qa.querySelector('.qaAsk'); ask.disabled = true; result.textContent = zh ? '正在读取已核验的研究证据…' : 'Reading verified research evidence…';
+        try {
+          const response = await fetch(base + '/v1/answer', { method: 'POST', headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ gene_id: g.gene_id, question, language: zh ? 'zh' : 'en' }) });
+          const body = await response.json();
+          result.textContent = body.answer || body.error || (zh ? '当前无法回答。' : 'Cannot answer right now.');
+        } catch { result.textContent = zh ? '暂时无法访问问答服务。' : 'The Q&A service is temporarily unavailable.'; }
+        finally { ask.disabled = false; }
       };
     }
     host.querySelectorAll('[data-evjump]').forEach(button => {

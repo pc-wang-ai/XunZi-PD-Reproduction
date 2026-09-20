@@ -8,6 +8,8 @@ compatibility_date = "2026-09-20"
 [vars]
 AI_ENABLED = "false"
 ALLOWED_ORIGIN = "https://pc-wang-ai.github.io"
+# Intentionally blank: a human must choose and pin a model before AI can be enabled.
+OPENAI_MODEL = ""
 
 # Replace namespace_id with an integer unique in the owner's Cloudflare account before
 # deploying. The Worker fails closed when this binding is absent.

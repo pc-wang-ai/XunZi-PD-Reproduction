@@ -1,6 +1,6 @@
 # XunZi-PD AI evidence Q&A backend
 
-This is a **fail-closed Cloudflare Worker**, not a live AI service. It does not call a model and the public GitHub Pages app does not point to it.
+This is a **fail-closed Cloudflare Worker**. The public app can show its status, but AI remains disabled until the owner completes the enablement checklist below.
 
 It provides the security gate that must be in place before a model adapter is added:
 
@@ -9,6 +9,7 @@ It provides the security gate that must be in place before a model adapter is ad
 - strict question and gene-ID input bounds;
 - pre-model refusal of medical advice and prompt-injection attempts; and
 - an `AI_ENABLED=false` default plus a hard failure when no server-side evidence retriever exists.
+- a server-side OpenAI Responses adapter that sends only a short allowed research question and independently retrieved frozen evidence; it disables API storage and exposes no tools.
 
 ## Frozen-evidence endpoint (not wired into the UI)
 
@@ -46,5 +47,14 @@ No local secret is required for these tests because no model call exists.
 3. Add the OpenAI key as a Cloudflare Secret, never as a Wrangler variable.
 4. Configure the model name, budget, usage alerts, CORS origin, and a public privacy notice.
 5. Complete the test and human-review gates in the security design before setting `AI_ENABLED` to `true`.
+
+## Owner enablement steps (required; not automated)
+
+1. In the OpenAI Platform, create a project-scoped API key and configure the project's budget and usage limits. Keep the key private.
+2. In Cloudflare Workers for `xunzi-pd-reproduction`, add the key as encrypted secret `OPENAI_API_KEY`; never paste it into GitHub, this repository, or the browser.
+3. Choose a pinned text model suitable for the project budget and set `OPENAI_MODEL` to its exact API name in the Worker environment/configuration.
+4. Review the public privacy page and deployment gate, then explicitly set `AI_ENABLED` to `true` only after a human test of refusals, citations and mobile UI.
+
+Until every step is complete, `/v1/answer` returns a safe error and cannot call a model.
 
 Cloudflare's current documentation describes encrypted Worker Secrets and the Worker rate-limiting binding. OpenAI's API documentation requires API keys to remain server-side.

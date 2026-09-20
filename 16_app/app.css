@@ -230,6 +230,9 @@ svg .edge{pointer-events:none}
 .lookupButton[disabled]{opacity:.65;cursor:wait}.lookupResult{margin-top:10px;color:#b8c7da;font-size:12.5px;line-height:1.55}
 .lookupSuccess{padding:10px 12px;border:1px solid #28594d;border-radius:8px;background:#13241f;color:#c9e8dd}
 .lookupSuccess ul{margin:7px 0;padding-left:18px}.lookupSuccess p{margin:7px 0 0;color:#c9e8dd}
+.researchQa{margin:14px 0;padding:14px;border:1px solid #564777;border-radius:10px;background:#1c1830}
+.researchQa p,.qaForm label{display:block;margin:6px 0 10px;color:#d6cae8;font-size:13px;line-height:1.55}
+.qaForm textarea{width:100%;resize:vertical;margin-bottom:8px}.qaResult{white-space:pre-wrap;margin-top:10px;color:#d6cae8;line-height:1.6}
 .geneEvidenceDetails>summary{cursor:pointer;padding:12px 14px;border:1px solid var(--line);border-radius:9px;
   background:var(--panel2);font-weight:700;color:#cfe3ff}.geneEvidenceDetails[open]>summary{margin-bottom:12px}
 .candidateQuick{margin:9px 0;padding:10px 12px;border:1px solid #2d4664;border-radius:9px;background:#152033}
