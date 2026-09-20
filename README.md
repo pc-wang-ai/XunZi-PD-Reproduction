@@ -66,3 +66,5 @@ This repository contains only the static app and the minimum frozen, derived dat
 ## For an AI application portfolio
 
 XunZi-PD demonstrates an AI-product design principle: make complex evidence navigable without concealing scientific uncertainty. The interface translates a fixed analysis into a guided, bilingual workflow while preserving source boundaries, technical detail for experts, local-only personal state, and explicit non-clinical safeguards.
+
+AI evidence Q&A is not enabled in the public app yet. Its required backend-only key handling, privacy rules, citations, refusals, and deployment gate are documented in [AI_QA_SECURITY_DESIGN.md](docs/AI_QA_SECURITY_DESIGN.md).
