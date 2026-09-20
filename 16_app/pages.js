@@ -1623,6 +1623,22 @@ const Pages = (() => {
     </section>`;
   }
 
+  // This is deliberately a citation check, not an AI chat. The only value sent is the
+  // selected public gene identifier; notes, shortlist state, free text and personal
+  // information never leave the browser. The Worker independently resolves the gene
+  // against a hash-pinned public snapshot.
+  function frozenEvidenceLookup(g) {
+    const zh = I18N.getLang() === 'zh';
+    return `<section class="frozenLookup beginnerOnly" aria-label="${esc(zh ? '服务器端证据核验' : 'Server-side evidence check')}">
+      <div class="summaryK">${esc(zh ? '服务器端证据核验（非 AI）' : 'Server-side evidence check (not AI)')}</div>
+      <p>${esc(zh
+        ? '可核验服务器是否从固定公开来源独立读取了该基因的研究字段和引用。点击后只发送当前基因 ID；请不要输入个人或健康信息。'
+        : 'Verify that the server independently reads this gene’s research fields and citations from a fixed public source. Clicking sends only this gene ID; do not enter personal or health information.')}</p>
+      <button type="button" class="lookupButton" data-frozen-lookup="${esc(g.gene_id)}">${esc(zh ? '核验证据与引用' : 'Verify evidence and citations')}</button>
+      <div class="lookupResult" role="status" aria-live="polite"></div>
+    </section>`;
+  }
+
   function gene(host, i) {
     const zh = I18N.getLang() === 'zh';
     const g = DataService.get_gene_detail(Number(i));
@@ -1687,6 +1703,8 @@ const Pages = (() => {
 
       ${quickEvidenceGuide(g, pathwayN, ev, limitationText)}
 
+      ${frozenEvidenceLookup(g)}
+
       <details class="geneEvidenceDetails" ${beginner() ? '' : 'open'}>
       <summary class="beginnerOnly">${esc(zh ? '查看完整证据与技术详情' : 'View full evidence and technical details')}</summary>
       <div class="geneFullEvidence">
@@ -1744,6 +1762,30 @@ const Pages = (() => {
       </div></details>`;
 
     Charts.network(host.querySelector('#gNet'), net, { onSelect: goGene });
+    const lookup = host.querySelector('[data-frozen-lookup]');
+    if (lookup) {
+      lookup.onclick = async () => {
+        const result = host.querySelector('.lookupResult');
+        lookup.disabled = true;
+        result.textContent = zh ? '正在核验固定公开证据…' : 'Verifying frozen public evidence…';
+        try {
+          const response = await fetch('https://xunzi-pd-reproduction.3474119431pcw.workers.dev/v1/evidence', {
+            method: 'POST', headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ gene_id: lookup.dataset.frozenLookup }),
+          });
+          const body = await response.json();
+          if (!response.ok || body.status !== 'evidence_loaded') throw new Error('evidence unavailable');
+          const citations = (body.evidence || []).slice(0, 8).map(item =>
+            `<li><b>${esc(item.label)}</b>: <span class="notranslate mono" translate="no">${esc(item.value)}</span></li>`).join('');
+          result.innerHTML = `<div class="lookupSuccess"><b>${esc(zh ? '已核验：' : 'Verified:')}</b> ${esc(body.gene.symbol || body.gene.gene_id)} · ${esc(zh ? '固定提交' : 'pinned commit')} <span class="mono">${esc(body.source_snapshot.commit.slice(0, 7))}</span>
+            <ul>${citations}</ul><p>${esc(zh ? '这些字段是研究背景，不证明疾病因果关系或已验证治疗靶点。' : 'These fields are research context; they do not establish disease causality or a validated therapeutic target.')}</p></div>`;
+        } catch {
+          result.textContent = zh
+            ? '暂时无法核验服务器端证据。当前页面中的冻结本地证据不受影响。'
+            : 'Server-side evidence cannot be verified right now. The frozen local evidence already shown on this page is unaffected.';
+        } finally { lookup.disabled = false; }
+      };
+    }
     host.querySelectorAll('[data-evjump]').forEach(button => {
       button.onclick = () => {
         const n = Number(button.dataset.evjump);

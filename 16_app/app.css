@@ -224,6 +224,12 @@ svg .edge{pointer-events:none}
 .summaryEvidence.muted{border-color:var(--line);color:var(--dim)}
 .summaryGaps{padding:10px 12px;border-left:3px solid var(--warn);background:#211e15;color:#d8c99b}
 .summaryActions{margin:12px 0 0}.geneEvidenceDetails{margin:14px 0}
+.frozenLookup{margin:14px 0;padding:14px;border:1px solid #31527a;border-radius:10px;background:#14243a}
+.frozenLookup p{margin:6px 0 10px;color:#b8c7da;font-size:13px;line-height:1.55}
+.lookupButton{background:#24446e;border-color:#2f5d96;font-weight:650}
+.lookupButton[disabled]{opacity:.65;cursor:wait}.lookupResult{margin-top:10px;color:#b8c7da;font-size:12.5px;line-height:1.55}
+.lookupSuccess{padding:10px 12px;border:1px solid #28594d;border-radius:8px;background:#13241f;color:#c9e8dd}
+.lookupSuccess ul{margin:7px 0;padding-left:18px}.lookupSuccess p{margin:7px 0 0;color:#c9e8dd}
 .geneEvidenceDetails>summary{cursor:pointer;padding:12px 14px;border:1px solid var(--line);border-radius:9px;
   background:var(--panel2);font-weight:700;color:#cfe3ff}.geneEvidenceDetails[open]>summary{margin-bottom:12px}
 .candidateQuick{margin:9px 0;padding:10px 12px;border:1px solid #2d4664;border-radius:9px;background:#152033}
