@@ -1,4 +1,5 @@
-name = "xunzi-pd-evidence-qa"
+# Match the Cloudflare connected-build service name.
+name = "xunzi-pd-reproduction"
 main = "src/worker.js"
 compatibility_date = "2026-09-20"
 
