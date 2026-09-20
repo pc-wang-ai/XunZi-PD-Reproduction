@@ -622,6 +622,16 @@ html[data-mode="expert"] details.techFold{display:none}   /* experts see the fie
   border-radius:9px;padding:12px;font-family:var(--mono);font-size:12px;line-height:1.55;
   resize:vertical}
 .localOnlyHint{margin-top:7px;color:var(--dim);font-size:11.5px;line-height:1.45}
+.evidenceCoach{margin:16px 0;padding:16px;border:1px solid #2b5587;border-radius:12px;
+  background:linear-gradient(135deg,#14243a,#111b29)}
+.coachHead p{margin:5px 0 13px;color:#c9d5e3;font-size:13px;line-height:1.55}
+.coachGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.coachCard{text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:6px;
+  min-width:0;padding:12px;border:1px solid var(--line);border-radius:9px;background:var(--panel2);color:var(--txt)}
+.coachCard:hover{border-color:#5b93d4;background:#17263a}
+.coachQ{font-weight:650;font-size:13px;color:#d6e8ff}
+.coachA{font-size:12px;line-height:1.55;color:#c9d5e3}
+.coachGo{font-size:11px;color:#83b8ff;margin-top:auto}
 .funnel{display:flex;flex-direction:column;align-items:center;gap:0;padding:6px 0}
 .fnStep{background:var(--panel2);border:1px solid var(--line);border-radius:9px;
   padding:8px 18px;min-width:240px;text-align:center}
@@ -672,6 +682,7 @@ html[data-mode="expert"] details.techFold{display:none}   /* experts see the fie
   .chainNode{width:100%}
   .cmpLabel{white-space:normal}
   .defRow{grid-template-columns:1fr;gap:2px}
+  .coachGrid{grid-template-columns:1fr}
 }
 
 /* ======================================================================

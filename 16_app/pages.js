@@ -1586,6 +1586,43 @@ const Pages = (() => {
       ${list.length > 12 ? `<div class="na">+${list.length - 12}</div>` : ''}</div>`;
   }
 
+  /* A deliberately constrained evidence assistant. It does not call an LLM, infer a
+   * score, or add a result: every answer is the same field-bound sentence already used
+   * in the seven evidence sections below. Its job is navigation and comprehension. */
+  function quickEvidenceGuide(g, pathwayN, ev, limitationText) {
+    const zh = I18N.getLang() === 'zh';
+    const L = G7[zh ? 'zh' : 'en'];
+    const p = DataService.foldPhrase(g.lp);
+    const dir = p ? (p.lfc > 0 ? (zh ? '高于对照' : 'higher than control')
+      : (p.lfc < 0 ? (zh ? '低于对照' : 'lower than control') : (zh ? '接近对照' : 'close to control'))) : '';
+    const mult = (p && Math.abs(p.lfc) > 0.05)
+      ? (zh ? `（约 ${p.multiple.toFixed(2)} 倍）` : ` (about ${p.multiple.toFixed(2)}×)`) : '';
+    const d = deltaRank(g);
+    const mem = (typeof Pathways !== 'undefined' && Pathways.ready()) ? Pathways.forGene(g.gene_id) : null;
+    const allPw = mem ? mem.reactome.concat(mem.gobp) : [];
+    const q = [
+      [2, zh ? '它在 MPTP 模型中发生了什么？' : 'What happened in the MPTP model?', L.l2(g, dir, mult)],
+      [3, zh ? '为什么它的排名值得关注？' : 'Why is its ranking worth attention?', L.l3(g, d)],
+      [4, zh ? '它有没有蛋白网络信息？' : 'Does it have protein-network information?', L.l4(g)],
+      [5, zh ? 'PFF 模型提供了什么证据？' : 'What does the PFF model show?', L.l5(g)],
+      [6, zh ? '它涉及哪些已知通路或过程？' : 'Which pathways or processes involve it?', L.l6(allPw, pathwayN)],
+      [7, zh ? '已有 PD 研究是否涉及它？' : 'Does existing PD research mention it?', L.l7(ev)],
+      [0, zh ? '当前证据还缺什么？' : 'What evidence is still missing?', limitationText],
+      [0, zh ? '它为什么仍只是研究候选？' : 'Why is it still a research candidate?',
+        zh ? '当前结果只表示冻结分析中的研究优先级和已加载证据；它不证明疾病因果，也不代表已验证治疗靶点。'
+           : 'These results show research priority and loaded evidence inside a frozen analysis; they do not establish disease causality or a validated therapeutic target.'],
+    ];
+    return `<section class="evidenceCoach beginnerOnly" aria-label="${esc(zh ? '快速证据解读' : 'Quick evidence guide')}">
+      <div class="coachHead"><div><div class="summaryK">${esc(zh ? '快速证据解读' : 'Quick evidence guide')}</div>
+        <p>${esc(zh ? '选择一个问题，先看简短答案；需要细节时可跳到对应的原始证据。'
+                         : 'Choose a question for a short answer, then jump to the underlying evidence when you need detail.')}</p></div></div>
+      <div class="coachGrid">${q.map(([n, question, answer]) => `<button type="button" class="coachCard" data-evjump="${n}">
+        <span class="coachQ">${esc(question)}</span><span class="coachA">${answer}</span>
+        ${n ? `<span class="coachGo">${esc(zh ? '查看证据 →' : 'See evidence →')}</span>` : ''}
+      </button>`).join('')}</div>
+    </section>`;
+  }
+
   function gene(host, i) {
     const zh = I18N.getLang() === 'zh';
     const g = DataService.get_gene_detail(Number(i));
@@ -1648,6 +1685,8 @@ const Pages = (() => {
         </div>
       </section>
 
+      ${quickEvidenceGuide(g, pathwayN, ev, limitationText)}
+
       <details class="geneEvidenceDetails" ${beginner() ? '' : 'open'}>
       <summary class="beginnerOnly">${esc(zh ? '查看完整证据与技术详情' : 'View full evidence and technical details')}</summary>
       <div class="geneFullEvidence">
@@ -1705,6 +1744,16 @@ const Pages = (() => {
       </div></details>`;
 
     Charts.network(host.querySelector('#gNet'), net, { onSelect: goGene });
+    host.querySelectorAll('[data-evjump]').forEach(button => {
+      button.onclick = () => {
+        const n = Number(button.dataset.evjump);
+        if (!n) return;
+        const details = host.querySelector('.geneEvidenceDetails');
+        if (details) details.open = true;
+        const section = host.querySelector(`.evSection.s${n}`);
+        if (section) requestAnimationFrame(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      };
+    });
     host.querySelectorAll('tbody tr').forEach(tr => tr.onclick = () => goGene(+tr.dataset.i));
     // The two-column reading sits after the seven sections: they describe what the data
     // says, this says what to do with it and where it could mislead.
