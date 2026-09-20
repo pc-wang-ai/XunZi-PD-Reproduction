@@ -1,0 +1,60 @@
+{
+ "schema_version": "app-data-v1.6",
+ "layer": "v1.6 EXTENSION — separate from outputs/app_data/, which stays frozen",
+ "generated_utc": "2026-09-19T04:49:49Z",
+ "inputs": [
+  {
+   "role": "pathway reference",
+   "path": "references/pathway_v1_6/manifest.json",
+   "sha256": "05a254b174d9c027482a5a1d9f6b90577254ca9485b5b46e1ab383af11d82c82"
+  },
+  {
+   "role": "pathway membership (Reactome)",
+   "path": "references/pathway_v1_6/gene2pathway_reactome.tsv",
+   "sha256": "d562464d8668cbef309ca81a560d991d0a4ffcce085d7fc62229708708b1716d"
+  },
+  {
+   "role": "pathway membership (GO BP)",
+   "path": "references/pathway_v1_6/gene2pathway_gobp.tsv",
+   "sha256": "81bbd758a166760b0b9e7cd2757dc17f26ac3f95a75b7baad7d84817097d9def"
+  },
+  {
+   "role": "frozen structural universe",
+   "path": "outputs/adopted_b1_b2/B1_structural_candidate_universe.csv",
+   "sha256": "046ab9c44cb5ad59ad8f9df00d940d9ccec43964742b2b6c0035765f54e64c7e"
+  },
+  {
+   "role": "frozen baseline ranking",
+   "path": "outputs/baselines/ranking_STAT-DE-v1.csv",
+   "sha256": "873b2f6f1dcee94648b36f2664672e5ccefb28478df18872cb8a71cbe41c9702"
+  }
+ ],
+ "files": [
+  {
+   "path": "enrichment_frozen.json",
+   "bytes": 379260,
+   "sha256": "58cca352010a436061ac9acd7494b799748af6ea5dc14281848d0f438c663956"
+  },
+  {
+   "path": "gene_pathway.tsv",
+   "bytes": 2523462,
+   "sha256": "fc25d3008de8ee577320227ddfbe7419ff5cf43d498505ec45ee145d79dba330"
+  },
+  {
+   "path": "pathway_index.tsv",
+   "bytes": 710283,
+   "sha256": "21a10e032c467e3a07cdb33faf5912b04e98397b8150cd6110e45910797707be"
+  },
+  {
+   "path": "pd_evidence.json",
+   "bytes": 163112,
+   "sha256": "7014d04e4c9eef925e4c8895d5832eee5fb94a2698b25f8bc5f2ac762747d94d"
+  }
+ ],
+ "definition": {
+  "enrichment": "The statistic, candidate-set rule, background and correction method are recorded verbatim in enrichment_frozen.json under `definition`. That file is authoritative; this manifest does not restate it, so the two cannot drift.",
+  "membership": "gene_pathway.tsv is an annotation lookup produced by references/pathway_v1_6/manifest.json's mapping rule. No statistic."
+ },
+ "invariant": "This layer is read-only context. It must never feed STAT-DE-v1, STRING-RWR-v1, analysis eligibility, graph membership or any ranking. No file in outputs/app_data/ or outputs/baselines/ is written by it.",
+ "finalized_utc": "2026-09-19T04:50:11Z"
+}

@@ -1,0 +1,29 @@
+{
+ "generated_utc": "2026-09-18T03:11:10Z",
+ "source_workspace": "(reconstruction workspace - path withheld)",
+ "adopted_bundle": "outputs/adopted_b1_b2/ (in-repo)",
+ "authority": [
+  "B1_B2_AUTHORITATIVE_RECONCILIATION.md",
+  "outputs/CHECKPOINT_B1_R1.md",
+  "outputs/CHECKPOINT_B2.md"
+ ],
+ "nodes": 15688,
+ "edges": 62672,
+ "universe": "Structural Candidate Universe U3",
+ "graph": {
+  "undirected_edges": 62672,
+  "weight": "combined_score/1000",
+  "edge_table_sha256": "f036d129c471a60e9602b219cf8c8c2d961ba5a703048a79fdd8bec956928360"
+ },
+ "baselines": [
+  "STAT-DE-v1",
+  "STRING-RWR-v1"
+ ],
+ "baseline_metrics": {
+  "stat_vs_rwr_spearman": 0.6873459967507687,
+  "stat_vs_rwr_kendall": 0.5577800545079967,
+  "validation_signed_spearman": -0.2932347286676408
+ },
+ "notes": "gene_symbol is display-only and is never a join key.",
+ "path_policy": "Absolute local paths are withheld from the public UI; artifacts are identified by SHA256."
+}

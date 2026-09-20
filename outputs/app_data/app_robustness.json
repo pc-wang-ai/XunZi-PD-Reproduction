@@ -1,0 +1,114 @@
+{
+ "schema_version": "app-robustness-v1",
+ "source": "B1_bootstrap_primary_summary.csv / B1_bootstrap_validation_summary.csv / B1_bootstrap_seed_summary.csv (repo root)",
+ "contract": "B0_evaluation_protocol.md - 20 frozen seeds 20260911..20260930, resample within each primary group with replacement at original group size. Sensitivity analysis, NOT model selection.",
+ "seeds_completed": 20,
+ "seeds_total": 20,
+ "seeds_missing": [],
+ "status": "PASS",
+ "note": "No selection threshold is derived from this panel. Rankings above are the full-data rankings.",
+ "cohorts": {
+  "primary": {
+   "spearman": {
+    "mean": 0.8165479915512588,
+    "median": 0.8112453137685237,
+    "sd": 0.10411033178077833,
+    "min": 0.6024724011112326,
+    "max": 1.0,
+    "iqr": 0.155902860423615
+   },
+   "kendall": {
+    "mean": 0.6433187082853304,
+    "median": 0.6148159355103056,
+    "sd": 0.13579872850416397,
+    "min": 0.4282639186319653,
+    "max": 1.0,
+    "iqr": 0.17643987758746937
+   },
+   "overlap_prop@10": {
+    "mean": 0.6050000000000001,
+    "median": 0.5,
+    "sd": 0.27999060134601883,
+    "min": 0.0,
+    "max": 1.0,
+    "iqr": 0.42500000000000004
+   },
+   "overlap_prop@100": {
+    "mean": 0.711,
+    "median": 0.705,
+    "sd": 0.15707524177586793,
+    "min": 0.44,
+    "max": 1.0,
+    "iqr": 0.18249999999999988
+   },
+   "jaccard@100": {
+    "mean": 0.5735714163454505,
+    "median": 0.5444245676803816,
+    "sd": 0.19181581500434286,
+    "min": 0.28205128205128205,
+    "max": 1.0,
+    "iqr": 0.2282080092839458
+   }
+  },
+  "validation": {
+   "spearman": {
+    "mean": 0.6269518500906903,
+    "median": 0.6333870859901032,
+    "sd": 0.15052104362031254,
+    "min": 0.3297618924551033,
+    "max": 0.860827279427394,
+    "iqr": 0.24513509550636892
+   },
+   "kendall": {
+    "mean": 0.4545593625661296,
+    "median": 0.4524320817234489,
+    "sd": 0.12513929007929755,
+    "min": 0.22399082251952218,
+    "max": 0.6752194856307226,
+    "iqr": 0.19977443510022042
+   },
+   "overlap_prop@10": {
+    "mean": 0.52,
+    "median": 0.5,
+    "sd": 0.1673320053068151,
+    "min": 0.2,
+    "max": 0.8,
+    "iqr": 0.22499999999999998
+   },
+   "overlap_prop@100": {
+    "mean": 0.4205,
+    "median": 0.42,
+    "sd": 0.11287976836113352,
+    "min": 0.19,
+    "max": 0.66,
+    "iqr": 0.15500000000000003
+   },
+   "jaccard@100": {
+    "mean": 0.27249326743158836,
+    "median": 0.26582278481012656,
+    "sd": 0.09275751523683484,
+    "min": 0.10497237569060773,
+    "max": 0.4925373134328358,
+    "iqr": 0.1248412266376338
+   }
+  }
+ },
+ "source_files": [
+  {
+   "path": "B1_bootstrap_primary_summary.csv",
+   "sha256": "673588d99c1a5f92ddaee13d911e7dd8c80172cfe3ce57530cd53b9c876c03ac",
+   "bytes": 1653
+  },
+  {
+   "path": "B1_bootstrap_validation_summary.csv",
+   "sha256": "8208009f62c7fe011e1aba121061af9b6453d21717b918b22b9aebcdc1699c8d",
+   "bytes": 1812
+  },
+  {
+   "path": "B1_bootstrap_seed_summary.csv",
+   "sha256": "3ddb31c0540a9eb637b82f5abe5d6b4f45f93b5527c24a795a5cdd30be779b35",
+   "bytes": 393
+  }
+ ],
+ "path_policy": "Repo-relative paths only. Absolute local paths are withheld from the public UI; sources are identified by SHA256."
+}

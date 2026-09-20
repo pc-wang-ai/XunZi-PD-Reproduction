@@ -1,0 +1,8558 @@
+{
+ "schema_version": "v1.6-pd-evidence-v1",
+ "source": {
+  "name": "GWAS Catalog (EBI/NHGRI), full ontology-annotated association release",
+  "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations_ontology-annotated-full.zip",
+  "trait": "MONDO_0005180 (Parkinson disease) as mapped by the Catalog itself",
+  "fetched_utc": "2026-09-19T04:50:08Z",
+  "sha256": "936c2213fdf4dc15b084518910a5c820898d9fe3c2da3c1968359d44793da419",
+  "release_rows": 1192604,
+  "association_count": 814,
+  "study_count": 72,
+  "mapped_to_universe": 311,
+  "mapping_rule": "MAPPED_GENE symbol -> Ensembl gene id via the frozen Ensembl 112 symbol reference; symbols that are missing or ambiguous are dropped, never guessed; only genes in the frozen 15,688-node structural universe are emitted."
+ },
+ "by_gene": {
+  "ENSG00000145335": {
+   "gwas_associations": 45,
+   "studies": [
+    "GCST000528",
+    "GCST000530",
+    "GCST000567",
+    "GCST000772",
+    "GCST000855",
+    "GCST000874",
+    "GCST000959",
+    "GCST001126",
+    "GCST001430",
+    "GCST001445",
+    "GCST002353",
+    "GCST002544",
+    "GCST003922",
+    "GCST003984",
+    "GCST004902",
+    "GCST007780",
+    "GCST009325",
+    "GCST009373",
+    "GCST009512",
+    "GCST009513",
+    "GCST010049",
+    "GCST010991",
+    "GCST011677",
+    "GCST90018894",
+    "GCST90026456",
+    "GCST90095083",
+    "GCST90256604",
+    "GCST90270939",
+    "GCST90278092",
+    "GCST90296432",
+    "GCST90308590",
+    "GCST90320240",
+    "GCST90455618",
+    "GCST90475830",
+    "GCST90480008",
+    "GCST90707270",
+    "GCST90828116"
+   ],
+   "strongest_p": 4e-170,
+   "associations": [
+    {
+     "rsid": "rs356203",
+     "risk_allele": "T",
+     "p_value": 2e-07,
+     "or_beta": "1.4337",
+     "study": "GCST009513",
+     "pmid": "31660654"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "G",
+     "p_value": 2e-09,
+     "or_beta": "0.223036",
+     "study": "GCST009512",
+     "pmid": "31660654"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "A",
+     "p_value": 4e-154,
+     "or_beta": "0.2774",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs5019538",
+     "risk_allele": "A",
+     "p_value": 1e-36,
+     "or_beta": "0.1565",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs356228",
+     "risk_allele": "C",
+     "p_value": 1e-48,
+     "or_beta": "0.1503",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs356203",
+     "risk_allele": "T",
+     "p_value": 5e-149,
+     "or_beta": "0.2504",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs6826785",
+     "risk_allele": "?",
+     "p_value": 2e-37,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs10516839",
+     "risk_allele": "T",
+     "p_value": 4e-17,
+     "or_beta": "0.1382",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "?",
+     "p_value": 1e-56,
+     "or_beta": "1.318",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs8180209",
+     "risk_allele": "?",
+     "p_value": 1e-32,
+     "or_beta": "1.41",
+     "study": "GCST003922",
+     "pmid": "28011712"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "G",
+     "p_value": 5e-123,
+     "or_beta": "1.33",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs356220",
+     "risk_allele": "T",
+     "p_value": 3e-08,
+     "or_beta": "1.37",
+     "study": "GCST000874",
+     "pmid": "21084426"
+    },
+    {
+     "rsid": "rs356219",
+     "risk_allele": "G",
+     "p_value": 2e-47,
+     "or_beta": "1.29",
+     "study": "GCST000959",
+     "pmid": "21292315"
+    },
+    {
+     "rsid": "rs356220",
+     "risk_allele": "A",
+     "p_value": 9e-16,
+     "or_beta": "1.27",
+     "study": "GCST000855",
+     "pmid": "21044948"
+    },
+    {
+     "rsid": "rs356220",
+     "risk_allele": "T",
+     "p_value": 2e-19,
+     "or_beta": "1.29",
+     "study": "GCST001126",
+     "pmid": "21738487"
+    },
+    {
+     "rsid": "rs356219",
+     "risk_allele": "?",
+     "p_value": 6e-65,
+     "or_beta": "1.29",
+     "study": "GCST001445",
+     "pmid": "22438815"
+    },
+    {
+     "rsid": "rs356220",
+     "risk_allele": "?",
+     "p_value": 8e-35,
+     "or_beta": "1.38",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    },
+    {
+     "rsid": "rs11931074",
+     "risk_allele": "?",
+     "p_value": 7e-17,
+     "or_beta": "1.37",
+     "study": "GCST000530",
+     "pmid": "19915576"
+    },
+    {
+     "rsid": "rs2736990",
+     "risk_allele": "C",
+     "p_value": 2e-16,
+     "or_beta": "1.23",
+     "study": "GCST000528",
+     "pmid": "19915575"
+    },
+    {
+     "rsid": "rs2736990",
+     "risk_allele": "?",
+     "p_value": 7e-08,
+     "or_beta": "1.29",
+     "study": "GCST000567",
+     "pmid": "20070850"
+    },
+    {
+     "rsid": "rs356220",
+     "risk_allele": "T",
+     "p_value": 3e-11,
+     "or_beta": "1.38",
+     "study": "GCST000772",
+     "pmid": "20711177"
+    },
+    {
+     "rsid": "rs356203",
+     "risk_allele": "?",
+     "p_value": 2e-12,
+     "or_beta": "0.626",
+     "study": "GCST007780",
+     "pmid": "30957308"
+    },
+    {
+     "rsid": "rs356219",
+     "risk_allele": "?",
+     "p_value": 2e-11,
+     "or_beta": "1.29",
+     "study": "GCST009373",
+     "pmid": "31755958"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "G",
+     "p_value": 4e-73,
+     "or_beta": "1.32",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs356220",
+     "risk_allele": "T",
+     "p_value": 1e-09,
+     "or_beta": "1.37",
+     "study": "GCST002353",
+     "pmid": "24511991"
+    },
+    {
+     "rsid": "rs356220",
+     "risk_allele": "T",
+     "p_value": 3e-11,
+     "or_beta": "1.38",
+     "study": "GCST002353",
+     "pmid": "24511991"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "A",
+     "p_value": 6e-08,
+     "or_beta": "0.686",
+     "study": "GCST90095083",
+     "pmid": "34776419"
+    },
+    {
+     "rsid": "rs356220",
+     "risk_allele": "C",
+     "p_value": 6e-13,
+     "or_beta": "0.2542",
+     "study": "GCST90018894",
+     "pmid": "34594039"
+    },
+    {
+     "rsid": "rs356219",
+     "risk_allele": "?",
+     "p_value": 6e-41,
+     "or_beta": "",
+     "study": "GCST90256604",
+     "pmid": "36672180"
+    },
+    {
+     "rsid": "rs1372518",
+     "risk_allele": "?",
+     "p_value": 3e-28,
+     "or_beta": "",
+     "study": "GCST90256604",
+     "pmid": "36672180"
+    },
+    {
+     "rsid": "rs3775458",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "1.41",
+     "study": "GCST011677",
+     "pmid": "33884653"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "?",
+     "p_value": 5e-08,
+     "or_beta": "0.234",
+     "study": "GCST90026456",
+     "pmid": "34227697"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "A",
+     "p_value": 3e-53,
+     "or_beta": "0.343",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs1372519",
+     "risk_allele": "G",
+     "p_value": 3e-12,
+     "or_beta": "0.18",
+     "study": "GCST90455618",
+     "pmid": "39080267"
+    },
+    {
+     "rsid": "rs114762839",
+     "risk_allele": "A",
+     "p_value": 1e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs79483792",
+     "risk_allele": "T",
+     "p_value": 3e-17,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "A",
+     "p_value": 4e-170,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs1372518",
+     "risk_allele": "A",
+     "p_value": 2e-79,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs3796661",
+     "risk_allele": "C",
+     "p_value": 4e-13,
+     "or_beta": "0.69",
+     "study": "GCST90278092",
+     "pmid": "37805635"
+    },
+    {
+     "rsid": "rs3796661",
+     "risk_allele": "C",
+     "p_value": 5e-09,
+     "or_beta": "0.63",
+     "study": "GCST90296432",
+     "pmid": "37805635"
+    },
+    {
+     "rsid": "rs356182",
+     "risk_allele": "?",
+     "p_value": 4e-11,
+     "or_beta": "",
+     "study": "GCST90320240",
+     "pmid": "38014556"
+    },
+    {
+     "rsid": "rs356183",
+     "risk_allele": "G",
+     "p_value": 3e-12,
+     "or_beta": "0.112",
+     "study": "GCST90475830",
+     "pmid": "39024449"
+    },
+    {
+     "rsid": "rs2619341",
+     "risk_allele": "?",
+     "p_value": 9e-09,
+     "or_beta": "1.2",
+     "study": "GCST90707270",
+     "pmid": "41810385"
+    },
+    {
+     "rsid": "rs34806123",
+     "risk_allele": "?",
+     "p_value": 4e-37,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    },
+    {
+     "rsid": "rs356183",
+     "risk_allele": "G",
+     "p_value": 6e-13,
+     "or_beta": "0.1157",
+     "study": "GCST90480008",
+     "pmid": "39024449"
+    }
+   ]
+  },
+  "ENSG00000185345": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009513"
+   ],
+   "strongest_p": 4e-13,
+   "associations": [
+    {
+     "rsid": "rs9356013",
+     "risk_allele": "?",
+     "p_value": 4e-13,
+     "or_beta": "4.11",
+     "study": "GCST009513",
+     "pmid": "31660654"
+    }
+   ]
+  },
+  "ENSG00000188906": {
+   "gwas_associations": 23,
+   "studies": [
+    "GCST000959",
+    "GCST001126",
+    "GCST001445",
+    "GCST002544",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST009512",
+    "GCST90270939",
+    "GCST90278092",
+    "GCST90296432",
+    "GCST90308590",
+    "GCST90455618",
+    "GCST90475830",
+    "GCST90479727",
+    "GCST90480008",
+    "GCST90707270",
+    "GCST90828116"
+   ],
+   "strongest_p": 4e-148,
+   "associations": [
+    {
+     "rsid": "rs190807041",
+     "risk_allele": "G",
+     "p_value": 7e-11,
+     "or_beta": "2.03403",
+     "study": "GCST009512",
+     "pmid": "31660654"
+    },
+    {
+     "rsid": "rs76904798",
+     "risk_allele": "T",
+     "p_value": 2e-28,
+     "or_beta": "0.1439",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs34637584",
+     "risk_allele": "A",
+     "p_value": 4e-148,
+     "or_beta": "2.4289",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs28903073",
+     "risk_allele": "?",
+     "p_value": 1e-39,
+     "or_beta": "3.1152647",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs76904798",
+     "risk_allele": "T",
+     "p_value": 1e-19,
+     "or_beta": "1.15",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs1491942",
+     "risk_allele": "G",
+     "p_value": 6e-14,
+     "or_beta": "1.27",
+     "study": "GCST000959",
+     "pmid": "21292315"
+    },
+    {
+     "rsid": "rs34637584",
+     "risk_allele": "A",
+     "p_value": 2e-28,
+     "or_beta": "9.62",
+     "study": "GCST001126",
+     "pmid": "21738487"
+    },
+    {
+     "rsid": "rs34778348",
+     "risk_allele": "?",
+     "p_value": 3e-21,
+     "or_beta": "2.23",
+     "study": "GCST001445",
+     "pmid": "22438815"
+    },
+    {
+     "rsid": "rs1491942",
+     "risk_allele": "?",
+     "p_value": 6e-15,
+     "or_beta": "1.17",
+     "study": "GCST001445",
+     "pmid": "22438815"
+    },
+    {
+     "rsid": "rs76904798",
+     "risk_allele": "T",
+     "p_value": 5e-14,
+     "or_beta": "1.155",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs34594498",
+     "risk_allele": "T",
+     "p_value": 4e-20,
+     "or_beta": "0.883",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs34778348",
+     "risk_allele": "C",
+     "p_value": 3e-30,
+     "or_beta": "0.608",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs34637584",
+     "risk_allele": "A",
+     "p_value": 7e-12,
+     "or_beta": "2.27",
+     "study": "GCST90455618",
+     "pmid": "39080267"
+    },
+    {
+     "rsid": "rs17443414",
+     "risk_allele": "A",
+     "p_value": 3e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs190807041",
+     "risk_allele": "G",
+     "p_value": 1e-13,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs34778348",
+     "risk_allele": "A",
+     "p_value": 5e-13,
+     "or_beta": "2.56",
+     "study": "GCST90278092",
+     "pmid": "37805635"
+    },
+    {
+     "rsid": "rs34778348",
+     "risk_allele": "A",
+     "p_value": 2e-09,
+     "or_beta": "3.53",
+     "study": "GCST90296432",
+     "pmid": "37805635"
+    },
+    {
+     "rsid": "rs34637584",
+     "risk_allele": "G",
+     "p_value": 2e-11,
+     "or_beta": "1.638",
+     "study": "GCST90475830",
+     "pmid": "39024449"
+    },
+    {
+     "rsid": "rs146373824",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "1.59",
+     "study": "GCST90707270",
+     "pmid": "41810385"
+    },
+    {
+     "rsid": "rs34778348",
+     "risk_allele": "?",
+     "p_value": 5e-12,
+     "or_beta": "1.52",
+     "study": "GCST90707270",
+     "pmid": "41810385"
+    },
+    {
+     "rsid": "rs146373824",
+     "risk_allele": "?",
+     "p_value": 1e-34,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    },
+    {
+     "rsid": "rs34637584",
+     "risk_allele": "G",
+     "p_value": 7e-17,
+     "or_beta": "1.594",
+     "study": "GCST90480008",
+     "pmid": "39024449"
+    },
+    {
+     "rsid": "rs34637584",
+     "risk_allele": "G",
+     "p_value": 3e-12,
+     "or_beta": "1.805",
+     "study": "GCST90479727",
+     "pmid": "39024449"
+    }
+   ]
+  },
+  "ENSG00000127419": {
+   "gwas_associations": 15,
+   "studies": [
+    "GCST000959",
+    "GCST001126",
+    "GCST002544",
+    "GCST004902",
+    "GCST007780",
+    "GCST009325",
+    "GCST009512",
+    "GCST010049",
+    "GCST010991",
+    "GCST012431",
+    "GCST90270939",
+    "GCST90308590",
+    "GCST90455618",
+    "GCST90828116",
+    "GCST90892629"
+   ],
+   "strongest_p": 5e-75,
+   "associations": [
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "C",
+     "p_value": 3e-07,
+     "or_beta": "0.2425",
+     "study": "GCST009512",
+     "pmid": "31660654"
+    },
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "T",
+     "p_value": 1e-69,
+     "or_beta": "0.2126",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "?",
+     "p_value": 7e-06,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs34884217",
+     "risk_allele": "A",
+     "p_value": 1e-11,
+     "or_beta": "0.1915",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "C",
+     "p_value": 1e-50,
+     "or_beta": "1.23",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs6599388",
+     "risk_allele": "T",
+     "p_value": 4e-12,
+     "or_beta": "1.16",
+     "study": "GCST000959",
+     "pmid": "21292315"
+    },
+    {
+     "rsid": "rs6599389",
+     "risk_allele": "A",
+     "p_value": 4e-08,
+     "or_beta": "1.31",
+     "study": "GCST001126",
+     "pmid": "21738487"
+    },
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "C",
+     "p_value": 1e-08,
+     "or_beta": "0.613",
+     "study": "GCST007780",
+     "pmid": "30957308"
+    },
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "C",
+     "p_value": 1e-43,
+     "or_beta": "1.27",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "C",
+     "p_value": 3e-06,
+     "or_beta": "0.134",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "C",
+     "p_value": 6e-11,
+     "or_beta": "1.25164",
+     "study": "GCST012431",
+     "pmid": "34064523"
+    },
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "C",
+     "p_value": 1e-12,
+     "or_beta": "0.17",
+     "study": "GCST90455618",
+     "pmid": "39080267"
+    },
+    {
+     "rsid": "rs34311866",
+     "risk_allele": "T",
+     "p_value": 5e-75,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs6599389",
+     "risk_allele": "?",
+     "p_value": 2e-11,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    },
+    {
+     "rsid": "rs6815138",
+     "risk_allele": "?",
+     "p_value": 2e-07,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000163344": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST002455",
+    "GCST009325",
+    "GCST90308590",
+    "GCST90428733"
+   ],
+   "strongest_p": 1e-37,
+   "associations": [
+    {
+     "rsid": "rs114138760",
+     "risk_allele": "C",
+     "p_value": 4e-09,
+     "or_beta": "0.2812",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs1630500",
+     "risk_allele": "?",
+     "p_value": 2e-08,
+     "or_beta": "1.75",
+     "study": "GCST002455",
+     "pmid": "24842889"
+    },
+    {
+     "rsid": "rs114138760",
+     "risk_allele": "C",
+     "p_value": 3e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs1630500",
+     "risk_allele": "?",
+     "p_value": 1e-37,
+     "or_beta": "2.07",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000163463": {
+   "gwas_associations": 6,
+   "studies": [
+    "GCST002544",
+    "GCST004902",
+    "GCST009325",
+    "GCST012431",
+    "GCST90428733"
+   ],
+   "strongest_p": 2e-70,
+   "associations": [
+    {
+     "rsid": "rs35749011",
+     "risk_allele": "A",
+     "p_value": 2e-70,
+     "or_beta": "0.6068",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs35749011",
+     "risk_allele": "A",
+     "p_value": 3e-35,
+     "or_beta": "1.724138",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs35749011",
+     "risk_allele": "A",
+     "p_value": 1e-29,
+     "or_beta": "1.824",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs35749011",
+     "risk_allele": "A",
+     "p_value": 5e-11,
+     "or_beta": "2.24146",
+     "study": "GCST012431",
+     "pmid": "34064523"
+    },
+    {
+     "rsid": "rs10908458",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "0.675",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs12028043",
+     "risk_allele": "?",
+     "p_value": 7e-06,
+     "or_beta": "0.649",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000117533": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-09,
+   "associations": [
+    {
+     "rsid": "rs11578699",
+     "risk_allele": "T",
+     "p_value": 4e-09,
+     "or_beta": "0.0704",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs10903",
+     "risk_allele": "A",
+     "p_value": 2e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000010165": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 4e-09,
+   "associations": [
+    {
+     "rsid": "rs11578699",
+     "risk_allele": "T",
+     "p_value": 4e-09,
+     "or_beta": "0.0704",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000069275": {
+   "gwas_associations": 10,
+   "studies": [
+    "GCST000528",
+    "GCST002455",
+    "GCST002544",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90270939",
+    "GCST90296433",
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-32,
+   "associations": [
+    {
+     "rsid": "rs823118",
+     "risk_allele": "T",
+     "p_value": 1e-29,
+     "or_beta": "0.1066",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs3805",
+     "risk_allele": "T",
+     "p_value": 4e-11,
+     "or_beta": "0.132",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs823118",
+     "risk_allele": "?",
+     "p_value": 6e-12,
+     "or_beta": "1.117",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs823118",
+     "risk_allele": "T",
+     "p_value": 1e-23,
+     "or_beta": "1.1235955",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs823128",
+     "risk_allele": "A",
+     "p_value": 7e-08,
+     "or_beta": "1.52",
+     "study": "GCST000528",
+     "pmid": "19915575"
+    },
+    {
+     "rsid": "rs823118",
+     "risk_allele": "T",
+     "p_value": 2e-16,
+     "or_beta": "1.122",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs823114",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "1.33",
+     "study": "GCST002455",
+     "pmid": "24842889"
+    },
+    {
+     "rsid": "rs823118",
+     "risk_allele": "C",
+     "p_value": 1e-23,
+     "or_beta": "0.208",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs12118655",
+     "risk_allele": "A",
+     "p_value": 2e-32,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs12748961",
+     "risk_allele": "T",
+     "p_value": 5e-06,
+     "or_beta": "0.69",
+     "study": "GCST90296433",
+     "pmid": "37805635"
+    }
+   ]
+  },
+  "ENSG00000117280": {
+   "gwas_associations": 13,
+   "studies": [
+    "GCST000530",
+    "GCST002455",
+    "GCST002544",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST010049",
+    "GCST90270939",
+    "GCST90278092",
+    "GCST90296433",
+    "GCST90828116"
+   ],
+   "strongest_p": 1e-29,
+   "associations": [
+    {
+     "rsid": "rs823118",
+     "risk_allele": "T",
+     "p_value": 1e-29,
+     "or_beta": "0.1066",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs11557080",
+     "risk_allele": "A",
+     "p_value": 3e-22,
+     "or_beta": "0.1315",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs6679073",
+     "risk_allele": "?",
+     "p_value": 4e-21,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs823118",
+     "risk_allele": "?",
+     "p_value": 6e-12,
+     "or_beta": "1.117",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs823118",
+     "risk_allele": "T",
+     "p_value": 1e-23,
+     "or_beta": "1.1235955",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs947211",
+     "risk_allele": "?",
+     "p_value": 2e-12,
+     "or_beta": "1.3",
+     "study": "GCST000530",
+     "pmid": "19915576"
+    },
+    {
+     "rsid": "rs823118",
+     "risk_allele": "T",
+     "p_value": 2e-16,
+     "or_beta": "1.122",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs823114",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "1.33",
+     "study": "GCST002455",
+     "pmid": "24842889"
+    },
+    {
+     "rsid": "rs823118",
+     "risk_allele": "C",
+     "p_value": 1e-23,
+     "or_beta": "0.208",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs11557080",
+     "risk_allele": "G",
+     "p_value": 1e-24,
+     "or_beta": "0.215",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs708723",
+     "risk_allele": "C",
+     "p_value": 7e-08,
+     "or_beta": "0.76",
+     "study": "GCST90278092",
+     "pmid": "37805635"
+    },
+    {
+     "rsid": "rs947211",
+     "risk_allele": "A",
+     "p_value": 3e-06,
+     "or_beta": "0.69",
+     "study": "GCST90296433",
+     "pmid": "37805635"
+    },
+    {
+     "rsid": "rs5014256",
+     "risk_allele": "?",
+     "p_value": 3e-16,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000143772": {
+   "gwas_associations": 6,
+   "studies": [
+    "GCST004902",
+    "GCST009325",
+    "GCST010049",
+    "GCST010991",
+    "GCST90308590",
+    "GCST90828116"
+   ],
+   "strongest_p": 3e-24,
+   "associations": [
+    {
+     "rsid": "rs4653767",
+     "risk_allele": "T",
+     "p_value": 1e-15,
+     "or_beta": "0.0833",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs16846351",
+     "risk_allele": "?",
+     "p_value": 8e-10,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs4653767",
+     "risk_allele": "T",
+     "p_value": 6e-08,
+     "or_beta": "0.0846",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs4653767",
+     "risk_allele": "T",
+     "p_value": 2e-11,
+     "or_beta": "1.0869565",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs4653767",
+     "risk_allele": "T",
+     "p_value": 3e-24,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs16846351",
+     "risk_allele": "?",
+     "p_value": 9e-10,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000116991": {
+   "gwas_associations": 5,
+   "studies": [
+    "GCST002544",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 1e-17,
+   "associations": [
+    {
+     "rsid": "rs10797576",
+     "risk_allele": "T",
+     "p_value": 7e-17,
+     "or_beta": "0.1114",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs10797576",
+     "risk_allele": "T",
+     "p_value": 2e-07,
+     "or_beta": "0.1045",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs10797576",
+     "risk_allele": "T",
+     "p_value": 8e-13,
+     "or_beta": "1.12",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs10797576",
+     "risk_allele": "T",
+     "p_value": 5e-10,
+     "or_beta": "1.131",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs1326293",
+     "risk_allele": "T",
+     "p_value": 1e-17,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000170745": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs76116224",
+     "risk_allele": "A",
+     "p_value": 1e-08,
+     "or_beta": "0.1104",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000115041": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs2042477",
+     "risk_allele": "A",
+     "p_value": 1e-08,
+     "or_beta": "0.0657",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000071054": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST004902",
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 8e-13,
+   "associations": [
+    {
+     "rsid": "rs11683001",
+     "risk_allele": "A",
+     "p_value": 8e-13,
+     "or_beta": "0.0705",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs34043159",
+     "risk_allele": "C",
+     "p_value": 5e-11,
+     "or_beta": "1.08",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs11683001",
+     "risk_allele": "A",
+     "p_value": 2e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000152128": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 5e-14,
+   "associations": [
+    {
+     "rsid": "rs57891859",
+     "risk_allele": "A",
+     "p_value": 5e-14,
+     "or_beta": "0.0807",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs4954162",
+     "risk_allele": "A",
+     "p_value": 2e-08,
+     "or_beta": "0.0746",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs57891859",
+     "risk_allele": "A",
+     "p_value": 5e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000198648": {
+   "gwas_associations": 9,
+   "studies": [
+    "GCST000959",
+    "GCST001430",
+    "GCST002544",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590",
+    "GCST90455618"
+   ],
+   "strongest_p": 4e-42,
+   "associations": [
+    {
+     "rsid": "rs1474055",
+     "risk_allele": "T",
+     "p_value": 3e-39,
+     "or_beta": "0.1796",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs4667572",
+     "risk_allele": "A",
+     "p_value": 4e-13,
+     "or_beta": "0.1377",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs13016703",
+     "risk_allele": "?",
+     "p_value": 3e-16,
+     "or_beta": "1.2091899",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs1474055",
+     "risk_allele": "T",
+     "p_value": 6e-26,
+     "or_beta": "1.2048193",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs2102808",
+     "risk_allele": "C",
+     "p_value": 4e-10,
+     "or_beta": "1.18",
+     "study": "GCST000959",
+     "pmid": "21292315"
+    },
+    {
+     "rsid": "rs9917256",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "1.19",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    },
+    {
+     "rsid": "rs1474055",
+     "risk_allele": "T",
+     "p_value": 1e-20,
+     "or_beta": "1.214",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs9917256",
+     "risk_allele": "A",
+     "p_value": 8e-11,
+     "or_beta": "0.15",
+     "study": "GCST90455618",
+     "pmid": "39080267"
+    },
+    {
+     "rsid": "rs12987123",
+     "risk_allele": "A",
+     "p_value": 4e-42,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000131374": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 6e-13,
+   "associations": [
+    {
+     "rsid": "rs73038319",
+     "risk_allele": "A",
+     "p_value": 6e-13,
+     "or_beta": "0.1693",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs13078687",
+     "risk_allele": "A",
+     "p_value": 9e-09,
+     "or_beta": "0.1206",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs4073221",
+     "risk_allele": "G",
+     "p_value": 2e-08,
+     "or_beta": "1.1",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs1108439",
+     "risk_allele": "A",
+     "p_value": 2e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000144642": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST000855",
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 6e-12,
+   "associations": [
+    {
+     "rsid": "rs6808178",
+     "risk_allele": "T",
+     "p_value": 8e-12,
+     "or_beta": "0.0658",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs7617877",
+     "risk_allele": "A",
+     "p_value": 3e-06,
+     "or_beta": "1.23",
+     "study": "GCST000855",
+     "pmid": "21044948"
+    },
+    {
+     "rsid": "rs6808178",
+     "risk_allele": "T",
+     "p_value": 6e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000068745": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST004902",
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 1e-10,
+   "associations": [
+    {
+     "rsid": "rs12497850",
+     "risk_allele": "T",
+     "p_value": 1e-10,
+     "or_beta": "0.0636",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs12497850",
+     "risk_allele": "T",
+     "p_value": 9e-09,
+     "or_beta": "1.0752687",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs12497850",
+     "risk_allele": "T",
+     "p_value": 3e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000114030": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 1e-11,
+   "associations": [
+    {
+     "rsid": "rs55961674",
+     "risk_allele": "T",
+     "p_value": 1e-11,
+     "or_beta": "0.0861",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000144893": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590",
+    "GCST90892629"
+   ],
+   "strongest_p": 5e-11,
+   "associations": [
+    {
+     "rsid": "rs11707416",
+     "risk_allele": "A",
+     "p_value": 1e-10,
+     "or_beta": "0.0627",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs2276765",
+     "risk_allele": "A",
+     "p_value": 2e-07,
+     "or_beta": "0.0761",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs6803771",
+     "risk_allele": "A",
+     "p_value": 5e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs1920393",
+     "risk_allele": "?",
+     "p_value": 1e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000196542": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST004902",
+    "GCST009325",
+    "GCST010991"
+   ],
+   "strongest_p": 5e-10,
+   "associations": [
+    {
+     "rsid": "rs1450522",
+     "risk_allele": "A",
+     "p_value": 5e-10,
+     "or_beta": "0.0616",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs1450522",
+     "risk_allele": "A",
+     "p_value": 6e-08,
+     "or_beta": "0.0797",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs67460515",
+     "risk_allele": "C",
+     "p_value": 1e-06,
+     "or_beta": "1.059",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000078070": {
+   "gwas_associations": 12,
+   "studies": [
+    "GCST000959",
+    "GCST001126",
+    "GCST002544",
+    "GCST003922",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST010049",
+    "GCST010991",
+    "GCST90270939",
+    "GCST90308590",
+    "GCST90828116"
+   ],
+   "strongest_p": 6e-50,
+   "associations": [
+    {
+     "rsid": "rs10513789",
+     "risk_allele": "T",
+     "p_value": 1e-34,
+     "or_beta": "0.1485",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs2292056",
+     "risk_allele": "?",
+     "p_value": 8e-17,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs140278703",
+     "risk_allele": "T",
+     "p_value": 2e-11,
+     "or_beta": "0.1671",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs9858038",
+     "risk_allele": "?",
+     "p_value": 3e-14,
+     "or_beta": "1.172",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs2270968",
+     "risk_allele": "G",
+     "p_value": 3e-08,
+     "or_beta": "1.178",
+     "study": "GCST003922",
+     "pmid": "28011712"
+    },
+    {
+     "rsid": "rs12637471",
+     "risk_allele": "G",
+     "p_value": 2e-30,
+     "or_beta": "1.1764705",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs11711441",
+     "risk_allele": "G",
+     "p_value": 8e-12,
+     "or_beta": "1.19",
+     "study": "GCST000959",
+     "pmid": "21292315"
+    },
+    {
+     "rsid": "rs10513789",
+     "risk_allele": "T",
+     "p_value": 3e-10,
+     "or_beta": "1.25",
+     "study": "GCST001126",
+     "pmid": "21738487"
+    },
+    {
+     "rsid": "rs12637471",
+     "risk_allele": "G",
+     "p_value": 2e-21,
+     "or_beta": "1.1876",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs10513789",
+     "risk_allele": "T",
+     "p_value": 4e-17,
+     "or_beta": "0.173",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs10513789",
+     "risk_allele": "T",
+     "p_value": 6e-50,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs9858038",
+     "risk_allele": "?",
+     "p_value": 2e-12,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000178950": {
+   "gwas_associations": 7,
+   "studies": [
+    "GCST000261",
+    "GCST000772",
+    "GCST003984",
+    "GCST009325",
+    "GCST90308590",
+    "GCST90892629"
+   ],
+   "strongest_p": 2e-21,
+   "associations": [
+    {
+     "rsid": "rs873786",
+     "risk_allele": "T",
+     "p_value": 2e-21,
+     "or_beta": "0.1731",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs35541465",
+     "risk_allele": "?",
+     "p_value": 3e-15,
+     "or_beta": "1.1560693",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs1564282",
+     "risk_allele": "T",
+     "p_value": 7e-07,
+     "or_beta": "1.7",
+     "study": "GCST000261",
+     "pmid": "18985386"
+    },
+    {
+     "rsid": "rs11248051",
+     "risk_allele": "T",
+     "p_value": 3e-09,
+     "or_beta": "1.46",
+     "study": "GCST000772",
+     "pmid": "20711177"
+    },
+    {
+     "rsid": "rs75072999",
+     "risk_allele": "A",
+     "p_value": 4e-19,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs3775113",
+     "risk_allele": "?",
+     "p_value": 3e-10,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    },
+    {
+     "rsid": "rs142442487",
+     "risk_allele": "?",
+     "p_value": 6e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000109743": {
+   "gwas_associations": 14,
+   "studies": [
+    "GCST000530",
+    "GCST000874",
+    "GCST000959",
+    "GCST001430",
+    "GCST002544",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST010049",
+    "GCST010991",
+    "GCST90270939",
+    "GCST90308590",
+    "GCST90828116",
+    "GCST90892629"
+   ],
+   "strongest_p": 6e-33,
+   "associations": [
+    {
+     "rsid": "rs4698412",
+     "risk_allele": "A",
+     "p_value": 2e-28,
+     "or_beta": "0.1035",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs6449168",
+     "risk_allele": "?",
+     "p_value": 4e-07,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs12651314",
+     "risk_allele": "T",
+     "p_value": 2e-11,
+     "or_beta": "0.1179",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs4266290",
+     "risk_allele": "?",
+     "p_value": 8e-11,
+     "or_beta": "1.128",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs11724635",
+     "risk_allele": "A",
+     "p_value": 1e-19,
+     "or_beta": "1.1111112",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs4698412",
+     "risk_allele": "A",
+     "p_value": 2e-06,
+     "or_beta": "1.14",
+     "study": "GCST000874",
+     "pmid": "21084426"
+    },
+    {
+     "rsid": "rs11724635",
+     "risk_allele": "A",
+     "p_value": 1e-16,
+     "or_beta": "1.15",
+     "study": "GCST000959",
+     "pmid": "21292315"
+    },
+    {
+     "rsid": "rs4698412",
+     "risk_allele": "?",
+     "p_value": 3e-07,
+     "or_beta": "1.14",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    },
+    {
+     "rsid": "rs4538475",
+     "risk_allele": "?",
+     "p_value": 3e-09,
+     "or_beta": "1.24",
+     "study": "GCST000530",
+     "pmid": "19915576"
+    },
+    {
+     "rsid": "rs11724635",
+     "risk_allele": "A",
+     "p_value": 9e-18,
+     "or_beta": "1.126",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs4698412",
+     "risk_allele": "A",
+     "p_value": 1e-13,
+     "or_beta": "0.15",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs4698412",
+     "risk_allele": "A",
+     "p_value": 6e-33,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs35519415",
+     "risk_allele": "?",
+     "p_value": 4e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    },
+    {
+     "rsid": "rs10000290",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000178177": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 8e-11,
+   "associations": [
+    {
+     "rsid": "rs34025766",
+     "risk_allele": "A",
+     "p_value": 3e-10,
+     "or_beta": "0.0839",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs7673321",
+     "risk_allele": "A",
+     "p_value": 8e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000138760": {
+   "gwas_associations": 5,
+   "studies": [
+    "GCST009325",
+    "GCST90270939",
+    "GCST90308590",
+    "GCST90828116"
+   ],
+   "strongest_p": 5e-19,
+   "associations": [
+    {
+     "rsid": "rs6825004",
+     "risk_allele": "C",
+     "p_value": 1e-09,
+     "or_beta": "0.0622",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs4101061",
+     "risk_allele": "A",
+     "p_value": 5e-19,
+     "or_beta": "0.0912",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs6825004",
+     "risk_allele": "G",
+     "p_value": 3e-06,
+     "or_beta": "0.097",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs1550556",
+     "risk_allele": "T",
+     "p_value": 1e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs28465660",
+     "risk_allele": "?",
+     "p_value": 2e-09,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000189157": {
+   "gwas_associations": 9,
+   "studies": [
+    "GCST000528",
+    "GCST001126",
+    "GCST002544",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 6e-21,
+   "associations": [
+    {
+     "rsid": "rs4101061",
+     "risk_allele": "A",
+     "p_value": 5e-19,
+     "or_beta": "0.0912",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs6854006",
+     "risk_allele": "T",
+     "p_value": 6e-21,
+     "or_beta": "0.0912",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs12643261",
+     "risk_allele": "T",
+     "p_value": 4e-11,
+     "or_beta": "0.1585",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs6812193",
+     "risk_allele": "?",
+     "p_value": 7e-11,
+     "or_beta": "1.1148272",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs6812193",
+     "risk_allele": "C",
+     "p_value": 1e-14,
+     "or_beta": "1.0869565",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs6812193",
+     "risk_allele": "C",
+     "p_value": 8e-10,
+     "or_beta": "1.19",
+     "study": "GCST001126",
+     "pmid": "21738487"
+    },
+    {
+     "rsid": "rs6812193",
+     "risk_allele": "C",
+     "p_value": 4e-07,
+     "or_beta": "1.12",
+     "study": "GCST000528",
+     "pmid": "19915575"
+    },
+    {
+     "rsid": "rs6812193",
+     "risk_allele": "C",
+     "p_value": 3e-11,
+     "or_beta": "1.1",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs6854006",
+     "risk_allele": "T",
+     "p_value": 2e-19,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000109572": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-11,
+   "associations": [
+    {
+     "rsid": "rs62333164",
+     "risk_allele": "A",
+     "p_value": 2e-10,
+     "or_beta": "0.0638",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs7434295",
+     "risk_allele": "T",
+     "p_value": 2e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000164181": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-23,
+   "associations": [
+    {
+     "rsid": "rs1867598",
+     "risk_allele": "A",
+     "p_value": 3e-23,
+     "or_beta": "0.1554",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs1867598",
+     "risk_allele": "A",
+     "p_value": 7e-10,
+     "or_beta": "0.1444",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs1867598",
+     "risk_allele": "A",
+     "p_value": 7e-22,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000145730": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST004902",
+    "GCST009325"
+   ],
+   "strongest_p": 2e-09,
+   "associations": [
+    {
+     "rsid": "rs26431",
+     "risk_allele": "C",
+     "p_value": 2e-09,
+     "or_beta": "0.0621",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs10463554",
+     "risk_allele": "T",
+     "p_value": 2e-07,
+     "or_beta": "1.0649627",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000181904": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 7e-09,
+   "associations": [
+    {
+     "rsid": "rs11950533",
+     "risk_allele": "A",
+     "p_value": 7e-09,
+     "or_beta": "0.0916",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000113621": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 7e-09,
+   "associations": [
+    {
+     "rsid": "rs11950533",
+     "risk_allele": "A",
+     "p_value": 7e-09,
+     "or_beta": "0.0916",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000079841": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 7e-12,
+   "associations": [
+    {
+     "rsid": "rs12528068",
+     "risk_allele": "T",
+     "p_value": 2e-10,
+     "or_beta": "0.0657",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs12528068",
+     "risk_allele": "T",
+     "p_value": 7e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000112761": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90270939"
+   ],
+   "strongest_p": 2e-09,
+   "associations": [
+    {
+     "rsid": "rs997368",
+     "risk_allele": "A",
+     "p_value": 2e-09,
+     "or_beta": "0.0714",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs943437",
+     "risk_allele": "A",
+     "p_value": 2e-07,
+     "or_beta": "0.1105",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs943437",
+     "risk_allele": "A",
+     "p_value": 6e-08,
+     "or_beta": "1.0940919",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs997368",
+     "risk_allele": "G",
+     "p_value": 1e-08,
+     "or_beta": "0.119",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    }
+   ]
+  },
+  "ENSG00000136235": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST002544",
+    "GCST004902",
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 4e-28,
+   "associations": [
+    {
+     "rsid": "rs199351",
+     "risk_allele": "A",
+     "p_value": 5e-26,
+     "or_beta": "0.1016",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs199347",
+     "risk_allele": "A",
+     "p_value": 4e-18,
+     "or_beta": "1.098901",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs199347",
+     "risk_allele": "A",
+     "p_value": 1e-12,
+     "or_beta": "1.11",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs199351",
+     "risk_allele": "A",
+     "p_value": 4e-28,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000038945": {
+   "gwas_associations": 6,
+   "studies": [
+    "GCST002544",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590",
+    "GCST90892629"
+   ],
+   "strongest_p": 6e-17,
+   "associations": [
+    {
+     "rsid": "rs620513",
+     "risk_allele": "T",
+     "p_value": 3e-15,
+     "or_beta": "0.0856",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs11203810",
+     "risk_allele": "T",
+     "p_value": 2e-08,
+     "or_beta": "0.0895",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs591323",
+     "risk_allele": "G",
+     "p_value": 2e-11,
+     "or_beta": "1.098901",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs591323",
+     "risk_allele": "G",
+     "p_value": 7e-08,
+     "or_beta": "1.09",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs34096562",
+     "risk_allele": "T",
+     "p_value": 6e-17,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs620490",
+     "risk_allele": "?",
+     "p_value": 3e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000147439": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST004902",
+    "GCST009325"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs2280104",
+     "risk_allele": "T",
+     "p_value": 1e-08,
+     "or_beta": "0.0556",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs2280104",
+     "risk_allele": "T",
+     "p_value": 3e-08,
+     "or_beta": "1.07",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000153310": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 2e-08,
+   "associations": [
+    {
+     "rsid": "rs2086641",
+     "risk_allele": "T",
+     "p_value": 2e-08,
+     "or_beta": "0.0605",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000107295": {
+   "gwas_associations": 9,
+   "studies": [
+    "GCST001430",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590",
+    "GCST90709787"
+   ],
+   "strongest_p": 8e-21,
+   "associations": [
+    {
+     "rsid": "rs13294100",
+     "risk_allele": "T",
+     "p_value": 9e-18,
+     "or_beta": "0.0859",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs10756907",
+     "risk_allele": "A",
+     "p_value": 5e-17,
+     "or_beta": "0.0926",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs13294100",
+     "risk_allele": "T",
+     "p_value": 3e-10,
+     "or_beta": "0.0942",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs2209440",
+     "risk_allele": "?",
+     "p_value": 8e-09,
+     "or_beta": "1.0964912",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs13294100",
+     "risk_allele": "G",
+     "p_value": 5e-13,
+     "or_beta": "1.0869565",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs1536076",
+     "risk_allele": "?",
+     "p_value": 5e-07,
+     "or_beta": "1.16",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    },
+    {
+     "rsid": "rs10756905",
+     "risk_allele": "T",
+     "p_value": 2e-20,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs13294100",
+     "risk_allele": "T",
+     "p_value": 8e-21,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs3808753",
+     "risk_allele": "G",
+     "p_value": 3e-07,
+     "or_beta": "0.448",
+     "study": "GCST90709787",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000137073": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 1e-09,
+   "associations": [
+    {
+     "rsid": "rs6476434",
+     "risk_allele": "T",
+     "p_value": 7e-09,
+     "or_beta": "0.0615",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs6476434",
+     "risk_allele": "T",
+     "p_value": 1e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000077943": {
+   "gwas_associations": 5,
+   "studies": [
+    "GCST000528",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-13,
+   "associations": [
+    {
+     "rsid": "rs896435",
+     "risk_allele": "T",
+     "p_value": 3e-13,
+     "or_beta": "0.0735",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs10906923",
+     "risk_allele": "A",
+     "p_value": 3e-07,
+     "or_beta": "0.0768",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs10906923",
+     "risk_allele": "A",
+     "p_value": 1e-08,
+     "or_beta": "1.0752687",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs7077361",
+     "risk_allele": "T",
+     "p_value": 5e-06,
+     "or_beta": "1.19",
+     "study": "GCST000528",
+     "pmid": "19915575"
+    },
+    {
+     "rsid": "rs13664",
+     "risk_allele": "T",
+     "p_value": 1e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000107862": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST004902",
+    "GCST009325",
+    "GCST90270939"
+   ],
+   "strongest_p": 1e-09,
+   "associations": [
+    {
+     "rsid": "rs10748818",
+     "risk_allele": "A",
+     "p_value": 1e-09,
+     "or_beta": "0.079",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs2296887",
+     "risk_allele": "C",
+     "p_value": 2e-07,
+     "or_beta": "1.084",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs10748818",
+     "risk_allele": "G",
+     "p_value": 3e-06,
+     "or_beta": "0.098",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    }
+   ]
+  },
+  "ENSG00000151929": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST010991"
+   ],
+   "strongest_p": 2e-12,
+   "associations": [
+    {
+     "rsid": "rs72840788",
+     "risk_allele": "A",
+     "p_value": 2e-11,
+     "or_beta": "0.0763",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs144814361",
+     "risk_allele": "T",
+     "p_value": 2e-12,
+     "or_beta": "0.468",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000198825": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST002544",
+    "GCST004902",
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-28,
+   "associations": [
+    {
+     "rsid": "rs117896735",
+     "risk_allele": "A",
+     "p_value": 2e-28,
+     "or_beta": "0.4354",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs117896735",
+     "risk_allele": "A",
+     "p_value": 2e-19,
+     "or_beta": "1.65",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs117896735",
+     "risk_allele": "A",
+     "p_value": 4e-13,
+     "or_beta": "1.624",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs2178923",
+     "risk_allele": "A",
+     "p_value": 2e-13,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000110315": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST009325",
+    "GCST90270939",
+    "GCST90308590"
+   ],
+   "strongest_p": 1e-11,
+   "associations": [
+    {
+     "rsid": "rs7938782",
+     "risk_allele": "A",
+     "p_value": 2e-09,
+     "or_beta": "0.087",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs7938782",
+     "risk_allele": "G",
+     "p_value": 1e-05,
+     "or_beta": "0.123",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs4910150",
+     "risk_allele": "T",
+     "p_value": 1e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000150672": {
+   "gwas_associations": 9,
+   "studies": [
+    "GCST000005",
+    "GCST002544",
+    "GCST003922",
+    "GCST004902",
+    "GCST009325",
+    "GCST010049",
+    "GCST010991",
+    "GCST90308590",
+    "GCST90828116"
+   ],
+   "strongest_p": 5e-12,
+   "associations": [
+    {
+     "rsid": "rs12283611",
+     "risk_allele": "A",
+     "p_value": 3e-10,
+     "or_beta": "0.0645",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs12278023",
+     "risk_allele": "?",
+     "p_value": 2e-08,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs3793947",
+     "risk_allele": "A",
+     "p_value": 5e-07,
+     "or_beta": "0.0715",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs7479949",
+     "risk_allele": "?",
+     "p_value": 6e-08,
+     "or_beta": "1.16",
+     "study": "GCST003922",
+     "pmid": "28011712"
+    },
+    {
+     "rsid": "rs3793947",
+     "risk_allele": "G",
+     "p_value": 4e-09,
+     "or_beta": "1.0752687",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs10501570",
+     "risk_allele": "?",
+     "p_value": 7e-06,
+     "or_beta": "5.0",
+     "study": "GCST000005",
+     "pmid": "17052657"
+    },
+    {
+     "rsid": "rs3793947",
+     "risk_allele": "G",
+     "p_value": 4e-07,
+     "or_beta": "1.0764",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs6592142",
+     "risk_allele": "T",
+     "p_value": 5e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs75208430",
+     "risk_allele": "?",
+     "p_value": 8e-06,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000080854": {
+   "gwas_associations": 5,
+   "studies": [
+    "GCST002544",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 6e-20,
+   "associations": [
+    {
+     "rsid": "rs3802920",
+     "risk_allele": "T",
+     "p_value": 6e-20,
+     "or_beta": "0.1073",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs3802920",
+     "risk_allele": "T",
+     "p_value": 7e-09,
+     "or_beta": "0.1012",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs329648",
+     "risk_allele": "T",
+     "p_value": 1e-13,
+     "or_beta": "1.09",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs329648",
+     "risk_allele": "T",
+     "p_value": 1e-11,
+     "or_beta": "1.105",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs3802920",
+     "risk_allele": "T",
+     "p_value": 9e-20,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000111371": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 4e-08,
+   "associations": [
+    {
+     "rsid": "rs7134559",
+     "risk_allele": "T",
+     "p_value": 4e-08,
+     "or_beta": "0.0539",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs6582586",
+     "risk_allele": "A",
+     "p_value": 6e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000130787": {
+   "gwas_associations": 6,
+   "studies": [
+    "GCST009325",
+    "GCST90270939",
+    "GCST90308590",
+    "GCST90455618",
+    "GCST90828116",
+    "GCST90892629"
+   ],
+   "strongest_p": 2e-41,
+   "associations": [
+    {
+     "rsid": "rs10847864",
+     "risk_allele": "T",
+     "p_value": 1e-37,
+     "or_beta": "0.1478",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs10847864",
+     "risk_allele": "G",
+     "p_value": 4e-07,
+     "or_beta": "0.102",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs10847839",
+     "risk_allele": "C",
+     "p_value": 5e-08,
+     "or_beta": "0.14",
+     "study": "GCST90455618",
+     "pmid": "39080267"
+    },
+    {
+     "rsid": "rs10847864",
+     "risk_allele": "T",
+     "p_value": 2e-41,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs10847864",
+     "risk_allele": "?",
+     "p_value": 8e-09,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    },
+    {
+     "rsid": "rs10847864",
+     "risk_allele": "?",
+     "p_value": 2e-07,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000112787": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 5e-11,
+   "associations": [
+    {
+     "rsid": "rs11610045",
+     "risk_allele": "A",
+     "p_value": 2e-10,
+     "or_beta": "0.0601",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs11610045",
+     "risk_allele": "A",
+     "p_value": 5e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000102547": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST004902",
+    "GCST009325"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs9568188",
+     "risk_allele": "T",
+     "p_value": 1e-08,
+     "or_beta": "0.0617",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs9568188",
+     "risk_allele": "T",
+     "p_value": 4e-07,
+     "or_beta": "1.0683761",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000139793": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 1e-09,
+   "associations": [
+    {
+     "rsid": "rs4771268",
+     "risk_allele": "T",
+     "p_value": 1e-09,
+     "or_beta": "0.0675",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000151338": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-09,
+   "associations": [
+    {
+     "rsid": "rs12147950",
+     "risk_allele": "T",
+     "p_value": 4e-08,
+     "or_beta": "0.0529",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs1956438",
+     "risk_allele": "A",
+     "p_value": 2e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000131979": {
+   "gwas_associations": 8,
+   "studies": [
+    "GCST002544",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90270939",
+    "GCST90308590",
+    "GCST90455618"
+   ],
+   "strongest_p": 2e-16,
+   "associations": [
+    {
+     "rsid": "rs11158026",
+     "risk_allele": "T",
+     "p_value": 2e-16,
+     "or_beta": "0.0842",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs11158026",
+     "risk_allele": "T",
+     "p_value": 1e-10,
+     "or_beta": "0.0993",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs11158026",
+     "risk_allele": "?",
+     "p_value": 9e-15,
+     "or_beta": "1.1454753",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs11158026",
+     "risk_allele": "C",
+     "p_value": 4e-16,
+     "or_beta": "1.098901",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs11158026",
+     "risk_allele": "C",
+     "p_value": 6e-11,
+     "or_beta": "1.11",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs11158026",
+     "risk_allele": "C",
+     "p_value": 2e-09,
+     "or_beta": "0.12",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs11158026",
+     "risk_allele": "T",
+     "p_value": 3e-08,
+     "or_beta": "0.1",
+     "study": "GCST90455618",
+     "pmid": "39080267"
+    },
+    {
+     "rsid": "rs11158026",
+     "risk_allele": "T",
+     "p_value": 3e-16,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000198208": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 2e-09,
+   "associations": [
+    {
+     "rsid": "rs3742785",
+     "risk_allele": "A",
+     "p_value": 2e-09,
+     "or_beta": "0.0707",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000140030": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST004902",
+    "GCST009325",
+    "GCST010991"
+   ],
+   "strongest_p": 6e-11,
+   "associations": [
+    {
+     "rsid": "rs979812",
+     "risk_allele": "T",
+     "p_value": 6e-11,
+     "or_beta": "0.061",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs8005172",
+     "risk_allele": "T",
+     "p_value": 6e-10,
+     "or_beta": "0.086",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs8005172",
+     "risk_allele": "T",
+     "p_value": 9e-11,
+     "or_beta": "1.08",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000069667": {
+   "gwas_associations": 8,
+   "studies": [
+    "GCST001430",
+    "GCST002544",
+    "GCST004902",
+    "GCST009325",
+    "GCST010991",
+    "GCST90270939",
+    "GCST90308590",
+    "GCST90828116"
+   ],
+   "strongest_p": 5e-22,
+   "associations": [
+    {
+     "rsid": "rs2251086",
+     "risk_allele": "T",
+     "p_value": 6e-18,
+     "or_beta": "0.1186",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs3889108",
+     "risk_allele": "T",
+     "p_value": 7e-09,
+     "or_beta": "0.1322",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs2414739",
+     "risk_allele": "A",
+     "p_value": 4e-14,
+     "or_beta": "1.098901",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs10519131",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "1.22",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    },
+    {
+     "rsid": "rs2414739",
+     "risk_allele": "A",
+     "p_value": 1e-11,
+     "or_beta": "1.113",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs2251086",
+     "risk_allele": "T",
+     "p_value": 1e-09,
+     "or_beta": "0.164",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs2251086",
+     "risk_allele": "T",
+     "p_value": 5e-22,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs2261069",
+     "risk_allele": "?",
+     "p_value": 9e-07,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000103528": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST003984",
+    "GCST004902",
+    "GCST009325"
+   ],
+   "strongest_p": 3e-11,
+   "associations": [
+    {
+     "rsid": "rs6497339",
+     "risk_allele": "A",
+     "p_value": 3e-11,
+     "or_beta": "0.063",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs11343",
+     "risk_allele": "?",
+     "p_value": 1e-08,
+     "or_beta": "1.096",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs11343",
+     "risk_allele": "T",
+     "p_value": 9e-11,
+     "or_beta": "1.07",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000177548": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 8e-10,
+   "associations": [
+    {
+     "rsid": "rs2904880",
+     "risk_allele": "C",
+     "p_value": 8e-10,
+     "or_beta": "0.065",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000177455": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 8e-10,
+   "associations": [
+    {
+     "rsid": "rs2904880",
+     "risk_allele": "C",
+     "p_value": 8e-10,
+     "or_beta": "0.065",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000167207": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 1e-09,
+   "associations": [
+    {
+     "rsid": "rs6500328",
+     "risk_allele": "A",
+     "p_value": 2e-09,
+     "or_beta": "0.0586",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs34133110",
+     "risk_allele": "T",
+     "p_value": 1e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000151233": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 7e-12,
+   "associations": [
+    {
+     "rsid": "rs144755950",
+     "risk_allele": "T",
+     "p_value": 2e-10,
+     "or_beta": "0.3993",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs138017112",
+     "risk_allele": "C",
+     "p_value": 7e-12,
+     "or_beta": "0.413",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000088899": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST002544",
+    "GCST004902",
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-11,
+   "associations": [
+    {
+     "rsid": "rs2295545",
+     "risk_allele": "T",
+     "p_value": 8e-11,
+     "or_beta": "0.0622",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs8118008",
+     "risk_allele": "A",
+     "p_value": 2e-06,
+     "or_beta": "1.07",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs8118008",
+     "risk_allele": "A",
+     "p_value": 3e-11,
+     "or_beta": "1.111",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs4815573",
+     "risk_allele": "T",
+     "p_value": 6e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000198171": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST002544",
+    "GCST004902",
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-11,
+   "associations": [
+    {
+     "rsid": "rs2295545",
+     "risk_allele": "T",
+     "p_value": 8e-11,
+     "or_beta": "0.0622",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs8118008",
+     "risk_allele": "A",
+     "p_value": 2e-06,
+     "or_beta": "1.07",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs8118008",
+     "risk_allele": "A",
+     "p_value": 3e-11,
+     "or_beta": "1.111",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs4815573",
+     "risk_allele": "T",
+     "p_value": 6e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000141699": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 1e-09,
+   "associations": [
+    {
+     "rsid": "rs12951632",
+     "risk_allele": "T",
+     "p_value": 1e-09,
+     "or_beta": "0.0642",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000108312": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 6e-10,
+   "associations": [
+    {
+     "rsid": "rs2269906",
+     "risk_allele": "A",
+     "p_value": 6e-10,
+     "or_beta": "0.0631",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000161682": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 1e-11,
+   "associations": [
+    {
+     "rsid": "rs850738",
+     "risk_allele": "A",
+     "p_value": 1e-11,
+     "or_beta": "0.071",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000136492": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-10,
+   "associations": [
+    {
+     "rsid": "rs61169879",
+     "risk_allele": "T",
+     "p_value": 9e-10,
+     "or_beta": "0.082",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs61169879",
+     "risk_allele": "T",
+     "p_value": 2e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000187775": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 3e-09,
+   "associations": [
+    {
+     "rsid": "rs666463",
+     "risk_allele": "A",
+     "p_value": 3e-09,
+     "or_beta": "0.076",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000141431": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 4e-09,
+   "associations": [
+    {
+     "rsid": "rs1941685",
+     "risk_allele": "T",
+     "p_value": 2e-08,
+     "or_beta": "0.0531",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs8091977",
+     "risk_allele": "T",
+     "p_value": 4e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000152214": {
+   "gwas_associations": 11,
+   "studies": [
+    "GCST001126",
+    "GCST001430",
+    "GCST002544",
+    "GCST003984",
+    "GCST004902",
+    "GCST009325",
+    "GCST010049",
+    "GCST010991",
+    "GCST90270939",
+    "GCST90308590",
+    "GCST90828116"
+   ],
+   "strongest_p": 2e-28,
+   "associations": [
+    {
+     "rsid": "rs12456492",
+     "risk_allele": "A",
+     "p_value": 4e-23,
+     "or_beta": "0.0983",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs4130047",
+     "risk_allele": "?",
+     "p_value": 5e-08,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs12456492",
+     "risk_allele": "A",
+     "p_value": 2e-09,
+     "or_beta": "0.0892",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs4130047",
+     "risk_allele": "?",
+     "p_value": 2e-10,
+     "or_beta": "1.1148272",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs12456492",
+     "risk_allele": "G",
+     "p_value": 6e-16,
+     "or_beta": "1.1",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs4130047",
+     "risk_allele": "C",
+     "p_value": 2e-07,
+     "or_beta": "1.16",
+     "study": "GCST001126",
+     "pmid": "21738487"
+    },
+    {
+     "rsid": "rs12456492",
+     "risk_allele": "?",
+     "p_value": 2e-10,
+     "or_beta": "1.19",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    },
+    {
+     "rsid": "rs12456492",
+     "risk_allele": "G",
+     "p_value": 8e-12,
+     "or_beta": "1.11",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    },
+    {
+     "rsid": "rs12456492",
+     "risk_allele": "G",
+     "p_value": 2e-07,
+     "or_beta": "0.106",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs4588066",
+     "risk_allele": "A",
+     "p_value": 2e-28,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs4130047",
+     "risk_allele": "?",
+     "p_value": 4e-08,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000141646": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST010991"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs8087969",
+     "risk_allele": "T",
+     "p_value": 1e-08,
+     "or_beta": "0.0578",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs8087969",
+     "risk_allele": "T",
+     "p_value": 5e-06,
+     "or_beta": "0.0645",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000005206": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90308590"
+   ],
+   "strongest_p": 4e-10,
+   "associations": [
+    {
+     "rsid": "rs55818311",
+     "risk_allele": "T",
+     "p_value": 4e-10,
+     "or_beta": "0.0696",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs55818311",
+     "risk_allele": "T",
+     "p_value": 1e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000088766": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 9e-09,
+   "associations": [
+    {
+     "rsid": "rs77351827",
+     "risk_allele": "T",
+     "p_value": 9e-09,
+     "or_beta": "0.0802",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000157540": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST009325",
+    "GCST010991",
+    "GCST90270939",
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-11,
+   "associations": [
+    {
+     "rsid": "rs2248244",
+     "risk_allele": "A",
+     "p_value": 3e-11,
+     "or_beta": "0.0714",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs11701722",
+     "risk_allele": "T",
+     "p_value": 5e-08,
+     "or_beta": "0.083",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs2248244",
+     "risk_allele": "A",
+     "p_value": 4e-07,
+     "or_beta": "0.105",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    },
+    {
+     "rsid": "rs2248244",
+     "risk_allele": "A",
+     "p_value": 6e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000196189": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST009325",
+    "GCST90018894",
+    "GCST90428733"
+   ],
+   "strongest_p": 1e-26,
+   "associations": [
+    {
+     "rsid": "rs35643925",
+     "risk_allele": "A",
+     "p_value": 8e-22,
+     "or_beta": "0.389",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs35643925",
+     "risk_allele": "A",
+     "p_value": 5e-09,
+     "or_beta": "0.5105",
+     "study": "GCST90018894",
+     "pmid": "34594039"
+    },
+    {
+     "rsid": "rs41265017",
+     "risk_allele": "?",
+     "p_value": 1e-26,
+     "or_beta": "1.657",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000160785": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST90018894"
+   ],
+   "strongest_p": 8e-22,
+   "associations": [
+    {
+     "rsid": "rs35643925",
+     "risk_allele": "A",
+     "p_value": 8e-22,
+     "or_beta": "0.389",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs35643925",
+     "risk_allele": "A",
+     "p_value": 5e-09,
+     "or_beta": "0.5105",
+     "study": "GCST90018894",
+     "pmid": "34594039"
+    }
+   ]
+  },
+  "ENSG00000185477": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST009325",
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 1e-48,
+   "associations": [
+    {
+     "rsid": "rs356228",
+     "risk_allele": "C",
+     "p_value": 1e-48,
+     "or_beta": "0.1503",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs10516839",
+     "risk_allele": "T",
+     "p_value": 4e-17,
+     "or_beta": "0.1382",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs114762839",
+     "risk_allele": "A",
+     "p_value": 1e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs79483792",
+     "risk_allele": "T",
+     "p_value": 3e-17,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000168916": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST009325",
+    "GCST010991"
+   ],
+   "strongest_p": 3e-09,
+   "associations": [
+    {
+     "rsid": "rs6875262",
+     "risk_allele": "T",
+     "p_value": 1e-08,
+     "or_beta": "0.1141",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    },
+    {
+     "rsid": "rs6875262",
+     "risk_allele": "T",
+     "p_value": 3e-09,
+     "or_beta": "0.1639",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000139132": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 8e-11,
+   "associations": [
+    {
+     "rsid": "rs181609621",
+     "risk_allele": "A",
+     "p_value": 8e-11,
+     "or_beta": "0.4232",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000087470": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST009325"
+   ],
+   "strongest_p": 8e-11,
+   "associations": [
+    {
+     "rsid": "rs181609621",
+     "risk_allele": "A",
+     "p_value": 8e-11,
+     "or_beta": "0.4232",
+     "study": "GCST009325",
+     "pmid": "31701892"
+    }
+   ]
+  },
+  "ENSG00000133065": {
+   "gwas_associations": 7,
+   "studies": [
+    "GCST000530",
+    "GCST001126",
+    "GCST010049",
+    "GCST90278092",
+    "GCST90296433",
+    "GCST90828116"
+   ],
+   "strongest_p": 4e-21,
+   "associations": [
+    {
+     "rsid": "rs6679073",
+     "risk_allele": "?",
+     "p_value": 4e-21,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs823156",
+     "risk_allele": "A",
+     "p_value": 1e-07,
+     "or_beta": "1.21",
+     "study": "GCST001126",
+     "pmid": "21738487"
+    },
+    {
+     "rsid": "rs947211",
+     "risk_allele": "?",
+     "p_value": 2e-12,
+     "or_beta": "1.3",
+     "study": "GCST000530",
+     "pmid": "19915576"
+    },
+    {
+     "rsid": "rs708726",
+     "risk_allele": "T",
+     "p_value": 2e-08,
+     "or_beta": "0.75",
+     "study": "GCST90278092",
+     "pmid": "37805635"
+    },
+    {
+     "rsid": "rs708726",
+     "risk_allele": "T",
+     "p_value": 8e-06,
+     "or_beta": "0.67",
+     "study": "GCST90296433",
+     "pmid": "37805635"
+    },
+    {
+     "rsid": "rs947211",
+     "risk_allele": "A",
+     "p_value": 3e-06,
+     "or_beta": "0.69",
+     "study": "GCST90296433",
+     "pmid": "37805635"
+    },
+    {
+     "rsid": "rs5014256",
+     "risk_allele": "?",
+     "p_value": 3e-16,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000010810": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST010049",
+    "GCST90308590",
+    "GCST90828116"
+   ],
+   "strongest_p": 4e-15,
+   "associations": [
+    {
+     "rsid": "rs1887316",
+     "risk_allele": "?",
+     "p_value": 3e-08,
+     "or_beta": "",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs9487736",
+     "risk_allele": "A",
+     "p_value": 4e-15,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs12661662",
+     "risk_allele": "?",
+     "p_value": 6e-06,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000122012": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST010049",
+    "GCST90308590",
+    "GCST90828116"
+   ],
+   "strongest_p": 3e-12,
+   "associations": [
+    {
+     "rsid": "rs246814",
+     "risk_allele": "C",
+     "p_value": 6e-10,
+     "or_beta": "1.11",
+     "study": "GCST010049",
+     "pmid": "32310270"
+    },
+    {
+     "rsid": "rs246815",
+     "risk_allele": "C",
+     "p_value": 3e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs1995381",
+     "risk_allele": "?",
+     "p_value": 5e-11,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000101306": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 4e-09,
+   "associations": [
+    {
+     "rsid": "rs6060983",
+     "risk_allele": "T",
+     "p_value": 6e-07,
+     "or_beta": "0.0767",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs6060983",
+     "risk_allele": "T",
+     "p_value": 4e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000142185": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST010991"
+   ],
+   "strongest_p": 9e-08,
+   "associations": [
+    {
+     "rsid": "rs56379273",
+     "risk_allele": "A",
+     "p_value": 9e-08,
+     "or_beta": "0.3655",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000099365": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST010991"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs140820592",
+     "risk_allele": "T",
+     "p_value": 1e-08,
+     "or_beta": "0.0859",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000108510": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 5e-10,
+   "associations": [
+    {
+     "rsid": "rs148534175",
+     "risk_allele": "T",
+     "p_value": 1e-08,
+     "or_beta": "0.1113",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs148528915",
+     "risk_allele": "T",
+     "p_value": 5e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000142599": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST010991"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs302714",
+     "risk_allele": "A",
+     "p_value": 4e-06,
+     "or_beta": "0.0698",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000116586": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST000959",
+    "GCST010991"
+   ],
+   "strongest_p": 4e-12,
+   "associations": [
+    {
+     "rsid": "rs34372695",
+     "risk_allele": "T",
+     "p_value": 4e-12,
+     "or_beta": "0.3189",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs34372695",
+     "risk_allele": "T",
+     "p_value": 4e-12,
+     "or_beta": "1.47",
+     "study": "GCST000959",
+     "pmid": "21292315"
+    }
+   ]
+  },
+  "ENSG00000132698": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST000959",
+    "GCST010991"
+   ],
+   "strongest_p": 4e-12,
+   "associations": [
+    {
+     "rsid": "rs34372695",
+     "risk_allele": "T",
+     "p_value": 4e-12,
+     "or_beta": "0.3189",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs34372695",
+     "risk_allele": "T",
+     "p_value": 4e-12,
+     "or_beta": "1.47",
+     "study": "GCST000959",
+     "pmid": "21292315"
+    }
+   ]
+  },
+  "ENSG00000066248": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST010991"
+   ],
+   "strongest_p": 3e-07,
+   "associations": [
+    {
+     "rsid": "rs113732002",
+     "risk_allele": "A",
+     "p_value": 3e-07,
+     "or_beta": "0.1272",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000138496": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-12,
+   "associations": [
+    {
+     "rsid": "rs55740225",
+     "risk_allele": "T",
+     "p_value": 3e-07,
+     "or_beta": "0.0946",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs16833168",
+     "risk_allele": "T",
+     "p_value": 3e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000138821": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST010991"
+   ],
+   "strongest_p": 7e-08,
+   "associations": [
+    {
+     "rsid": "rs13107325",
+     "risk_allele": "T",
+     "p_value": 7e-08,
+     "or_beta": "0.1495",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000122550": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST010991"
+   ],
+   "strongest_p": 8e-12,
+   "associations": [
+    {
+     "rsid": "rs28624974",
+     "risk_allele": "T",
+     "p_value": 8e-12,
+     "or_beta": "0.1016",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000104219": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST010991"
+   ],
+   "strongest_p": 6e-06,
+   "associations": [
+    {
+     "rsid": "rs4921739",
+     "risk_allele": "T",
+     "p_value": 6e-06,
+     "or_beta": "0.0813",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000148408": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST010991"
+   ],
+   "strongest_p": 3e-07,
+   "associations": [
+    {
+     "rsid": "rs2278973",
+     "risk_allele": "T",
+     "p_value": 3e-07,
+     "or_beta": "0.1373",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000110975": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST003984",
+    "GCST010991",
+    "GCST90709787"
+   ],
+   "strongest_p": 4e-21,
+   "associations": [
+    {
+     "rsid": "rs138895122",
+     "risk_allele": "T",
+     "p_value": 6e-12,
+     "or_beta": "0.6116",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs144847051",
+     "risk_allele": "?",
+     "p_value": 4e-21,
+     "or_beta": "2.2371366",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs10437796",
+     "risk_allele": "A",
+     "p_value": 5e-08,
+     "or_beta": "0.304",
+     "study": "GCST90709787",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000151229": {
+   "gwas_associations": 5,
+   "studies": [
+    "GCST000530",
+    "GCST001430",
+    "GCST003922",
+    "GCST010991",
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-33,
+   "associations": [
+    {
+     "rsid": "rs28370664",
+     "risk_allele": "A",
+     "p_value": 7e-26,
+     "or_beta": "0.4475",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs1384236",
+     "risk_allele": "C",
+     "p_value": 8e-12,
+     "or_beta": "1.551",
+     "study": "GCST003922",
+     "pmid": "28011712"
+    },
+    {
+     "rsid": "rs10877840",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "1.15",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    },
+    {
+     "rsid": "rs1994090",
+     "risk_allele": "?",
+     "p_value": 3e-08,
+     "or_beta": "1.39",
+     "study": "GCST000530",
+     "pmid": "19915576"
+    },
+    {
+     "rsid": "rs28370650",
+     "risk_allele": "A",
+     "p_value": 3e-33,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000130783": {
+   "gwas_associations": 5,
+   "studies": [
+    "GCST000959",
+    "GCST002544",
+    "GCST003984",
+    "GCST004902",
+    "GCST010991"
+   ],
+   "strongest_p": 2e-20,
+   "associations": [
+    {
+     "rsid": "rs11060112",
+     "risk_allele": "A",
+     "p_value": 2e-10,
+     "or_beta": "0.1102",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs11060180",
+     "risk_allele": "?",
+     "p_value": 3e-10,
+     "or_beta": "1.1074197",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs11060180",
+     "risk_allele": "A",
+     "p_value": 2e-20,
+     "or_beta": "1.1111112",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs12817488",
+     "risk_allele": "T",
+     "p_value": 3e-13,
+     "or_beta": "1.14",
+     "study": "GCST000959",
+     "pmid": "21292315"
+    },
+    {
+     "rsid": "rs11060180",
+     "risk_allele": "A",
+     "p_value": 6e-12,
+     "or_beta": "1.105",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    }
+   ]
+  },
+  "ENSG00000140416": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST003652",
+    "GCST010991"
+   ],
+   "strongest_p": 9e-11,
+   "associations": [
+    {
+     "rsid": "rs1027647",
+     "risk_allele": "A",
+     "p_value": 2e-06,
+     "or_beta": "0.0698",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    },
+    {
+     "rsid": "rs117267308",
+     "risk_allele": "A",
+     "p_value": 9e-11,
+     "or_beta": "4.55",
+     "study": "GCST003652",
+     "pmid": "27402877"
+    }
+   ]
+  },
+  "ENSG00000103642": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST010991"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs1027647",
+     "risk_allele": "A",
+     "p_value": 2e-06,
+     "or_beta": "0.0698",
+     "study": "GCST010991",
+     "pmid": "32201043"
+    }
+   ]
+  },
+  "ENSG00000122591": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003984"
+   ],
+   "strongest_p": 2e-12,
+   "associations": [
+    {
+     "rsid": "rs10256359",
+     "risk_allele": "?",
+     "p_value": 2e-12,
+     "or_beta": "1.1273957",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    }
+   ]
+  },
+  "ENSG00000151923": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003984"
+   ],
+   "strongest_p": 3e-11,
+   "associations": [
+    {
+     "rsid": "rs188789342",
+     "risk_allele": "?",
+     "p_value": 3e-11,
+     "or_beta": "1.488",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    }
+   ]
+  },
+  "ENSG00000164182": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST003984",
+    "GCST004902"
+   ],
+   "strongest_p": 5e-15,
+   "associations": [
+    {
+     "rsid": "rs162227",
+     "risk_allele": "?",
+     "p_value": 1e-08,
+     "or_beta": "1.1627907",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    },
+    {
+     "rsid": "rs2694528",
+     "risk_allele": "C",
+     "p_value": 5e-15,
+     "or_beta": "1.15",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000178538": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003984"
+   ],
+   "strongest_p": 6e-08,
+   "associations": [
+    {
+     "rsid": "rs144074972",
+     "risk_allele": "?",
+     "p_value": 6e-08,
+     "or_beta": "",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    }
+   ]
+  },
+  "ENSG00000108784": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003984"
+   ],
+   "strongest_p": 7e-08,
+   "associations": [
+    {
+     "rsid": "rs601999",
+     "risk_allele": "?",
+     "p_value": 7e-08,
+     "or_beta": "1.095",
+     "study": "GCST003984",
+     "pmid": "27182965"
+    }
+   ]
+  },
+  "ENSG00000145685": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003652"
+   ],
+   "strongest_p": 1e-11,
+   "associations": [
+    {
+     "rsid": "rs344650",
+     "risk_allele": "G",
+     "p_value": 1e-11,
+     "or_beta": "3.4",
+     "study": "GCST003652",
+     "pmid": "27402877"
+    }
+   ]
+  },
+  "ENSG00000104447": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003652"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs74335301",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "2.2",
+     "study": "GCST003652",
+     "pmid": "27402877"
+    }
+   ]
+  },
+  "ENSG00000197776": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003652"
+   ],
+   "strongest_p": 5e-08,
+   "associations": [
+    {
+     "rsid": "rs79503702",
+     "risk_allele": "?",
+     "p_value": 5e-08,
+     "or_beta": "3.82",
+     "study": "GCST003652",
+     "pmid": "27402877"
+    }
+   ]
+  },
+  "ENSG00000198133": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST002544",
+    "GCST004902"
+   ],
+   "strongest_p": 7e-14,
+   "associations": [
+    {
+     "rsid": "rs1555399",
+     "risk_allele": "T",
+     "p_value": 1e-10,
+     "or_beta": "1.09",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs1555399",
+     "risk_allele": "T",
+     "p_value": 7e-14,
+     "or_beta": "1.1148",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    }
+   ]
+  },
+  "ENSG00000178297": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST002544",
+    "GCST004902"
+   ],
+   "strongest_p": 6e-07,
+   "associations": [
+    {
+     "rsid": "rs62120679",
+     "risk_allele": "T",
+     "p_value": 7e-07,
+     "or_beta": "1.08",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs62120679",
+     "risk_allele": "T",
+     "p_value": 6e-07,
+     "or_beta": "1.097",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    }
+   ]
+  },
+  "ENSG00000062524": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST004902"
+   ],
+   "strongest_p": 7e-06,
+   "associations": [
+    {
+     "rsid": "rs316619",
+     "risk_allele": "C",
+     "p_value": 7e-06,
+     "or_beta": "1.0548522",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000055957": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST004902"
+   ],
+   "strongest_p": 3e-08,
+   "associations": [
+    {
+     "rsid": "rs143918452",
+     "risk_allele": "A",
+     "p_value": 3e-08,
+     "or_beta": "1.4705882",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000157985": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST004902"
+   ],
+   "strongest_p": 7e-08,
+   "associations": [
+    {
+     "rsid": "rs10929159",
+     "risk_allele": "A",
+     "p_value": 7e-08,
+     "or_beta": "1.0626993",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000166118": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST002544",
+    "GCST004902"
+   ],
+   "strongest_p": 1e-13,
+   "associations": [
+    {
+     "rsid": "rs329648",
+     "risk_allele": "T",
+     "p_value": 1e-13,
+     "or_beta": "1.09",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs329648",
+     "risk_allele": "T",
+     "p_value": 1e-11,
+     "or_beta": "1.105",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    }
+   ]
+  },
+  "ENSG00000103507": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST002544",
+    "GCST004902"
+   ],
+   "strongest_p": 2e-12,
+   "associations": [
+    {
+     "rsid": "rs14235",
+     "risk_allele": "A",
+     "p_value": 5e-12,
+     "or_beta": "1.08",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs14235",
+     "risk_allele": "A",
+     "p_value": 2e-12,
+     "or_beta": "1.103",
+     "study": "GCST002544",
+     "pmid": "25064009"
+    }
+   ]
+  },
+  "ENSG00000126777": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST004902",
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-10,
+   "associations": [
+    {
+     "rsid": "rs8017172",
+     "risk_allele": "G",
+     "p_value": 2e-07,
+     "or_beta": "1.0615711",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs8012377",
+     "risk_allele": "T",
+     "p_value": 2e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000005961": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST004902",
+    "GCST90308590"
+   ],
+   "strongest_p": 7e-10,
+   "associations": [
+    {
+     "rsid": "rs5910",
+     "risk_allele": "C",
+     "p_value": 4e-06,
+     "or_beta": "1.056",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    },
+    {
+     "rsid": "rs850731",
+     "risk_allele": "T",
+     "p_value": 7e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000136531": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST004902"
+   ],
+   "strongest_p": 3e-08,
+   "associations": [
+    {
+     "rsid": "rs353116",
+     "risk_allele": "C",
+     "p_value": 3e-08,
+     "or_beta": "1.0638298",
+     "study": "GCST004902",
+     "pmid": "28892059"
+    }
+   ]
+  },
+  "ENSG00000013503": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000874"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs4964469",
+     "risk_allele": "A",
+     "p_value": 2e-07,
+     "or_beta": "1.16",
+     "study": "GCST000874",
+     "pmid": "21084426"
+    }
+   ]
+  },
+  "ENSG00000111783": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000874"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs4964469",
+     "risk_allele": "A",
+     "p_value": 2e-07,
+     "or_beta": "1.16",
+     "study": "GCST000874",
+     "pmid": "21084426"
+    }
+   ]
+  },
+  "ENSG00000072310": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001126"
+   ],
+   "strongest_p": 6e-08,
+   "associations": [
+    {
+     "rsid": "rs11868035",
+     "risk_allele": "G",
+     "p_value": 6e-08,
+     "or_beta": "1.18",
+     "study": "GCST001126",
+     "pmid": "21738487"
+    }
+   ]
+  },
+  "ENSG00000198722": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001189"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs10121009",
+     "risk_allele": "A",
+     "p_value": 3e-06,
+     "or_beta": "",
+     "study": "GCST001189",
+     "pmid": "21812969"
+    }
+   ]
+  },
+  "ENSG00000145214": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST000567",
+    "GCST001430",
+    "GCST001445"
+   ],
+   "strongest_p": 3e-12,
+   "associations": [
+    {
+     "rsid": "rs11248060",
+     "risk_allele": "?",
+     "p_value": 3e-12,
+     "or_beta": "1.21",
+     "study": "GCST001445",
+     "pmid": "22438815"
+    },
+    {
+     "rsid": "rs11248060",
+     "risk_allele": "?",
+     "p_value": 3e-09,
+     "or_beta": "1.26",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    },
+    {
+     "rsid": "rs11248060",
+     "risk_allele": "?",
+     "p_value": 2e-06,
+     "or_beta": "",
+     "study": "GCST000567",
+     "pmid": "20070850"
+    }
+   ]
+  },
+  "ENSG00000138722": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST000528",
+    "GCST001445",
+    "GCST90308590"
+   ],
+   "strongest_p": 1e-16,
+   "associations": [
+    {
+     "rsid": "rs6532194",
+     "risk_allele": "?",
+     "p_value": 5e-11,
+     "or_beta": "1.29",
+     "study": "GCST001445",
+     "pmid": "22438815"
+    },
+    {
+     "rsid": "rs6532197",
+     "risk_allele": "G",
+     "p_value": 1e-07,
+     "or_beta": "1.32",
+     "study": "GCST000528",
+     "pmid": "19915575"
+    },
+    {
+     "rsid": "rs78327649",
+     "risk_allele": "C",
+     "p_value": 2e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs79214011",
+     "risk_allele": "A",
+     "p_value": 1e-16,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000141956": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST001430",
+    "GCST90828117"
+   ],
+   "strongest_p": 5e-10,
+   "associations": [
+    {
+     "rsid": "rs2839398",
+     "risk_allele": "?",
+     "p_value": 5e-06,
+     "or_beta": "1.23",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    },
+    {
+     "rsid": "rs141772267",
+     "risk_allele": "?",
+     "p_value": 5e-10,
+     "or_beta": "4.2",
+     "study": "GCST90828117",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000153721": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001430"
+   ],
+   "strongest_p": 9e-07,
+   "associations": [
+    {
+     "rsid": "rs2275336",
+     "risk_allele": "?",
+     "p_value": 9e-07,
+     "or_beta": "1.36",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    }
+   ]
+  },
+  "ENSG00000169241": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001430"
+   ],
+   "strongest_p": 5e-08,
+   "associations": [
+    {
+     "rsid": "rs12726330",
+     "risk_allele": "?",
+     "p_value": 5e-08,
+     "or_beta": "1.71",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    }
+   ]
+  },
+  "ENSG00000171714": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001430"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs11026412",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "1.16",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    }
+   ]
+  },
+  "ENSG00000151006": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001430"
+   ],
+   "strongest_p": 4e-07,
+   "associations": [
+    {
+     "rsid": "rs11865038",
+     "risk_allele": "?",
+     "p_value": 4e-07,
+     "or_beta": "1.14",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    }
+   ]
+  },
+  "ENSG00000167395": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001430"
+   ],
+   "strongest_p": 4e-07,
+   "associations": [
+    {
+     "rsid": "rs11865038",
+     "risk_allele": "?",
+     "p_value": 4e-07,
+     "or_beta": "1.14",
+     "study": "GCST001430",
+     "pmid": "22451204"
+    }
+   ]
+  },
+  "ENSG00000113368": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001546"
+   ],
+   "strongest_p": 5e-06,
+   "associations": [
+    {
+     "rsid": "rs959573",
+     "risk_allele": "?",
+     "p_value": 5e-06,
+     "or_beta": "1.92",
+     "study": "GCST001546",
+     "pmid": "22658654"
+    }
+   ]
+  },
+  "ENSG00000173926": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001546"
+   ],
+   "strongest_p": 5e-06,
+   "associations": [
+    {
+     "rsid": "rs959573",
+     "risk_allele": "?",
+     "p_value": 5e-06,
+     "or_beta": "1.92",
+     "study": "GCST001546",
+     "pmid": "22658654"
+    }
+   ]
+  },
+  "ENSG00000180745": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001546"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs6482992",
+     "risk_allele": "?",
+     "p_value": 4e-06,
+     "or_beta": "2.03",
+     "study": "GCST001546",
+     "pmid": "22658654"
+    }
+   ]
+  },
+  "ENSG00000174792": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001546"
+   ],
+   "strongest_p": 5e-06,
+   "associations": [
+    {
+     "rsid": "rs17000647",
+     "risk_allele": "?",
+     "p_value": 5e-06,
+     "or_beta": "5.58",
+     "study": "GCST001546",
+     "pmid": "22658654"
+    }
+   ]
+  },
+  "ENSG00000178971": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST001546"
+   ],
+   "strongest_p": 9e-06,
+   "associations": [
+    {
+     "rsid": "rs3027247",
+     "risk_allele": "?",
+     "p_value": 9e-06,
+     "or_beta": "1.89",
+     "study": "GCST001546",
+     "pmid": "22658654"
+    }
+   ]
+  },
+  "ENSG00000035720": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000005"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs2242330",
+     "risk_allele": "?",
+     "p_value": 2e-06,
+     "or_beta": "2.0",
+     "study": "GCST000005",
+     "pmid": "17052657"
+    }
+   ]
+  },
+  "ENSG00000112902": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000002"
+   ],
+   "strongest_p": 8e-06,
+   "associations": [
+    {
+     "rsid": "rs7702187",
+     "risk_allele": "?",
+     "p_value": 8e-06,
+     "or_beta": "1.74",
+     "study": "GCST000002",
+     "pmid": "16252231"
+    }
+   ]
+  },
+  "ENSG00000134757": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000490"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs1941184",
+     "risk_allele": "C",
+     "p_value": 4e-06,
+     "or_beta": "2.28",
+     "study": "GCST000490",
+     "pmid": "19772629"
+    }
+   ]
+  },
+  "ENSG00000182256": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000490"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs17565841",
+     "risk_allele": "A",
+     "p_value": 3e-06,
+     "or_beta": "2.84",
+     "study": "GCST000490",
+     "pmid": "19772629"
+    }
+   ]
+  },
+  "ENSG00000118217": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000490"
+   ],
+   "strongest_p": 8e-06,
+   "associations": [
+    {
+     "rsid": "rs10918270",
+     "risk_allele": "A",
+     "p_value": 8e-06,
+     "or_beta": "2.26",
+     "study": "GCST000490",
+     "pmid": "19772629"
+    }
+   ]
+  },
+  "ENSG00000135378": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000490"
+   ],
+   "strongest_p": 5e-07,
+   "associations": [
+    {
+     "rsid": "rs10767971",
+     "risk_allele": "T",
+     "p_value": 5e-07,
+     "or_beta": "3.24",
+     "study": "GCST000490",
+     "pmid": "19772629"
+    }
+   ]
+  },
+  "ENSG00000060749": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000490"
+   ],
+   "strongest_p": 5e-07,
+   "associations": [
+    {
+     "rsid": "rs10767971",
+     "risk_allele": "T",
+     "p_value": 5e-07,
+     "or_beta": "3.24",
+     "study": "GCST000490",
+     "pmid": "19772629"
+    }
+   ]
+  },
+  "ENSG00000115977": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000490"
+   ],
+   "strongest_p": 9e-06,
+   "associations": [
+    {
+     "rsid": "rs7577851",
+     "risk_allele": "T",
+     "p_value": 9e-06,
+     "or_beta": "6.85",
+     "study": "GCST000490",
+     "pmid": "19772629"
+    }
+   ]
+  },
+  "ENSG00000101230": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000528"
+   ],
+   "strongest_p": 5e-06,
+   "associations": [
+    {
+     "rsid": "rs1223271",
+     "risk_allele": "G",
+     "p_value": 5e-06,
+     "or_beta": "1.18",
+     "study": "GCST000528",
+     "pmid": "19915575"
+    }
+   ]
+  },
+  "ENSG00000089123": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000528"
+   ],
+   "strongest_p": 5e-06,
+   "associations": [
+    {
+     "rsid": "rs1223271",
+     "risk_allele": "G",
+     "p_value": 5e-06,
+     "or_beta": "1.18",
+     "study": "GCST000528",
+     "pmid": "19915575"
+    }
+   ]
+  },
+  "ENSG00000166272": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000528"
+   ],
+   "strongest_p": 7e-08,
+   "associations": [
+    {
+     "rsid": "rs17115100",
+     "risk_allele": "G",
+     "p_value": 7e-08,
+     "or_beta": "1.25",
+     "study": "GCST000528",
+     "pmid": "19915575"
+    }
+   ]
+  },
+  "ENSG00000148795": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000528"
+   ],
+   "strongest_p": 7e-08,
+   "associations": [
+    {
+     "rsid": "rs17115100",
+     "risk_allele": "G",
+     "p_value": 7e-08,
+     "or_beta": "1.25",
+     "study": "GCST000528",
+     "pmid": "19915575"
+    }
+   ]
+  },
+  "ENSG00000009709": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000567"
+   ],
+   "strongest_p": 5e-07,
+   "associations": [
+    {
+     "rsid": "rs12063142",
+     "risk_allele": "?",
+     "p_value": 5e-07,
+     "or_beta": "",
+     "study": "GCST000567",
+     "pmid": "20070850"
+    }
+   ]
+  },
+  "ENSG00000179002": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000567"
+   ],
+   "strongest_p": 5e-07,
+   "associations": [
+    {
+     "rsid": "rs12063142",
+     "risk_allele": "?",
+     "p_value": 5e-07,
+     "or_beta": "",
+     "study": "GCST000567",
+     "pmid": "20070850"
+    }
+   ]
+  },
+  "ENSG00000078725": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000567"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs4837628",
+     "risk_allele": "A",
+     "p_value": 1e-06,
+     "or_beta": "1.27",
+     "study": "GCST000567",
+     "pmid": "20070850"
+    }
+   ]
+  },
+  "ENSG00000131459": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST000567"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs10464059",
+     "risk_allele": "A",
+     "p_value": 3e-06,
+     "or_beta": "1.33",
+     "study": "GCST000567",
+     "pmid": "20070850"
+    }
+   ]
+  },
+  "ENSG00000149231": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST002077"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs7118648",
+     "risk_allele": "G",
+     "p_value": 2e-07,
+     "or_beta": "",
+     "study": "GCST002077",
+     "pmid": "23793441"
+    }
+   ]
+  },
+  "ENSG00000188869": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST002077"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs3935740",
+     "risk_allele": "T",
+     "p_value": 2e-07,
+     "or_beta": "",
+     "study": "GCST002077",
+     "pmid": "23793441"
+    }
+   ]
+  },
+  "ENSG00000197467": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST002077"
+   ],
+   "strongest_p": 6e-07,
+   "associations": [
+    {
+     "rsid": "rs17497526",
+     "risk_allele": "G",
+     "p_value": 6e-07,
+     "or_beta": "",
+     "study": "GCST002077",
+     "pmid": "23793441"
+    }
+   ]
+  },
+  "ENSG00000130203": {
+   "gwas_associations": 5,
+   "studies": [
+    "GCST007780",
+    "GCST011037",
+    "GCST011039",
+    "GCST90270129",
+    "GCST90709787"
+   ],
+   "strongest_p": 2e-15,
+   "associations": [
+    {
+     "rsid": "rs429358",
+     "risk_allele": "?",
+     "p_value": 6e-08,
+     "or_beta": "0.707",
+     "study": "GCST007780",
+     "pmid": "30957308"
+    },
+    {
+     "rsid": "rs429358",
+     "risk_allele": "C",
+     "p_value": 3e-13,
+     "or_beta": "0.38",
+     "study": "GCST011037",
+     "pmid": "33111402"
+    },
+    {
+     "rsid": "rs429358",
+     "risk_allele": "C",
+     "p_value": 1e-08,
+     "or_beta": "0.35",
+     "study": "GCST011039",
+     "pmid": "33111402"
+    },
+    {
+     "rsid": "rs429358",
+     "risk_allele": "C",
+     "p_value": 2e-15,
+     "or_beta": "2.41",
+     "study": "GCST90270129",
+     "pmid": "36348503"
+    },
+    {
+     "rsid": "rs429358",
+     "risk_allele": "C",
+     "p_value": 1e-10,
+     "or_beta": "0.295",
+     "study": "GCST90709787",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000018236": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST002455",
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-27,
+   "associations": [
+    {
+     "rsid": "rs1442190",
+     "risk_allele": "?",
+     "p_value": 2e-27,
+     "or_beta": "3.72",
+     "study": "GCST002455",
+     "pmid": "24842889"
+    },
+    {
+     "rsid": "rs11177328",
+     "risk_allele": "A",
+     "p_value": 3e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs1442190",
+     "risk_allele": "A",
+     "p_value": 2e-15,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs73273590",
+     "risk_allele": "A",
+     "p_value": 9e-17,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000143603": {
+   "gwas_associations": 6,
+   "studies": [
+    "GCST002455",
+    "GCST90428733"
+   ],
+   "strongest_p": 1e-37,
+   "associations": [
+    {
+     "rsid": "rs1630500",
+     "risk_allele": "?",
+     "p_value": 2e-08,
+     "or_beta": "1.75",
+     "study": "GCST002455",
+     "pmid": "24842889"
+    },
+    {
+     "rsid": "rs1630500",
+     "risk_allele": "?",
+     "p_value": 1e-37,
+     "or_beta": "2.07",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs1218566",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "0.809",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs11264275",
+     "risk_allele": "?",
+     "p_value": 2e-06,
+     "or_beta": "1.086",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs2798604",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "0.749",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs11584630",
+     "risk_allele": "?",
+     "p_value": 5e-06,
+     "or_beta": "0.747",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000116205": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST002778"
+   ],
+   "strongest_p": 6e-08,
+   "associations": [
+    {
+     "rsid": "rs10788972",
+     "risk_allele": "?",
+     "p_value": 6e-08,
+     "or_beta": "1.56",
+     "study": "GCST002778",
+     "pmid": "25663231"
+    }
+   ]
+  },
+  "ENSG00000167515": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST002778"
+   ],
+   "strongest_p": 9e-07,
+   "associations": [
+    {
+     "rsid": "rs12921479",
+     "risk_allele": "?",
+     "p_value": 9e-07,
+     "or_beta": "1.54",
+     "study": "GCST002778",
+     "pmid": "25663231"
+    }
+   ]
+  },
+  "ENSG00000205022": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST002778"
+   ],
+   "strongest_p": 9e-07,
+   "associations": [
+    {
+     "rsid": "rs12921479",
+     "risk_allele": "?",
+     "p_value": 9e-07,
+     "or_beta": "1.54",
+     "study": "GCST002778",
+     "pmid": "25663231"
+    }
+   ]
+  },
+  "ENSG00000102468": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST002778"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs7984966",
+     "risk_allele": "?",
+     "p_value": 2e-06,
+     "or_beta": "1.61",
+     "study": "GCST002778",
+     "pmid": "25663231"
+    }
+   ]
+  },
+  "ENSG00000143816": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003059"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs849898",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "2.73",
+     "study": "GCST003059",
+     "pmid": "26227905"
+    }
+   ]
+  },
+  "ENSG00000204262": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003059"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs11186",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "2.79",
+     "study": "GCST003059",
+     "pmid": "26227905"
+    }
+   ]
+  },
+  "ENSG00000185565": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003059"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs1879553",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "2.83",
+     "study": "GCST003059",
+     "pmid": "26227905"
+    }
+   ]
+  },
+  "ENSG00000144847": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003059"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs1879553",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "2.83",
+     "study": "GCST003059",
+     "pmid": "26227905"
+    }
+   ]
+  },
+  "ENSG00000139915": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST003059"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs9323124",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "3.97",
+     "study": "GCST003059",
+     "pmid": "26227905"
+    }
+   ]
+  },
+  "ENSG00000134121": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST006153"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs3773384",
+     "risk_allele": "C",
+     "p_value": 4e-06,
+     "or_beta": "2.3255813",
+     "study": "GCST006153",
+     "pmid": "29724592"
+    }
+   ]
+  },
+  "ENSG00000185591": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST006153"
+   ],
+   "strongest_p": 8e-06,
+   "associations": [
+    {
+     "rsid": "rs34656641",
+     "risk_allele": "C",
+     "p_value": 8e-06,
+     "or_beta": "3.26",
+     "study": "GCST006153",
+     "pmid": "29724592"
+    }
+   ]
+  },
+  "ENSG00000250803": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST011038",
+    "GCST011039"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs5870994",
+     "risk_allele": "C",
+     "p_value": 1e-06,
+     "or_beta": "0.21",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    },
+    {
+     "rsid": "rs17367669",
+     "risk_allele": "T",
+     "p_value": 3e-06,
+     "or_beta": "0.23",
+     "study": "GCST011039",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000064692": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST011038",
+    "GCST011039"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs5870994",
+     "risk_allele": "C",
+     "p_value": 1e-06,
+     "or_beta": "0.21",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    },
+    {
+     "rsid": "rs17367669",
+     "risk_allele": "T",
+     "p_value": 3e-06,
+     "or_beta": "0.23",
+     "study": "GCST011039",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000153707": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011038"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs7870456",
+     "risk_allele": "T",
+     "p_value": 2e-06,
+     "or_beta": "0.21",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000140563": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST011038",
+    "GCST011039"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs72767442",
+     "risk_allele": "A",
+     "p_value": 2e-06,
+     "or_beta": "0.18",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    },
+    {
+     "rsid": "rs11634227",
+     "risk_allele": "C",
+     "p_value": 1e-06,
+     "or_beta": "0.21",
+     "study": "GCST011039",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000119771": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011038"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs6741991",
+     "risk_allele": "G",
+     "p_value": 3e-06,
+     "or_beta": "0.2",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000047617": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011038"
+   ],
+   "strongest_p": 6e-06,
+   "associations": [
+    {
+     "rsid": "rs74709761",
+     "risk_allele": "C",
+     "p_value": 6e-06,
+     "or_beta": "0.41",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000204361": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011038"
+   ],
+   "strongest_p": 7e-06,
+   "associations": [
+    {
+     "rsid": "rs4436579",
+     "risk_allele": "T",
+     "p_value": 7e-06,
+     "or_beta": "0.18",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000182985": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011038"
+   ],
+   "strongest_p": 7e-06,
+   "associations": [
+    {
+     "rsid": "rs4436579",
+     "risk_allele": "T",
+     "p_value": 7e-06,
+     "or_beta": "0.18",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000183150": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011038"
+   ],
+   "strongest_p": 8e-06,
+   "associations": [
+    {
+     "rsid": "rs12813102",
+     "risk_allele": "C",
+     "p_value": 8e-06,
+     "or_beta": "0.43",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000187720": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011038"
+   ],
+   "strongest_p": 8e-06,
+   "associations": [
+    {
+     "rsid": "rs4128840",
+     "risk_allele": "A",
+     "p_value": 8e-06,
+     "or_beta": "0.17",
+     "study": "GCST011038",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000174738": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011037"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs113730632",
+     "risk_allele": "G",
+     "p_value": 2e-06,
+     "or_beta": "0.41",
+     "study": "GCST011037",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000166444": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011037"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs34105455",
+     "risk_allele": "G",
+     "p_value": 4e-06,
+     "or_beta": "0.25",
+     "study": "GCST011037",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000137558": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011037"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs2956605",
+     "risk_allele": "A",
+     "p_value": 4e-06,
+     "or_beta": "0.17",
+     "study": "GCST011037",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000121005": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011037"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs2956605",
+     "risk_allele": "A",
+     "p_value": 4e-06,
+     "or_beta": "0.17",
+     "study": "GCST011037",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000197506": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011037"
+   ],
+   "strongest_p": 6e-06,
+   "associations": [
+    {
+     "rsid": "rs148603475",
+     "risk_allele": "T",
+     "p_value": 6e-06,
+     "or_beta": "0.31",
+     "study": "GCST011037",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000148053": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011037"
+   ],
+   "strongest_p": 6e-06,
+   "associations": [
+    {
+     "rsid": "rs148603475",
+     "risk_allele": "T",
+     "p_value": 6e-06,
+     "or_beta": "0.31",
+     "study": "GCST011037",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000081760": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011037"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs6488987",
+     "risk_allele": "C",
+     "p_value": 2e-06,
+     "or_beta": "0.18",
+     "study": "GCST011037",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000152402": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011037"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs17092224",
+     "risk_allele": "C",
+     "p_value": 4e-06,
+     "or_beta": "0.27",
+     "study": "GCST011037",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000148498": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011039"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs224750",
+     "risk_allele": "T",
+     "p_value": 1e-06,
+     "or_beta": "0.21",
+     "study": "GCST011039",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000111879": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011039"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs79987229",
+     "risk_allele": "T",
+     "p_value": 3e-06,
+     "or_beta": "0.85",
+     "study": "GCST011039",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000071189": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011039"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs10253857",
+     "risk_allele": "T",
+     "p_value": 4e-06,
+     "or_beta": "0.23",
+     "study": "GCST011039",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000198203": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011039"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs13424530",
+     "risk_allele": "A",
+     "p_value": 4e-06,
+     "or_beta": "0.2",
+     "study": "GCST011039",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000137767": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST011039"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs17554587",
+     "risk_allele": "C",
+     "p_value": 3e-06,
+     "or_beta": "0.85",
+     "study": "GCST011039",
+     "pmid": "33111402"
+    }
+   ]
+  },
+  "ENSG00000013563": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST90104086",
+    "GCST90104087"
+   ],
+   "strongest_p": 1e-09,
+   "associations": [
+    {
+     "rsid": "rs28602900",
+     "risk_allele": "A",
+     "p_value": 4e-07,
+     "or_beta": "1.11",
+     "study": "GCST90104086",
+     "pmid": "33583074"
+    },
+    {
+     "rsid": "rs28602900",
+     "risk_allele": "A",
+     "p_value": 1e-09,
+     "or_beta": "1.1",
+     "study": "GCST90104087",
+     "pmid": "33583074"
+    }
+   ]
+  },
+  "ENSG00000046653": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90104087"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs7066890",
+     "risk_allele": "T",
+     "p_value": 1e-08,
+     "or_beta": "1.1",
+     "study": "GCST90104087",
+     "pmid": "33583074"
+    }
+   ]
+  },
+  "ENSG00000090776": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90104087"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs11796528",
+     "risk_allele": "A",
+     "p_value": 1e-06,
+     "or_beta": "1.08",
+     "study": "GCST90104087",
+     "pmid": "33583074"
+    }
+   ]
+  },
+  "ENSG00000181191": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90104087"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs11796528",
+     "risk_allele": "A",
+     "p_value": 1e-06,
+     "or_beta": "1.08",
+     "study": "GCST90104087",
+     "pmid": "33583074"
+    }
+   ]
+  },
+  "ENSG00000243978": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90104087"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs41306249",
+     "risk_allele": "T",
+     "p_value": 1e-07,
+     "or_beta": "1.15",
+     "study": "GCST90104087",
+     "pmid": "33583074"
+    }
+   ]
+  },
+  "ENSG00000203805": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90095083"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs12771445",
+     "risk_allele": "T",
+     "p_value": 1e-08,
+     "or_beta": "0.663",
+     "study": "GCST90095083",
+     "pmid": "34776419"
+    }
+   ]
+  },
+  "ENSG00000168702": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90270129"
+   ],
+   "strongest_p": 7e-09,
+   "associations": [
+    {
+     "rsid": "rs80306347",
+     "risk_allele": "C",
+     "p_value": 7e-09,
+     "or_beta": "3.23",
+     "study": "GCST90270129",
+     "pmid": "36348503"
+    }
+   ]
+  },
+  "ENSG00000122507": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90270129"
+   ],
+   "strongest_p": 4e-08,
+   "associations": [
+    {
+     "rsid": "rs78294974",
+     "risk_allele": "A",
+     "p_value": 4e-08,
+     "or_beta": "3.9",
+     "study": "GCST90270129",
+     "pmid": "36348503"
+    }
+   ]
+  },
+  "ENSG00000113327": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90000014"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs11949046",
+     "risk_allele": "T",
+     "p_value": 2e-06,
+     "or_beta": "0.54",
+     "study": "GCST90000014",
+     "pmid": "33987465"
+    }
+   ]
+  },
+  "ENSG00000103534": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90000014"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs78926797",
+     "risk_allele": "A",
+     "p_value": 2e-06,
+     "or_beta": "0.3",
+     "study": "GCST90000014",
+     "pmid": "33987465"
+    }
+   ]
+  },
+  "ENSG00000188580": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90000014"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs6932127",
+     "risk_allele": "T",
+     "p_value": 3e-06,
+     "or_beta": "0.46",
+     "study": "GCST90000014",
+     "pmid": "33987465"
+    }
+   ]
+  },
+  "ENSG00000002822": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90321084"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs4721411",
+     "risk_allele": "?",
+     "p_value": 2e-07,
+     "or_beta": "0.53",
+     "study": "GCST90321084",
+     "pmid": "37560120"
+    }
+   ]
+  },
+  "ENSG00000071127": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90321084"
+   ],
+   "strongest_p": 8e-07,
+   "associations": [
+    {
+     "rsid": "rs10939702",
+     "risk_allele": "?",
+     "p_value": 8e-07,
+     "or_beta": "0.57",
+     "study": "GCST90321084",
+     "pmid": "37560120"
+    }
+   ]
+  },
+  "ENSG00000265107": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90321081"
+   ],
+   "strongest_p": 1e-10,
+   "associations": [
+    {
+     "rsid": "rs6593808",
+     "risk_allele": "?",
+     "p_value": 1e-10,
+     "or_beta": "0.28",
+     "study": "GCST90321081",
+     "pmid": "37560120"
+    }
+   ]
+  },
+  "ENSG00000173559": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90321081"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs4073509",
+     "risk_allele": "?",
+     "p_value": 2e-07,
+     "or_beta": "0.52",
+     "study": "GCST90321081",
+     "pmid": "37560120"
+    }
+   ]
+  },
+  "ENSG00000168497": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90321081"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs4073509",
+     "risk_allele": "?",
+     "p_value": 2e-07,
+     "or_beta": "0.52",
+     "study": "GCST90321081",
+     "pmid": "37560120"
+    }
+   ]
+  },
+  "ENSG00000068097": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90270939"
+   ],
+   "strongest_p": 1e-09,
+   "associations": [
+    {
+     "rsid": "rs61204179",
+     "risk_allele": "T",
+     "p_value": 1e-09,
+     "or_beta": "0.291",
+     "study": "GCST90270939",
+     "pmid": "36759515"
+    }
+   ]
+  },
+  "ENSG00000116539": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST012431",
+    "GCST90308590",
+    "GCST90428733",
+    "GCST90828116"
+   ],
+   "strongest_p": 4e-68,
+   "associations": [
+    {
+     "rsid": "rs145330152",
+     "risk_allele": "C",
+     "p_value": 1e-09,
+     "or_beta": "2.22123",
+     "study": "GCST012431",
+     "pmid": "34064523"
+    },
+    {
+     "rsid": "rs12734374",
+     "risk_allele": "A",
+     "p_value": 4e-68,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs116540837",
+     "risk_allele": "?",
+     "p_value": 2e-53,
+     "or_beta": "2.383",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs138045074",
+     "risk_allele": "?",
+     "p_value": 2e-08,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000134905": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST012431"
+   ],
+   "strongest_p": 2e-10,
+   "associations": [
+    {
+     "rsid": "rs74125032",
+     "risk_allele": "T",
+     "p_value": 2e-10,
+     "or_beta": "4.49847E-10",
+     "study": "GCST012431",
+     "pmid": "34064523"
+    }
+   ]
+  },
+  "ENSG00000083454": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST012431"
+   ],
+   "strongest_p": 2e-15,
+   "associations": [
+    {
+     "rsid": "rs117672332",
+     "risk_allele": "T",
+     "p_value": 2e-15,
+     "or_beta": "7.6928",
+     "study": "GCST012431",
+     "pmid": "34064523"
+    }
+   ]
+  },
+  "ENSG00000083457": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST012431"
+   ],
+   "strongest_p": 2e-15,
+   "associations": [
+    {
+     "rsid": "rs117672332",
+     "risk_allele": "T",
+     "p_value": 2e-15,
+     "or_beta": "7.6928",
+     "study": "GCST012431",
+     "pmid": "34064523"
+    },
+    {
+     "rsid": "rs11653889",
+     "risk_allele": "A",
+     "p_value": 1e-14,
+     "or_beta": "0.0499",
+     "study": "GCST012431",
+     "pmid": "34064523"
+    }
+   ]
+  },
+  "ENSG00000153487": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST012431"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs74125084",
+     "risk_allele": "T",
+     "p_value": 1e-07,
+     "or_beta": "1.058E-4",
+     "study": "GCST012431",
+     "pmid": "34064523"
+    }
+   ]
+  },
+  "ENSG00000177602": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST012431"
+   ],
+   "strongest_p": 1e-14,
+   "associations": [
+    {
+     "rsid": "rs11653889",
+     "risk_allele": "A",
+     "p_value": 1e-14,
+     "or_beta": "0.0499",
+     "study": "GCST012431",
+     "pmid": "34064523"
+    }
+   ]
+  },
+  "ENSG00000130202": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90455618"
+   ],
+   "strongest_p": 2e-09,
+   "associations": [
+    {
+     "rsid": "rs6857",
+     "risk_allele": "T",
+     "p_value": 2e-09,
+     "or_beta": "0.13",
+     "study": "GCST90455618",
+     "pmid": "39080267"
+    }
+   ]
+  },
+  "ENSG00000143033": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-09,
+   "associations": [
+    {
+     "rsid": "rs11164870",
+     "risk_allele": "C",
+     "p_value": 3e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000163357": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST90308590",
+    "GCST90428733"
+   ],
+   "strongest_p": 2e-10,
+   "associations": [
+    {
+     "rsid": "rs146143531",
+     "risk_allele": "T",
+     "p_value": 2e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs11264300",
+     "risk_allele": "?",
+     "p_value": 8e-07,
+     "or_beta": "0.836",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs4845404",
+     "risk_allele": "?",
+     "p_value": 2e-06,
+     "or_beta": "0.808",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000160789": {
+   "gwas_associations": 4,
+   "studies": [
+    "GCST90308590",
+    "GCST90428733"
+   ],
+   "strongest_p": 2e-21,
+   "associations": [
+    {
+     "rsid": "rs10737170",
+     "risk_allele": "A",
+     "p_value": 3e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs513043",
+     "risk_allele": "?",
+     "p_value": 2e-21,
+     "or_beta": "1.416",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs577492",
+     "risk_allele": "?",
+     "p_value": 3e-21,
+     "or_beta": "1.413",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs553016",
+     "risk_allele": "?",
+     "p_value": 4e-21,
+     "or_beta": "1.407",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000163468": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST90308590",
+    "GCST90428733"
+   ],
+   "strongest_p": 1e-15,
+   "associations": [
+    {
+     "rsid": "rs35161831",
+     "risk_allele": "T",
+     "p_value": 1e-15,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs2764407",
+     "risk_allele": "?",
+     "p_value": 4e-09,
+     "or_beta": "0.861",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000087274": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-07,
+   "associations": [
+    {
+     "rsid": "rs16843452",
+     "risk_allele": "T",
+     "p_value": 3e-07,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000138771": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 8e-08,
+   "associations": [
+    {
+     "rsid": "rs4859676",
+     "risk_allele": "A",
+     "p_value": 8e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000184305": {
+   "gwas_associations": 3,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-24,
+   "associations": [
+    {
+     "rsid": "rs78327649",
+     "risk_allele": "C",
+     "p_value": 2e-12,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs145138919",
+     "risk_allele": "T",
+     "p_value": 5e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    },
+    {
+     "rsid": "rs75541595",
+     "risk_allele": "A",
+     "p_value": 3e-24,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000145833": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 8e-08,
+   "associations": [
+    {
+     "rsid": "rs11956597",
+     "risk_allele": "A",
+     "p_value": 8e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000147642": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs6469271",
+     "risk_allele": "T",
+     "p_value": 2e-07,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000107651": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 4e-23,
+   "associations": [
+    {
+     "rsid": "rs118117788",
+     "risk_allele": "T",
+     "p_value": 4e-23,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000057294": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 7e-11,
+   "associations": [
+    {
+     "rsid": "rs148163066",
+     "risk_allele": "A",
+     "p_value": 7e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000090975": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-09,
+   "associations": [
+    {
+     "rsid": "rs78299420",
+     "risk_allele": "T",
+     "p_value": 3e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000150977": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-08,
+   "associations": [
+    {
+     "rsid": "rs28659953",
+     "risk_allele": "T",
+     "p_value": 3e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000102753": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-08,
+   "associations": [
+    {
+     "rsid": "rs1127021",
+     "risk_allele": "T",
+     "p_value": 2e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000198554": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 4e-16,
+   "associations": [
+    {
+     "rsid": "rs8018800",
+     "risk_allele": "A",
+     "p_value": 4e-16,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000119682": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-07,
+   "associations": [
+    {
+     "rsid": "rs112288215",
+     "risk_allele": "T",
+     "p_value": 3e-07,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000170236": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-08,
+   "associations": [
+    {
+     "rsid": "rs28648524",
+     "risk_allele": "A",
+     "p_value": 3e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000138592": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-08,
+   "associations": [
+    {
+     "rsid": "rs28648524",
+     "risk_allele": "A",
+     "p_value": 3e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000108474": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs11650438",
+     "risk_allele": "A",
+     "p_value": 1e-07,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000108788": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs665268",
+     "risk_allele": "A",
+     "p_value": 2e-07,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000087157": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-07,
+   "associations": [
+    {
+     "rsid": "rs77483524",
+     "risk_allele": "A",
+     "p_value": 3e-07,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000169710": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-09,
+   "associations": [
+    {
+     "rsid": "rs4485435",
+     "risk_allele": "C",
+     "p_value": 3e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000132872": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 9e-10,
+   "associations": [
+    {
+     "rsid": "rs75344947",
+     "risk_allele": "T",
+     "p_value": 9e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000100387": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 5e-07,
+   "associations": [
+    {
+     "rsid": "rs73174657",
+     "risk_allele": "A",
+     "p_value": 5e-07,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000100239": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 6e-08,
+   "associations": [
+    {
+     "rsid": "rs10775809",
+     "risk_allele": "A",
+     "p_value": 6e-08,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000184445": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-09,
+   "associations": [
+    {
+     "rsid": "rs34773022",
+     "risk_allele": "A",
+     "p_value": 2e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000185950": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-09,
+   "associations": [
+    {
+     "rsid": "rs1078514",
+     "risk_allele": "T",
+     "p_value": 2e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000101746": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 4e-09,
+   "associations": [
+    {
+     "rsid": "rs8091977",
+     "risk_allele": "T",
+     "p_value": 4e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000121879": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-09,
+   "associations": [
+    {
+     "rsid": "rs7636454",
+     "risk_allele": "A",
+     "p_value": 3e-09,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000185619": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 2e-11,
+   "associations": [
+    {
+     "rsid": "rs11729193",
+     "risk_allele": "A",
+     "p_value": 2e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000048342": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 5e-10,
+   "associations": [
+    {
+     "rsid": "rs11941559",
+     "risk_allele": "C",
+     "p_value": 5e-10,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000146409": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 3e-11,
+   "associations": [
+    {
+     "rsid": "rs41286192",
+     "risk_allele": "A",
+     "p_value": 3e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000120913": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90308590"
+   ],
+   "strongest_p": 6e-11,
+   "associations": [
+    {
+     "rsid": "rs11783129",
+     "risk_allele": "A",
+     "p_value": 6e-11,
+     "or_beta": "",
+     "study": "GCST90308590",
+     "pmid": "38155330"
+    }
+   ]
+  },
+  "ENSG00000115216": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs2303370",
+     "risk_allele": "?",
+     "p_value": 1e-08,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000102870": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 8e-07,
+   "associations": [
+    {
+     "rsid": "rs4889490",
+     "risk_allele": "?",
+     "p_value": 8e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000171105": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 7e-07,
+   "associations": [
+    {
+     "rsid": "rs6510955",
+     "risk_allele": "?",
+     "p_value": 7e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000174099": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs12229918",
+     "risk_allele": "?",
+     "p_value": 2e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000103510": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs12716982",
+     "risk_allele": "?",
+     "p_value": 1e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000160803": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 7e-10,
+   "associations": [
+    {
+     "rsid": "rs35603727",
+     "risk_allele": "?",
+     "p_value": 7e-10,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000178188": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 5e-08,
+   "associations": [
+    {
+     "rsid": "rs7498665",
+     "risk_allele": "?",
+     "p_value": 5e-08,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000005882": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 6e-07,
+   "associations": [
+    {
+     "rsid": "rs9914013",
+     "risk_allele": "?",
+     "p_value": 6e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000174944": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs1920393",
+     "risk_allele": "?",
+     "p_value": 1e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000162972": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs203771",
+     "risk_allele": "?",
+     "p_value": 1e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000196141": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90892629"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs203771",
+     "risk_allele": "?",
+     "p_value": 1e-07,
+     "or_beta": "",
+     "study": "GCST90892629",
+     "pmid": "42336304"
+    }
+   ]
+  },
+  "ENSG00000116128": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90651411"
+   ],
+   "strongest_p": 6e-09,
+   "associations": [
+    {
+     "rsid": "rs373616374",
+     "risk_allele": "?",
+     "p_value": 6e-09,
+     "or_beta": "",
+     "study": "GCST90651411",
+     "pmid": "40465716"
+    }
+   ]
+  },
+  "ENSG00000181315": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90278092"
+   ],
+   "strongest_p": 5e-08,
+   "associations": [
+    {
+     "rsid": "rs2451713",
+     "risk_allele": "C",
+     "p_value": 5e-08,
+     "or_beta": "1.88",
+     "study": "GCST90278092",
+     "pmid": "37805635"
+    }
+   ]
+  },
+  "ENSG00000145491": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90296433"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs139422381",
+     "risk_allele": "A",
+     "p_value": 2e-06,
+     "or_beta": "4.02",
+     "study": "GCST90296433",
+     "pmid": "37805635"
+    }
+   ]
+  },
+  "ENSG00000187855": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90296433"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs10746109",
+     "risk_allele": "A",
+     "p_value": 4e-06,
+     "or_beta": "1.46",
+     "study": "GCST90296433",
+     "pmid": "37805635"
+    }
+   ]
+  },
+  "ENSG00000075035": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90296433"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs10746109",
+     "risk_allele": "A",
+     "p_value": 4e-06,
+     "or_beta": "1.46",
+     "study": "GCST90296433",
+     "pmid": "37805635"
+    }
+   ]
+  },
+  "ENSG00000163462": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 9e-60,
+   "associations": [
+    {
+     "rsid": "rs114525519",
+     "risk_allele": "?",
+     "p_value": 9e-60,
+     "or_beta": "2.563",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000163346": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 2e-39,
+   "associations": [
+    {
+     "rsid": "rs116114495",
+     "risk_allele": "?",
+     "p_value": 2e-39,
+     "or_beta": "2.134",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000116584": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 4e-36,
+   "associations": [
+    {
+     "rsid": "rs71628699",
+     "risk_allele": "?",
+     "p_value": 4e-36,
+     "or_beta": "1.87",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000143622": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 3e-34,
+   "associations": [
+    {
+     "rsid": "rs1749409",
+     "risk_allele": "?",
+     "p_value": 3e-34,
+     "or_beta": "1.824",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs670523",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "0.794",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000143590": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 9e-07,
+   "associations": [
+    {
+     "rsid": "rs7365544",
+     "risk_allele": "?",
+     "p_value": 9e-07,
+     "or_beta": "0.719",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    },
+    {
+     "rsid": "rs7367207",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "0.696",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000157445": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs75337321",
+     "risk_allele": "?",
+     "p_value": 2e-06,
+     "or_beta": "0.83",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000164116": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 2e-06,
+   "associations": [
+    {
+     "rsid": "rs17377936",
+     "risk_allele": "?",
+     "p_value": 2e-06,
+     "or_beta": "0.682",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000198400": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs58519469",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "0.896",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000130511": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 3e-06,
+   "associations": [
+    {
+     "rsid": "rs111408331",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "0.944",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000206422": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs79372348",
+     "risk_allele": "?",
+     "p_value": 4e-06,
+     "or_beta": "1.007",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000173482": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs79372348",
+     "risk_allele": "?",
+     "p_value": 4e-06,
+     "or_beta": "1.007",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000070610": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs186852039",
+     "risk_allele": "?",
+     "p_value": 4e-06,
+     "or_beta": "0.921",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000174945": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs11772125",
+     "risk_allele": "?",
+     "p_value": 4e-06,
+     "or_beta": "0.799",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000146535": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 4e-06,
+   "associations": [
+    {
+     "rsid": "rs11772125",
+     "risk_allele": "?",
+     "p_value": 4e-06,
+     "or_beta": "0.799",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000171094": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90428733"
+   ],
+   "strongest_p": 7e-06,
+   "associations": [
+    {
+     "rsid": "rs72792300",
+     "risk_allele": "?",
+     "p_value": 7e-06,
+     "or_beta": "1.178",
+     "study": "GCST90428733",
+     "pmid": "37842648"
+    }
+   ]
+  },
+  "ENSG00000055813": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90320240"
+   ],
+   "strongest_p": 1e-08,
+   "associations": [
+    {
+     "rsid": "rs59330234",
+     "risk_allele": "?",
+     "p_value": 1e-08,
+     "or_beta": "",
+     "study": "GCST90320240",
+     "pmid": "38014556"
+    }
+   ]
+  },
+  "ENSG00000138767": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90828117"
+   ],
+   "strongest_p": 4e-08,
+   "associations": [
+    {
+     "rsid": "rs10518182",
+     "risk_allele": "?",
+     "p_value": 4e-08,
+     "or_beta": "3.85",
+     "study": "GCST90828117",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000169288": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90828117"
+   ],
+   "strongest_p": 4e-08,
+   "associations": [
+    {
+     "rsid": "rs10518182",
+     "risk_allele": "?",
+     "p_value": 4e-08,
+     "or_beta": "3.85",
+     "study": "GCST90828117",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000155849": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90828116"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs34182751",
+     "risk_allele": "?",
+     "p_value": 1e-07,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000185274": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90828116"
+   ],
+   "strongest_p": 2e-07,
+   "associations": [
+    {
+     "rsid": "rs28479972",
+     "risk_allele": "?",
+     "p_value": 2e-07,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000205356": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90828116"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs6963518",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000214435": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90828116"
+   ],
+   "strongest_p": 1e-06,
+   "associations": [
+    {
+     "rsid": "rs12765002",
+     "risk_allele": "?",
+     "p_value": 1e-06,
+     "or_beta": "",
+     "study": "GCST90828116",
+     "pmid": "41810385"
+    }
+   ]
+  },
+  "ENSG00000116151": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST90709786",
+    "GCST90709788"
+   ],
+   "strongest_p": 3e-09,
+   "associations": [
+    {
+     "rsid": "rs115217673",
+     "risk_allele": "A",
+     "p_value": 3e-09,
+     "or_beta": "1.016",
+     "study": "GCST90709786",
+     "pmid": "38849413"
+    },
+    {
+     "rsid": "rs115217673",
+     "risk_allele": "?",
+     "p_value": 3e-06,
+     "or_beta": "",
+     "study": "GCST90709788",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000006128": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709786"
+   ],
+   "strongest_p": 3e-09,
+   "associations": [
+    {
+     "rsid": "rs145274312",
+     "risk_allele": "A",
+     "p_value": 3e-09,
+     "or_beta": "1.872",
+     "study": "GCST90709786",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000070669": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709786"
+   ],
+   "strongest_p": 3e-09,
+   "associations": [
+    {
+     "rsid": "rs145274312",
+     "risk_allele": "A",
+     "p_value": 3e-09,
+     "or_beta": "1.872",
+     "study": "GCST90709786",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000138735": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709786"
+   ],
+   "strongest_p": 7e-09,
+   "associations": [
+    {
+     "rsid": "rs113120976",
+     "risk_allele": "T",
+     "p_value": 7e-09,
+     "or_beta": "1.581",
+     "study": "GCST90709786",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000082898": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709786"
+   ],
+   "strongest_p": 3e-08,
+   "associations": [
+    {
+     "rsid": "rs141421624",
+     "risk_allele": "G",
+     "p_value": 3e-08,
+     "or_beta": "0.923",
+     "study": "GCST90709786",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000182118": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709786"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs74796254",
+     "risk_allele": "T",
+     "p_value": 1e-07,
+     "or_beta": "0.693",
+     "study": "GCST90709786",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000119283": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709786"
+   ],
+   "strongest_p": 1e-07,
+   "associations": [
+    {
+     "rsid": "rs74796254",
+     "risk_allele": "T",
+     "p_value": 1e-07,
+     "or_beta": "0.693",
+     "study": "GCST90709786",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000154556": {
+   "gwas_associations": 2,
+   "studies": [
+    "GCST90709786",
+    "GCST90709788"
+   ],
+   "strongest_p": 2e-08,
+   "associations": [
+    {
+     "rsid": "rs75614365",
+     "risk_allele": "C",
+     "p_value": 2e-07,
+     "or_beta": "0.372",
+     "study": "GCST90709786",
+     "pmid": "38849413"
+    },
+    {
+     "rsid": "rs75614365",
+     "risk_allele": "?",
+     "p_value": 2e-08,
+     "or_beta": "",
+     "study": "GCST90709788",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000111859": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709786"
+   ],
+   "strongest_p": 4e-07,
+   "associations": [
+    {
+     "rsid": "rs148949229",
+     "risk_allele": "A",
+     "p_value": 4e-07,
+     "or_beta": "1.694",
+     "study": "GCST90709786",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000059377": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709787"
+   ],
+   "strongest_p": 8e-10,
+   "associations": [
+    {
+     "rsid": "rs4726467",
+     "risk_allele": "T",
+     "p_value": 8e-10,
+     "or_beta": "0.713",
+     "study": "GCST90709787",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000181847": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709787"
+   ],
+   "strongest_p": 4e-07,
+   "associations": [
+    {
+     "rsid": "rs142285045",
+     "risk_allele": "A",
+     "p_value": 4e-07,
+     "or_beta": "0.836",
+     "study": "GCST90709787",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000134775": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709787"
+   ],
+   "strongest_p": 5e-07,
+   "associations": [
+    {
+     "rsid": "rs76125680",
+     "risk_allele": "C",
+     "p_value": 5e-07,
+     "or_beta": "0.874",
+     "study": "GCST90709787",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000164512": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709787"
+   ],
+   "strongest_p": 6e-07,
+   "associations": [
+    {
+     "rsid": "rs28811891",
+     "risk_allele": "T",
+     "p_value": 6e-07,
+     "or_beta": "0.544",
+     "study": "GCST90709787",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000186971": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709787"
+   ],
+   "strongest_p": 7e-07,
+   "associations": [
+    {
+     "rsid": "rs145506557",
+     "risk_allele": "C",
+     "p_value": 7e-07,
+     "or_beta": "0.896",
+     "study": "GCST90709787",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000187122": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90709787"
+   ],
+   "strongest_p": 8e-07,
+   "associations": [
+    {
+     "rsid": "rs17112311",
+     "risk_allele": "A",
+     "p_value": 8e-07,
+     "or_beta": "0.364",
+     "study": "GCST90709787",
+     "pmid": "38849413"
+    }
+   ]
+  },
+  "ENSG00000132122": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90480008"
+   ],
+   "strongest_p": 4e-11,
+   "associations": [
+    {
+     "rsid": "rs1311506805",
+     "risk_allele": "A",
+     "p_value": 4e-11,
+     "or_beta": "3.35",
+     "study": "GCST90480008",
+     "pmid": "39024449"
+    }
+   ]
+  },
+  "ENSG00000198752": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90479727"
+   ],
+   "strongest_p": 4e-11,
+   "associations": [
+    {
+     "rsid": "rs34400130",
+     "risk_allele": "C",
+     "p_value": 4e-11,
+     "or_beta": "3.784",
+     "study": "GCST90479727",
+     "pmid": "39024449"
+    }
+   ]
+  },
+  "ENSG00000168675": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90479727"
+   ],
+   "strongest_p": 2e-11,
+   "associations": [
+    {
+     "rsid": "rs73415968",
+     "risk_allele": "G",
+     "p_value": 2e-11,
+     "or_beta": "3.095",
+     "study": "GCST90479727",
+     "pmid": "39024449"
+    }
+   ]
+  },
+  "ENSG00000166352": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90479726"
+   ],
+   "strongest_p": 1e-12,
+   "associations": [
+    {
+     "rsid": "rs189775425",
+     "risk_allele": "C",
+     "p_value": 1e-12,
+     "or_beta": "2.877",
+     "study": "GCST90479726",
+     "pmid": "39024449"
+    }
+   ]
+  },
+  "ENSG00000180440": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90479726"
+   ],
+   "strongest_p": 9e-12,
+   "associations": [
+    {
+     "rsid": "rs368657122",
+     "risk_allele": "G",
+     "p_value": 9e-12,
+     "or_beta": "1.633",
+     "study": "GCST90479726",
+     "pmid": "39024449"
+    }
+   ]
+  },
+  "ENSG00000163870": {
+   "gwas_associations": 1,
+   "studies": [
+    "GCST90479727"
+   ],
+   "strongest_p": 3e-11,
+   "associations": [
+    {
+     "rsid": "rs559557961",
+     "risk_allele": "C",
+     "p_value": 3e-11,
+     "or_beta": "3.021",
+     "study": "GCST90479727",
+     "pmid": "39024449"
+    }
+   ]
+  }
+ }
+}

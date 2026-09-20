@@ -1,0 +1,104 @@
+{
+ "schema_version": "app-baseline-comparison-v1",
+ "note": "Verbatim presentation copy of the authoritative baseline comparison. Values are not recomputed, rounded or reordered by the app; the service layer reads them from here so no scientific number is hardcoded in the UI.",
+ "source": {
+  "file": "outputs/baselines/baseline_comparison.json",
+  "sha256": "d322c94d5fbf9dc5c9b44cead3087a99df0701ae07741ffc24f39b2e0af0ae78",
+  "generated_utc": "2026-09-18T03:11:09Z",
+  "copied_verbatim": true,
+  "cross_check_file": "outputs/baselines/validation_pff_metrics.csv",
+  "cross_check_sha256": "cc32176ba41af884c277af5248df24df38117d57350dc45421c785b8496eb798"
+ },
+ "common_ranked_universe": 12577,
+ "stat_vs_rwr": {
+  "spearman_rho": 0.6873459967507687,
+  "kendall_tau_b": 0.5577800545079967,
+  "topk": [
+   {
+    "k": 10,
+    "overlap": 10,
+    "jaccard": 1.0
+   },
+   {
+    "k": 20,
+    "overlap": 19,
+    "jaccard": 0.9047619047619048
+   },
+   {
+    "k": 50,
+    "overlap": 43,
+    "jaccard": 0.7543859649122807
+   },
+   {
+    "k": 100,
+    "overlap": 83,
+    "jaccard": 0.7094017094017094
+   }
+  ]
+ },
+ "validation_pff": {
+  "usable_nodes_both_cohorts": 12425,
+  "signed_effect_spearman": -0.2932347286676408,
+  "signed_effect_kendall_tau_b": -0.19630480889198682,
+  "per_k": [
+   {
+    "k": 10,
+    "primary_topk": 10,
+    "sign_concordant": 0,
+    "sign_concordance": 0.0,
+    "primary_vs_validation_topk_overlap": 1
+   },
+   {
+    "k": 20,
+    "primary_topk": 20,
+    "sign_concordant": 0,
+    "sign_concordance": 0.0,
+    "primary_vs_validation_topk_overlap": 2
+   },
+   {
+    "k": 50,
+    "primary_topk": 50,
+    "sign_concordant": 0,
+    "sign_concordance": 0.0,
+    "primary_vs_validation_topk_overlap": 5
+   },
+   {
+    "k": 100,
+    "primary_topk": 100,
+    "sign_concordant": 0,
+    "sign_concordance": 0.0,
+    "primary_vs_validation_topk_overlap": 12
+   }
+  ]
+ },
+ "validation_pff_csv": [
+  {
+   "k": 10,
+   "primary_topk": 10,
+   "sign_concordant": 0,
+   "sign_concordance": 0.0,
+   "primary_vs_validation_topk_overlap": 1
+  },
+  {
+   "k": 20,
+   "primary_topk": 20,
+   "sign_concordant": 0,
+   "sign_concordance": 0.0,
+   "primary_vs_validation_topk_overlap": 2
+  },
+  {
+   "k": 50,
+   "primary_topk": 50,
+   "sign_concordant": 0,
+   "sign_concordance": 0.0,
+   "primary_vs_validation_topk_overlap": 5
+  },
+  {
+   "k": 100,
+   "primary_topk": 100,
+   "sign_concordant": 0,
+   "sign_concordance": 0.0,
+   "primary_vs_validation_topk_overlap": 12
+  }
+ ]
+}
