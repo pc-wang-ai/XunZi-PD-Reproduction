@@ -74,10 +74,11 @@ test('model adapter is server-only, disables storage, and returns only model tex
     question: 'What happened in MPTP?', language: 'en',
     evidence: { gene: { gene_id: 'ENSG00000145335', symbol: 'SNCA' }, evidence: [], pathway_membership: [], pd_reference: null, boundary: 'boundary', source_snapshot: {} },
     env: { DEEPSEEK_API_KEY: 'test-secret', DEEPSEEK_MODEL: 'test-model' },
-    fetchImpl: async (_url, init) => { request = init; return new Response(JSON.stringify({ output: [{ content: [{ type: 'output_text', text: 'Evidence-only answer. boundary' }] }] })); },
+    fetchImpl: async (url, init) => { request = { url, ...init }; return new Response(JSON.stringify({ output: [{ content: [{ type: 'output_text', text: 'Evidence-only answer. boundary' }] }] })); },
   });
   assert.equal(result.answer, 'Evidence-only answer. boundary');
   const body = JSON.parse(request.body);
+  assert.equal(request.url, 'https://api.deepseek.com/responses');
   assert.equal(body.model, 'test-model');
   assert.equal(body.store, false);
   assert.equal(body.tools, undefined);

@@ -27,7 +27,7 @@ Do not diagnose, discuss symptoms, treatment, drugs, prognosis, disease causalit
 If evidence is missing, say that the loaded snapshot cannot answer it. Preserve gene symbols, identifiers, pathway IDs and study accessions exactly. Keep the answer under 180 words and end with the supplied research boundary.`;
   // DeepSeek documents a Responses API compatible with this endpoint. No tools,
   // web search, file search, or browser capabilities are requested.
-  const response = await fetchImpl('https://api.deepseek.com/v1/responses', {
+  const response = await fetchImpl('https://api.deepseek.com/responses', {
     method: 'POST',
     headers: { authorization: `Bearer ${env.DEEPSEEK_API_KEY}`, 'content-type': 'application/json' },
     body: JSON.stringify({ model: env.DEEPSEEK_MODEL, store: false, max_output_tokens: 450, instructions,

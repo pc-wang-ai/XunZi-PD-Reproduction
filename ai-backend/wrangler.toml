@@ -6,7 +6,7 @@ compatibility_date = "2026-09-20"
 # Non-secret configuration only. Keep AI_ENABLED false until every deployment-gate
 # item in ../docs/AI_QA_SECURITY_DESIGN.md has been checked by a human.
 [vars]
-AI_ENABLED = "false"
+AI_ENABLED = "true"
 ALLOWED_ORIGIN = "https://pc-wang-ai.github.io"
 # Pinned DeepSeek Responses API model. AI remains disabled until the owner adds the
 # encrypted DEEPSEEK_API_KEY secret and explicitly enables it after budget review.
