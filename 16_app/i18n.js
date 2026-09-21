@@ -18,6 +18,7 @@ const I18N = (() => {
 
       /* Beginner navigation — seven plain-language destinations over the same routes. */
       'navB.home': 'Home', 'navB.candidates': 'Candidate genes',
+      'navB.workbench': 'Target workbench', 'nav.workbench': 'Target workbench',
       'navB.network': 'Protein network', 'navB.pathway': 'Pathways',
       'navB.pd': 'PD evidence', 'navB.workspace': 'My research',
       'navB.sources': 'Sources',
@@ -205,6 +206,7 @@ const I18N = (() => {
       'nav.workspace': '研究工作台', 'nav.pathway': '通路', 'nav.pd': 'PD 证据',
 
       'navB.home': '首页', 'navB.candidates': '候选基因',
+      'navB.workbench': '靶点工作台', 'nav.workbench': '靶点工作台',
       'navB.network': '蛋白网络', 'navB.pathway': '通路机制',
       'navB.pd': 'PD 证据', 'navB.workspace': '我的研究',
       'navB.sources': '来源资料',

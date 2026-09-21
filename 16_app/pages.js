@@ -7,7 +7,10 @@ const Pages = (() => {
   const card = (k, v, n) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div><div class="n">${n || ''}</div></div>`;
   const step = (t, d) => `<div class="step"><div class="t">${t}</div><div class="d">${d}</div></div>`;
   const row = (k, v) => `<div class="metricRow"><span class="mk">${k}</span><span class="mv">${v}</span></div>`;
-  const goGene = i => { location.hash = '#gene/' + i; };
+  // A selected gene now opens the decision-oriented workbench. The raw gene page is
+  // still available as an evidence record, but it is not the first thing a newcomer
+  // has to decipher.
+  const goGene = i => { location.hash = '#workbench/' + i; };
   /** A home-screen entry choice. Big, plain, and one per thing a beginner might want. */
   const entryCard = (href, label, desc) => `<a class="entryCard" href="${href}">
     <span class="ecT">${esc(label)}</span>
@@ -261,7 +264,7 @@ const Pages = (() => {
           <section class="homeStartCard">
             <div class="homeStartK">${esc(T('ov2.noGene'))}</div>
             <p>${esc(T('ov2.noGeneD'))}</p>
-            <a class="btnLink primary big" href="#candidates">${esc(T('ov2.browse'))} →</a>
+            <a class="btnLink primary big" href="#workbench">${esc(I18N.getLang() === 'zh' ? '开始一次靶点探索' : 'Start a target exploration')} →</a>
           </section>
           <section class="homeStartCard">
             <div class="homeStartK">${esc(T('ov2.haveGene'))}</div>
@@ -1658,6 +1661,98 @@ const Pages = (() => {
     </section>`;
   }
 
+  /* ================= TARGET HYPOTHESIS WORKBENCH =================
+   *
+   * This is deliberately a reading and decision surface, not a third ranking model.
+   * It groups fields that already exist in the frozen result into questions a research
+   * user actually has to answer before putting a gene in a personal follow-up list.
+   * No card below changes a rank, assigns a target score, or declares a target valid.
+   */
+  function workbench(host, i) {
+    const zh = I18N.getLang() === 'zh';
+    const chosen = (i === undefined || i === null || i === '') ? null : DataService.get_gene_detail(Number(i));
+    const sample = DataService.search_genes('CHRM1', 1)[0];
+    const picker = `<section class="workbenchPicker panel">
+      <div><h2 style="margin-top:0">${esc(zh ? '1. 选择要审阅的基因' : '1. Choose a gene to review')}</h2>
+      <p>${esc(zh ? '输入基因符号、Ensembl ID 或小鼠 ID。这里不重新计算结果，只打开该基因已有的冻结证据。'
+        : 'Enter a gene symbol, Ensembl ID, or mouse ID. This does not recalculate results; it opens this gene’s existing frozen evidence.')}</p></div>
+      <div class="workbenchSearch"><div class="searchWrap"><label class="visuallyHidden" for="workbenchGene">${esc(zh ? '选择基因' : 'Choose a gene')}</label><input id="workbenchGene" type="text" autocomplete="off" placeholder="${esc(zh ? '例如 CHRM1、LRRK2、SNCA' : 'For example: CHRM1, LRRK2, SNCA')}"></div>
+        <button type="button" id="workbenchOpen">${esc(zh ? '打开工作台' : 'Open workbench')}</button></div>
+      <div class="workbenchSearchHint" id="workbenchSearchHint" role="status" aria-live="polite">${sample ? `<a href="#workbench/${sample.i}">${esc(zh ? '不知道从哪里开始？打开 CHRM1 示例流程' : 'Not sure where to start? Open the CHRM1 example')}</a>` : ''}</div>
+    </section>`;
+    if (!chosen) {
+      host.innerHTML = `<h1 class="titleBeginner">${esc(zh ? '靶点假设工作台' : 'Target hypothesis workbench')}</h1>
+        <p class="lede">${esc(zh ? '从已有研究信号到“下一步该核验什么”的单基因审阅流程。它帮助组织假设，不会自动认定治疗靶点。'
+          : 'A single-gene review from existing research signal to “what should be checked next?”. It organizes a hypothesis; it never automatically declares a therapeutic target.')}</p>
+        ${picker}
+        <section class="workbenchIntro"><div class="wbIntroStep"><b>1</b><span>${esc(zh ? '看发现模型中是否有信号和优先级。' : 'Check the discovery-model signal and priority.')}</span></div><div class="wbIntroStep"><b>2</b><span>${esc(zh ? '按实际有无网络、通路、另一模型和 PD 参考证据逐项核验。' : 'Review network, pathway, second-model and PD-reference evidence only when present.')}</span></div><div class="wbIntroStep"><b>3</b><span>${esc(zh ? '将需要继续核验的基因加入自己的研究清单。' : 'Put genes that need follow-up into your own research list.')}</span></div></section>
+        ${scientificBoundary(zh ? '工作台仅组织当前已加载的冻结证据；缺少某类证据时，不会将缺失解释为否定结论。' : 'The workbench only organizes loaded frozen evidence; a missing source is not interpreted as a negative conclusion.')}`;
+      bindWorkbenchPicker(host); return;
+    }
+    const g = chosen;
+    const mem = (typeof Pathways !== 'undefined' && Pathways.ready()) ? Pathways.forGene(g.gene_id) : null;
+    const pathwayN = mem ? mem.reactome.length + mem.gobp.length : 0;
+    const ev = (typeof PdEvidence !== 'undefined' && PdEvidence.ready()) ? PdEvidence.forGene(g.gene_id) : null;
+    const pdN = ev ? ev.gwas_associations : 0;
+    const vState = DataService.validation_state(g);
+    const fold = DataService.foldPhrase(g.lp);
+    const signal = g.statRank !== null
+      ? (zh ? `主模型已报告研究优先级：第 ${g.statRank} 位。` : `The primary model reports research priority: rank ${g.statRank}.`)
+      : (zh ? '主模型没有报告该基因的研究优先级。' : 'The primary model reports no research priority for this gene.');
+    const mptp = fold
+      ? (zh ? `MPTP 模型中表达${fold.lfc > 0 ? '升高' : (fold.lfc < 0 ? '降低' : '接近不变')}，约 ${fold.multiple.toFixed(2)} 倍。`
+            : `Expression is ${fold.lfc > 0 ? 'higher' : (fold.lfc < 0 ? 'lower' : 'near unchanged')} in MPTP (about ${fold.multiple.toFixed(2)}×).`)
+      : (zh ? 'MPTP 中没有可展示的表达结果。' : 'No displayable MPTP expression result is available.');
+    const validation = !g.eligV
+      ? (zh ? 'PFF 模型中不可比较：不能把它当作第二模型的支持或反驳。' : 'Not comparable in PFF: it cannot be counted as support or contradiction from a second model.')
+      : vState.id === 'near_zero'
+        ? (zh ? 'PFF 中变化接近零：该模型不能提供有意义的方向性复核。' : 'The PFF change is near zero: this model does not provide a meaningful directional check.')
+        : (zh ? 'PFF 中存在可比较的记录；请打开完整证据核对效应值与不确定性。' : 'A comparable PFF record exists; open full evidence to inspect effect size and uncertainty.');
+    const gaps = [];
+    if (!g.degree) gaps.push(zh ? '没有已记录的直接蛋白互作伙伴，因此当前不能从网络关系继续推理。' : 'No direct protein interaction partners are recorded, so this dataset cannot extend the reasoning through a network.');
+    if (!g.eligV) gaps.push(zh ? '缺少可比较的第二 PD 模型记录。' : 'A comparable second PD-model record is missing.');
+    else if (vState.id === 'near_zero') gaps.push(zh ? '第二模型的变化接近零，不能作为方向性重复证据。' : 'The second-model change is near zero and cannot serve as directional replication.');
+    if (!pathwayN) gaps.push(zh ? '当前加载的通路参考层没有该基因的注释。' : 'The loaded pathway reference has no annotation for this gene.');
+    if (!pdN) gaps.push(zh ? '当前加载的 PD 遗传学参考来源没有提到该基因。' : 'The loaded PD genetics references do not mention this gene.');
+    const link = (ok, href, label, absent) => ok
+      ? `<a class="btnLink" href="${href}">${esc(label)} →</a>`
+      : `<span class="wbUnavailable">${esc(absent)}</span>`;
+    host.innerHTML = `
+      <a class="contextBack beginnerOnly" href="#candidates">← ${esc(zh ? '返回候选基因' : 'Back to candidate genes')}</a>
+      <h1>${NT(g.symbol || g.gene_id)} <span class="na" style="font-size:13px">${esc(zh ? '靶点假设工作台' : 'Target hypothesis workbench')}</span></h1>
+      <p class="lede">${esc(zh ? '先判断“现有证据能支持什么、不能支持什么”，再决定是否把它放入你的后续研究清单。' : 'First decide what the existing evidence supports and does not support, then decide whether to put it in your follow-up list.')}</p>
+      ${picker}
+      <section class="workbenchFlow" aria-label="${esc(zh ? '该基因的证据审阅流程' : 'Evidence review flow for this gene')}">
+        <article class="wbStage active"><div class="wbN">1</div><div><h2>${esc(zh ? '发现信号' : 'Discovery signal')}</h2><p>${esc(signal)}</p><p>${esc(mptp)}</p><a class="btnLink" href="#gene/${g.i}">${esc(zh ? '查看原始表达与排名' : 'View raw expression and rank')} →</a></div></article>
+        <article class="wbStage ${g.degree ? 'active' : 'limited'}"><div class="wbN">2</div><div><h2>${esc(zh ? '网络机制线索' : 'Network mechanism clue')}</h2><p>${esc(g.degree ? (zh ? `当前蛋白网络记录 ${g.degree} 个直接互作伙伴；这提供关系线索，不证明机制。` : `The current protein network records ${g.degree} direct partners; this supplies relationship clues, not a proven mechanism.`) : (zh ? '当前网络没有记录直接互作伙伴。无需跳到空的网络页面。' : 'The current network records no direct interaction partners. There is no need to open an empty network page.'))}</p>${link(g.degree > 0, '#network/' + g.i + '/1', zh ? '检查网络关系' : 'Inspect network', zh ? '本项暂无可用网络证据' : 'No usable network evidence here')}</div></article>
+        <article class="wbStage ${g.eligV && vState.id !== 'near_zero' ? 'active' : 'limited'}"><div class="wbN">3</div><div><h2>${esc(zh ? '另一 PD 模型核验' : 'Second PD-model check')}</h2><p>${esc(validation)}</p><a class="btnLink" href="#gene/${g.i}">${esc(zh ? '查看 MPTP / PFF 原始对照' : 'View raw MPTP / PFF comparison')} →</a></div></article>
+        <article class="wbStage ${pathwayN || pdN ? 'active' : 'limited'}"><div class="wbN">4</div><div><h2>${esc(zh ? '已知机制与疾病背景' : 'Known mechanism and disease context')}</h2><p>${esc(zh ? `通路/生物过程注释：${pathwayN} 条；已加载 PD 遗传学关联：${pdN} 条。这些是解释背景，不是本次排名输入。` : `Pathway/biological-process annotations: ${pathwayN}; loaded PD genetics associations: ${pdN}. These are interpretation context, not inputs to this ranking.`)}</p><div class="toolbar">${link(pathwayN > 0, '#pathway/' + g.i, zh ? '查看通路' : 'View pathways', zh ? '本项暂无通路注释' : 'No pathway annotation here')}${link(pdN > 0, '#pd/' + g.i, zh ? '查看 PD 参考证据' : 'View PD reference evidence', zh ? '本项暂无 PD 参考记录' : 'No PD reference record here')}</div></div></article>
+      </section>
+      <section class="wbDecision panel"><h2 style="margin-top:0">${esc(zh ? '5. 现在能作出的研究判断' : '5. Research judgement you can make now')}</h2>
+        <p>${esc(zh ? '该基因可作为“待进一步核验的研究候选”被记录，但当前页面不会把它自动升级为疾病靶点。是否进入后续研究，由你结合实验可行性、独立文献和额外数据决定。' : 'This gene can be recorded as a research candidate for further review, but this page never automatically upgrades it to a disease target. Whether it moves forward depends on your judgement of experimental feasibility, independent literature, and additional data.')}</p>
+        <div class="wbGap"><b>${esc(zh ? '当前仍需补齐：' : 'What still needs to be filled:')}</b><ul>${(gaps.length ? gaps : [zh ? '仍需要独立实验和机制研究进行验证。' : 'Independent experimental and mechanistic validation is still required.']).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+        <div class="toolbar">${Shortlist.button(g.i)}<a class="btnLink primary" href="#workspace/${g.i}">${esc(zh ? '在“我的研究”中继续整理' : 'Continue organizing in My Research')} →</a><a class="btnLink" href="#gene/${g.i}">${esc(zh ? '打开完整证据记录' : 'Open full evidence record')} →</a></div>
+      </section>
+      ${scientificBoundary(gaps.join(zh ? ' ' : '; '))}`;
+    bindWorkbenchPicker(host);
+    Shortlist.bind(host);
+    Glossary.bind(host);
+  }
+
+  function bindWorkbenchPicker(host) {
+    const input = host.querySelector('#workbenchGene');
+    const hint = host.querySelector('#workbenchSearchHint');
+    const open = g => {
+      if (g) { location.hash = '#workbench/' + g.i; return; }
+      if (hint) hint.textContent = I18N.getLang() === 'zh'
+        ? '当前固定基因全集中没有匹配结果。请检查基因符号或 Ensembl ID 后重试。'
+        : 'No match in the fixed gene universe. Check the gene symbol or Ensembl ID and try again.';
+    };
+    if (input) bindSearch(input, open);
+    const button = host.querySelector('#workbenchOpen');
+    if (button) button.onclick = () => open(DataService.search_genes(input ? input.value : '', 1)[0]);
+  }
+
   function gene(host, i) {
     const zh = I18N.getLang() === 'zh';
     const g = DataService.get_gene_detail(Number(i));
@@ -1997,7 +2092,7 @@ const Pages = (() => {
   /** Enter the demo at a given step. Used by the #demo/<n> deep link. */
   function demoGoTo(n) { demo.on = true; demoGo(Number(n) || 0); }
 
-  return { overview, de, ranking, network, validation, gene, provenance,
+  return { overview, de, ranking, network, validation, workbench, gene, provenance,
            screening: (host, state) => Screening.render(host, state),
            candidates: (host, state) => Candidates.render(host, state),
            workspace: (host, state) => Workspace.render(host, state),

@@ -110,12 +110,13 @@ window.addEventListener('unhandledrejection', e => window.__appErrors.push('reje
                             {}, state.network, Pages.parseNetworkArg(arg))); break;
       // #validation/<node_index> focuses the validation view on one gene.
       case 'validation': Pages.validation(view, Pages.parseGeneArg(arg)); break;
+      case 'workbench':  Pages.workbench(view, arg); break;
       case 'gene':       Pages.gene(view, arg || 0); break;
       case 'provenance': Pages.provenance(view); break;
       default:           Pages.overview(view);
     }
     // The guided-demo bar sits above whatever page is showing. No-op when the demo is off.
-    const stepPages = ['overview', 'candidates', 'gene', 'network', 'pathway', 'workspace'];
+    const stepPages = ['overview', 'candidates', 'workbench', 'gene', 'network', 'pathway', 'workspace'];
     Pages.mountDemo(view, stepPages.includes(page) ? page : 'overview');
   }
 

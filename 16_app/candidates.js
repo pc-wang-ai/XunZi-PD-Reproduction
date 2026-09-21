@@ -294,7 +294,7 @@ const Candidates = (() => {
       <header class="cc2Head">
         <label class="ccSel"><input type="checkbox" data-cmp="${g.i}" ${selected ? 'checked' : ''}
           aria-label="${esc(zh ? '选择用于比较' : 'select for comparison')}"></label>
-        <a class="cc2Sym" href="#gene/${g.i}">${NT(g.symbol || g.gene_id)}</a>
+        <a class="cc2Sym" href="#workbench/${g.i}">${NT(g.symbol || g.gene_id)}</a>
         <span class="cc2Id mono">${NT(g.gene_id)}</span>
       </header>
 
@@ -358,7 +358,7 @@ const Candidates = (() => {
       </div>
 
       <footer class="cc2Foot">
-        <a class="btnLink primary" href="#gene/${g.i}" data-jmark="expression" data-jgene="${g.i}">${esc(S('openEvidence'))} →</a>
+        <a class="btnLink primary" href="#workbench/${g.i}" data-jmark="expression" data-jgene="${g.i}">${esc(I18N.getLang() === 'zh' ? '进入靶点工作台' : 'Open target workbench')} →</a>
         ${Shortlist.button(g.i)}
       </footer>
     </article>`;
@@ -521,7 +521,7 @@ const Candidates = (() => {
         <span class="mv">${v}</span></div>`;
       return `<div class="searchHit">
         <div class="shHead">
-          <a class="cc2Sym" href="#gene/${g.i}">${NT(g.symbol || g.gene_id)}</a>
+          <a class="cc2Sym" href="#workbench/${g.i}">${NT(g.symbol || g.gene_id)}</a>
           <span class="mono" style="color:var(--dim)">${NT(g.gene_id)}</span>
           <span class="pill on">${esc(S('inUniverse'))}</span>
         </div>
