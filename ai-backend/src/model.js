@@ -11,8 +11,13 @@ function outputText(payload) {
   // `output_text` convenience field. Prefer it, then retain the compatible
   // structured-output parser for providers that omit the convenience field.
   if (typeof payload.output_text === 'string' && payload.output_text.trim()) return payload.output_text.trim();
-  return (payload.output || []).flatMap(item => item.content || [])
-    .filter(part => part.type === 'output_text' && typeof part.text === 'string')
+  const choiceText = payload?.choices?.[0]?.message?.content;
+  if (typeof choiceText === 'string' && choiceText.trim()) return choiceText.trim();
+  return (payload.output || [])
+    // Never surface a reasoning item. Only assistant/message content can become an answer.
+    .filter(item => !item.type || item.type === 'message' || item.role === 'assistant')
+    .flatMap(item => typeof item.content === 'string' ? [{ type: 'text', text: item.content }] : (item.content || []))
+    .filter(part => (part.type === 'output_text' || part.type === 'text') && typeof part.text === 'string')
     .map(part => part.text).join('\n').trim();
 }
 

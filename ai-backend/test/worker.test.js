@@ -132,6 +132,19 @@ test('model adapter accepts the DeepSeek Responses output_text field', async () 
   assert.equal(result.answer, 'DeepSeek response text.');
 });
 
+test('model adapter accepts compatible text parts without exposing reasoning', async () => {
+  const result = await askEvidenceModel({
+    question: 'What happened in MPTP?', language: 'en',
+    evidence: { gene: { gene_id: 'ENSG00000145335', symbol: 'SNCA' }, evidence: [], pathway_membership: [], pd_reference: null, boundary: 'boundary', source_snapshot: {} },
+    env: { DEEPSEEK_API_KEY: 'test-secret' },
+    fetchImpl: async () => new Response(JSON.stringify({ output: [
+      { type: 'reasoning', content: [{ type: 'reasoning_text', text: 'private reasoning' }] },
+      { type: 'message', content: [{ type: 'text', text: 'Compatible answer.' }] },
+    ] })),
+  });
+  assert.equal(result.answer, 'Compatible answer.');
+});
+
 test('model adapter bounds an excessively long response', async () => {
   const result = await askEvidenceModel({
     question: 'What happened in MPTP?', language: 'en',
