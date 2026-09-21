@@ -25,7 +25,7 @@
       <li>不会要求账户、登录、姓名、邮箱或病历。</li>
       <li>不会重新运行 RNA-seq、重算排名或修改冻结的科学结果。</li>
       <li>不会提供诊断、治疗、用药建议或经过验证的治疗靶点结论。</li>
-      <li>AI 问答目前<strong>未启用</strong>：没有 API Key、没有模型调用，也不会发送自由文本问题。</li>
+      <li>AI 问答只会在单基因页面显示“可用”状态后运行。此时会发送你主动输入的短研究问题、当前公开 gene ID 和界面语言；不会发送候选清单、笔记或浏览历史。请不要输入个人或健康信息。</li>
     </ul>
   </section>
 
@@ -35,13 +35,14 @@
     <div class="boundaryItem limits"><div class="boundaryK">使用限制</div><p>任何后续实验、临床或治疗决定都必须由适当的专业人员和独立证据支持。</p></div>
   </section>
 
-  <section class="panel"><h2>未来如启用 AI 问答</h2>
-    <p>只有在完成独立人工审查、限流和预算设置、服务器端密钥保护，以及引用和拒答测试后，才可能启用。届时页面会在发送前明确说明：仅发送短问题与当前 gene ID，且不得包含个人或健康信息。</p>
+  <section class="panel"><h2>AI 问答的工作边界</h2>
+    <p>AI 问答由独立的服务器端服务提供。它只根据固定公开证据快照解释所选 gene，并由服务器附上引用；不会访问网页、文件、笔记或外部资料。若服务尚未就绪，页面会保持不发送自由文本问题的非 AI 模式。</p>
+    <p>启用前必须完成独立人工审查、限流和预算设置、服务器端密钥保护，以及引用和拒答测试。发送前页面会明确提示：仅发送短问题与当前 gene ID，且不得包含个人或健康信息。</p>
     <p><a href="../docs/AI_QA_SECURITY_DESIGN.md">查看公开的安全设计</a> · <a href="index.html#overview">返回研究平台</a></p>
   </section>
 
   <section class="panel"><h2>English summary</h2>
-    <p>Most XunZi-PD pages read public frozen data locally. Clicking “Verify evidence and citations” sends only the selected public gene ID to the server. AI Q&amp;A is disabled: no model call, no API key, and no free-text question is transmitted. This research tool does not provide medical advice or establish causality or validated therapeutic targets.</p>
+    <p>Most XunZi-PD pages read public frozen data locally. Clicking “Verify evidence and citations” sends only the selected public gene ID to the server. When AI Q&amp;A is shown as available, submitting a question sends that short question, selected public gene ID, and interface language to the server-side research-evidence service. It does not send notes, shortlists, browsing history, or an API key. This research tool does not provide medical advice or establish causality or validated therapeutic targets.</p>
   </section>
 </main>
 </body>
