@@ -19,7 +19,7 @@
 
   <section class="panel guideToc" aria-label="手册目录">
     <b>第一次来，按这个顺序读：</b>
-    <a href="#before">0. 使用前准备</a><a href="#theme">1. 项目主题</a><a href="#flow">2. 知识推理流程</a><a href="#walkthrough">3. 跟着做一次</a><a href="#ai">4. AI 怎么用</a><a href="#pages">5. 每个页面怎么用</a><a href="#terms">6. 术语与常见误解</a><a href="#faq">7. 常见问题</a>
+    <a href="#before">0. 使用前准备</a><a href="#theme">1. 项目主题</a><a href="#flow">2. 知识推理流程</a><a href="#case">3. 真实基因示范</a><a href="#walkthrough">4. 跟着做一次</a><a href="#ai">5. AI 怎么用</a><a href="#pages">6. 每个页面怎么用</a><a href="#terms">7. 术语与常见误解</a><a href="#faq">8. 常见问题</a>
   </section>
 
   <h2 id="before">0. 使用前准备：先知道三件事</h2>
@@ -52,7 +52,27 @@
     <p>每一层都只能回答自己的问题：表达层告诉你“有没有测到变化”；网络层告诉你“当前已知网络中有什么关联”；通路层告诉你“被注释到哪些过程”。它们共同服务于靶点发现的优先级排序，但不会自动证明机制、因果或可成药性。</p>
   </section>
 
-  <h2 id="walkthrough">3. 跟着做一次：第一次使用路线</h2>
+  <h2 id="case">3. 示范流程：从一个真实基因到“靶点候选”</h2>
+  <section class="panel">
+    <p><b>本例使用 <code>CHRM1</code>。</b>它来自本平台冻结结果，目的是让你看懂“筛选”如何发生；这不是新增的靶点结论，也不会改变平台的官方排名。</p>
+    <ol class="guideList">
+      <li><b>起点：不要从名称猜，先从疾病模型信号开始。</b><br>在 MPTP 发现模型中，<code>CHRM1</code> 的 <code>log2FC</code> 为 3.53，调整后 p 值为 4.70×10<sup>−39</sup>。白话说：在这个冻结模型结果中，它是一个值得进一步检查的强表达线索。</li>
+      <li><b>第一轮筛选：它在表达排序中靠前吗？</b><br><code>CHRM1</code> 的 <code>STAT-DE-v1</code> 报告排名是第 10 名。此步骤把大量可分析基因缩小为一个优先阅读队列；排名第 10 不表示“第 10 个疾病原因”。</li>
+      <li><b>知识推理：网络背景支持它吗？</b><br>它在冻结的 STRING physical 网络中有 11 个记录的互作伙伴，网络传播后的 <code>STRING-RWR-v1</code> 报告排名为第 6 名。这说明在本项目固定网络与既定算法下，它仍处于靠前位置；它不是网络验证，更不等同于可成药性。</li>
+      <li><b>交叉检查：另一模型是否提供补充？</b><br>在 PFF 记录中，<code>log2FC</code> 为 −0.020，调整后 p 值为 0.0318。这里变化幅度接近零，因此不能把它称为对 MPTP 信号的生物学重复或确认；它提示我们必须保留不确定性。</li>
+      <li><b>背景核对：再看通路与 PD 资料。</b><br>在 <a href="index.html#pathway">通路机制</a> 与 <a href="index.html#pd">PD 证据</a> 页面，用 <code>CHRM1</code> 检查现有注释和已加载参考来源。它们用于解释和寻找后续文献，<b>不会</b>被加入或反过来改变官方排名。</li>
+      <li><b>筛选结果：进入“待验证疾病靶点候选”清单。</b><br>本例可被放入后续研究清单，理由是“发现模型信号强、两个报告排名靠前、具有网络背景”；同时必须带上标签“PFF 幅度接近零，仍需独立验证”。这就是一次负责任的靶点发现筛选终点，而不是宣布 <code>CHRM1</code> 已经是治疗靶点。</li>
+    </ol>
+    <p class="note"><b>你可以跟着点：</b><a href="index.html#gene/10905">打开 CHRM1 的证据页</a> → 阅读顶部白话摘要 → 打开“查看网络关系” → 再到通路、PD 证据和“我的研究”。</p>
+  </section>
+
+  <section class="three">
+    <article class="card"><div class="k">筛选后保留</div><div class="v">强信号</div><p>发现模型表达线索、报告排名与网络背景能够说明为什么值得继续看。</p></article>
+    <article class="card"><div class="k">筛选时保留</div><div class="v">证据缺口</div><p>例如 PFF 幅度接近零、网络缺失或参考资料没有记录；缺口必须跟随候选一起被记录。</p></article>
+    <article class="card"><div class="k">筛选的终点</div><div class="v">验证计划</div><p>候选进入后续的独立队列、功能机制、可药性和实验验证工作，而不是直接变成治疗建议。</p></article>
+  </section>
+
+  <h2 id="walkthrough">4. 跟着做一次：第一次使用路线</h2>
   <section class="three">
     <article class="card"><div class="k">第 1 步</div><div class="v">选一个基因</div><p>打开 <a href="index.html#candidates">候选基因</a>，点击任意基因符号，例如 <code>SNCA</code>。不必先理解排名或统计数值。</p></article>
     <article class="card"><div class="k">第 2 步</div><div class="v">先读白话摘要</div><p>基因页顶部的“为什么这个基因在这里”会说清：它在模型中是否变化、有哪些线索、哪些证据不足。</p></article>
@@ -72,7 +92,7 @@
     <p class="note warn"><b>如果看见长数字：</b>先不要停住。它们是支持结论的原始字段；初学者先看文字结论、缺口和边界即可。</p>
   </section>
 
-  <h2 id="ai">4. AI 回答怎么看、怎么问</h2>
+  <h2 id="ai">5. AI 回答怎么看、怎么问</h2>
   <section class="panel">
     <dl class="guideKv">
       <dt>结论</dt><dd>用一句话说明当前冻结数据能支持什么。例如“该基因在 MPTP 模型中表达升高”。</dd>
@@ -95,7 +115,7 @@
     </ol>
   </section>
 
-  <h2 id="pages">5. 每个页面怎么用</h2>
+  <h2 id="pages">6. 每个页面怎么用</h2>
   <section class="two">
     <article class="panel"><h3>首页</h3><p><b>什么时候用：</b>第一次打开时。<br><b>你要做什么：</b>确认右上角是初学者模式，然后点“候选基因”。首页介绍研究流程，不需要在这里做决定。</p></article>
     <article class="panel"><h3>候选基因</h3><p><b>什么时候用：</b>想开始挑选研究对象时。<br><b>你要做什么：</b>直接点击基因符号进入证据页。搜索框只在你已知基因符号时使用；筛选器可等熟悉后再用。</p></article>
@@ -114,7 +134,7 @@
     <dt>重要提醒</dt><dd>切换模式不会改变任何数据、排名或科学结果；它只改变页面呈现方式。看不懂时随时切回初学者模式。</dd>
   </dl></section>
 
-  <h2 id="terms">6. 最后再认识这些术语</h2>
+  <h2 id="terms">7. 最后再认识这些术语</h2>
   <section class="panel"><dl class="guideKv">
     <dt>MPTP / PFF</dt><dd>两类帕金森病研究模型。模型中的变化不自动等于人体中的疾病因果。</dd>
     <dt>log2FC</dt><dd>表达变化幅度的表示方式；正负号表示相对方向，不是治疗效果。</dd>
@@ -123,7 +143,7 @@
     <dt>STRING</dt><dd>蛋白关联网络来源；“没有网络支持”意味着当前网络中证据有限，不代表基因没有作用。</dd>
   </dl></section>
 
-  <h2 id="faq">7. 常见问题与排查</h2>
+  <h2 id="faq">8. 常见问题与排查</h2>
   <section class="panel"><dl class="guideKv">
     <dt>“为什么这个基因排得高？”</dt><dd>先看单基因页的白话摘要和“排名值得关注吗？”；排名只是当前固定分析中的研究优先级，并不等于它就是疾病原因。</dd>
     <dt>“为什么没有网络信息？”</dt><dd>这表示当前冻结 STRING physical network 没有保留该蛋白的连接，或连接有限。它是证据缺口，不是负面结论。</dd>
