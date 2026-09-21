@@ -144,6 +144,19 @@ svg .edge{pointer-events:none}
 .foot{display:flex;gap:16px;flex-wrap:wrap;padding:14px var(--pad);border-top:1px solid var(--line);
   color:var(--dim);font-size:11.5px;background:var(--panel)}
 
+/* ---------------- beginner guide ---------------- */
+.guide{max-width:960px}
+.guide h3{font-size:14px;margin:0 0 6px;color:#c9d5e3}
+.guide .card p,.guide .panel p{margin:7px 0 0;color:#c9d5e3}
+.guideKv{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px 16px;margin:0}
+.guideKv dt{font-weight:650;color:#dbeaff}
+.guideKv dd{margin:0;color:#c9d5e3}
+.guideList{margin:0;padding-left:22px;color:#c9d5e3}
+.guideList li{padding:7px 0;border-bottom:1px solid #1f2731}
+.guideList li:last-child{border-bottom:0}
+.guideButton{display:inline-block;background:#24446e;border:1px solid #2f5d96;border-radius:7px;padding:8px 12px;color:#e6edf3;margin-right:12px}
+.guideStart{margin-top:18px}
+
 /* ---------------- responsive ---------------- */
 @media(max-width:1080px){
   .two,.three{grid-template-columns:1fr}
@@ -168,6 +181,7 @@ svg .edge{pointer-events:none}
   .pipeline .step .d{font-size:9.5px}
   .arrow{padding:0 3px;font-size:13px}
   .foot{flex-direction:column;gap:6px}
+  .guideKv{grid-template-columns:1fr;gap:3px}
 }
 @media(max-width:430px){
   :root{--pad:11px}

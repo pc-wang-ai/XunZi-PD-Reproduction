@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XunZi-PD — 新手学习手册</title>
+<link rel="stylesheet" href="app.css?v=1.13">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a class="mark notranslate" translate="no" href="index.html#overview">XunZi-PD</a>
+    <span class="sub">新手学习手册 / Beginner guide</span></div>
+</header>
+<main class="guide">
+  <h1>从零读懂 XunZi-PD</h1>
+  <p class="lede">这是一份给第一次使用者的学习手册。你不需要懂 DESeq2、RWR 或 STRING；先用页面的自然语言解释和示例问题即可。</p>
+
+  <section class="note"><b>先记住一句话：</b>XunZi-PD 帮你整理“哪些基因值得进一步研究、现有证据说了什么、还缺什么”。它不是诊断工具，也不推荐治疗或药物。</section>
+
+  <h2>三步完成第一次研究</h2>
+  <section class="three">
+    <article class="card"><div class="k">第 1 步</div><div class="v">选一个基因</div><p>打开 <a href="index.html#candidates">候选基因</a>，点击任意基因符号，例如 <code>SNCA</code>。不必先理解排名或统计数值。</p></article>
+    <article class="card"><div class="k">第 2 步</div><div class="v">先读白话摘要</div><p>基因页顶部的“为什么这个基因在这里”会说清：它在模型中是否变化、有哪些线索、哪些证据不足。</p></article>
+    <article class="card"><div class="k">第 3 步</div><div class="v">点示例问题</div><p>在“研究证据问答”中点击一个示例，再点“询问研究证据”。不需要自己写专业问题。</p></article>
+  </section>
+
+  <h2>AI 回答怎么看</h2>
+  <section class="panel">
+    <dl class="guideKv">
+      <dt>结论</dt><dd>用一句话说明当前冻结数据能支持什么。例如“该基因在 MPTP 模型中表达升高”。</dd>
+      <dt>对应证据引用</dt><dd>支撑这句话的原始研究字段与数值。第一次可以略过；需要复查时再展开看。</dd>
+      <dt>当前还缺什么</dt><dd>提醒你不能过度解读：例如没有网络支持，或公开 PD 遗传学资料没有提到它。</dd>
+      <dt>科研边界</dt><dd>结果只代表研究优先级与当前证据，不能证明疾病因果关系，更不是经过验证的治疗靶点。</dd>
+    </dl>
+  </section>
+
+  <h2>三个最有用的问题</h2>
+  <section class="panel">
+    <ol class="guideList">
+      <li><b>“它在 MPTP 模型中发生了什么？”</b><br>先看该基因在一个帕金森病模型中是否出现表达变化。</li>
+      <li><b>“为什么它的排名值得关注？”</b><br>了解它在当前研究流程中的相对位置；排名用于排序，不等于疾病因果。</li>
+      <li><b>“当前证据还缺什么？”</b><br>这是最重要的自检问题：它帮助你知道下一步需要哪些独立证据或实验。</li>
+    </ol>
+  </section>
+
+  <h2>页面地图</h2>
+  <section class="two">
+    <article class="panel"><h3>候选基因</h3><p>从候选列表开始，找到感兴趣的基因。初学者优先点击基因名，不必筛选复杂字段。</p></article>
+    <article class="panel"><h3>单基因证据页</h3><p>把表达、排名、网络、通路与 PD 参考资料放在同一页，并提供 AI 的受限科研解读。</p></article>
+    <article class="panel"><h3>蛋白网络与通路</h3><p>用于追问“它和哪些蛋白有关”“它属于哪些已知生物过程”。没有网络信息也是有价值的限制信息。</p></article>
+    <article class="panel"><h3>我的研究</h3><p>把想继续比较的候选加入清单。它保存在当前浏览器中；不要将其当作云端账户或临床记录。</p></article>
+  </section>
+
+  <h2>最后再认识这些术语</h2>
+  <section class="panel"><dl class="guideKv">
+    <dt>MPTP / PFF</dt><dd>两类帕金森病研究模型。模型中的变化不自动等于人体中的疾病因果。</dd>
+    <dt>log2FC</dt><dd>表达变化幅度的表示方式；正负号表示相对方向，不是治疗效果。</dd>
+    <dt>adjusted p-value / FDR</dt><dd>统计不确定性的控制指标；它帮助判断结果稳定程度，不能单独证明生物学机制。</dd>
+    <dt>STAT-DE / RWR</dt><dd>本项目用于排序的两类研究计算结果。它们帮助选择后续研究候选，不是临床评分。</dd>
+    <dt>STRING</dt><dd>蛋白关联网络来源；“没有网络支持”意味着当前网络中证据有限，不代表基因没有作用。</dd>
+  </dl></section>
+
+  <section class="boundaryLayer" aria-label="Research interpretation boundary">
+    <div class="boundaryItem means"><div class="boundaryK">推荐用法</div><p>将结果作为阅读文献、设计后续验证和比较研究候选的起点。</p></div>
+    <div class="boundaryItem notMeans"><div class="boundaryK">不要这样用</div><p>不要用它诊断疾病、预测个人风险、决定用药或断言基因因果关系。</p></div>
+    <div class="boundaryItem limits"><div class="boundaryK">隐私提示</div><p>AI 问答只问公开基因的研究证据；请不要输入姓名、病历、症状或其他个人健康信息。</p></div>
+  </section>
+
+  <p class="guideStart"><a class="guideButton" href="index.html#candidates">开始：打开候选基因 →</a> <a href="privacy.html">隐私与科研边界</a></p>
+</main>
+<footer class="foot"><a href="index.html#overview">返回研究平台</a><a href="privacy.html">隐私与科研边界</a></footer>
+</body>
+</html>
