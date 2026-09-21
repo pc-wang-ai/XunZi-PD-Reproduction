@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>XunZi-PD — 新手学习手册</title>
+<title>XunZi-PD — 从知识推理到疾病靶点发现</title>
 <link rel="stylesheet" href="app.css?v=1.13">
 </head>
 <body>
 <header class="topbar">
   <div class="brand"><a class="mark notranslate" translate="no" href="index.html#overview">XunZi-PD</a>
-    <span class="sub">新手学习手册 / Beginner guide</span></div>
+    <span class="sub">从知识推理到疾病靶点发现 / Learning guide</span></div>
 </header>
 <main class="guide">
-  <h1>从零读懂 XunZi-PD</h1>
-  <p class="lede">这是一份围绕“帕金森病候选基因研究”主题编写的学习手册。它先说明项目在研究什么，再讲如何读平台结果；你不需要预先懂 DESeq2、RWR 或 STRING。</p>
+  <h1>从知识推理到疾病靶点发现</h1>
+  <p class="lede">XunZi-PD 的主题是：把转录组信号放进固定的生物医学知识网络中推理，再逐步收敛为值得验证的帕金森病疾病靶点候选。这里的“发现”指研究发现的早期筛选阶段，不等于已经确认的治疗靶点。</p>
 
-  <section class="note"><b>先记住一句话：</b>XunZi-PD 帮你整理“哪些基因值得进一步研究、现有证据说了什么、还缺什么”。它不是诊断工具，也不推荐治疗或药物。</section>
+  <section class="note"><b>先记住一句话：</b>平台不直接给出“靶点答案”；它把疾病模型、基因表达、蛋白互作和已有知识连起来，帮助研究者找到下一批最值得验证的疾病靶点候选。它不是诊断工具，也不推荐治疗或药物。</section>
 
-  <h2>这个项目在研究什么</h2>
+  <h2>从知识推理到靶点候选：项目在研究什么</h2>
   <section class="panel">
     <p>帕金森病是一类影响脑功能的复杂疾病。它的发生与进展不能由单个基因、单个模型或一项实验完全解释。研究人员因此会把表达变化、蛋白关联、已知生物过程和公开 PD 研究资料并排查看，寻找<strong>值得继续验证的候选基因</strong>。</p>
-    <p>XunZi-PD 的问题不是“哪个基因已经证明导致帕金森病”，而是：<strong>在这一套固定研究数据中，哪些基因出现了值得后续研究的线索？这些线索来自哪里，又缺少什么？</strong></p>
-    <p>这是研究探索的第一步。候选基因需要由独立队列、功能实验和领域研究进一步检验，才可能支持更强的科学结论。</p>
+    <p>XunZi-PD 的问题不是“哪个基因已经证明导致帕金森病”，而是：<strong>如何从疾病模型的表达信号出发，结合固定知识网络推理，找到更值得进入靶点验证流程的基因？这些线索来自哪里，又缺少什么？</strong></p>
+    <p>这属于疾病靶点发现的早期“假设生成与优先级排序”阶段。候选基因仍需经过独立队列、机制研究、功能实验与可药性评估，才可能支持更强的靶点结论。</p>
   </section>
 
   <h2>证据从哪里来</h2>
@@ -31,10 +31,11 @@
     <article class="card"><div class="k">背景证据</div><div class="v">网络与通路</div><p>蛋白网络提示已有的关联信息；通路说明基因被注释到哪些生物过程；PD 资料显示公开参考来源中是否已有相关记录。</p></article>
   </section>
 
-  <h2>平台怎样把线索整理成候选</h2>
+  <h2>平台怎样进行知识推理</h2>
   <section class="panel">
-    <div class="pipeline"><div class="step"><div class="t">表达</div><div class="d">MPTP / PFF</div></div><div class="arrow">→</div><div class="step"><div class="t">排序</div><div class="d">研究优先级</div></div><div class="arrow">→</div><div class="step"><div class="t">网络</div><div class="d">蛋白关联</div></div><div class="arrow">→</div><div class="step"><div class="t">通路与 PD 资料</div><div class="d">已知背景</div></div><div class="arrow">→</div><div class="step"><div class="t">研究候选</div><div class="d">下一步验证</div></div></div>
-    <p>每一层都只能回答自己的问题：表达层告诉你“有没有测到变化”；网络层告诉你“当前网络里有没有关联”；通路层告诉你“被注释到哪些过程”。它们共同帮助排定研究顺序，但不会自动证明机制或因果关系。</p>
+    <div class="pipeline"><div class="step"><div class="t">疾病模型信号</div><div class="d">MPTP expression</div></div><div class="arrow">→</div><div class="step"><div class="t">知识网络</div><div class="d">STRING physical PPI</div></div><div class="arrow">→</div><div class="step"><div class="t">网络推理</div><div class="d">RWR propagation</div></div><div class="arrow">→</div><div class="step"><div class="t">交叉证据检查</div><div class="d">PFF · pathway · PD</div></div><div class="arrow">→</div><div class="step"><div class="t">靶点候选</div><div class="d">next validation</div></div></div>
+    <p><b>知识推理</b>在这里有明确含义：先保留疾病模型中测得的表达信号，再让信号在冻结的 STRING 蛋白物理互作网络中按既定 RWR 方法传播，从而查看网络背景是否改变研究优先级。随后再显示 PFF、通路和 PD 参考资料，帮助解释候选，但不会把这些资料偷偷加入排序。</p>
+    <p>每一层都只能回答自己的问题：表达层告诉你“有没有测到变化”；网络层告诉你“当前已知网络中有什么关联”；通路层告诉你“被注释到哪些过程”。它们共同服务于靶点发现的优先级排序，但不会自动证明机制、因果或可成药性。</p>
   </section>
 
   <h2>三步完成第一次研究</h2>
@@ -76,12 +77,12 @@
     <dt>MPTP / PFF</dt><dd>两类帕金森病研究模型。模型中的变化不自动等于人体中的疾病因果。</dd>
     <dt>log2FC</dt><dd>表达变化幅度的表示方式；正负号表示相对方向，不是治疗效果。</dd>
     <dt>adjusted p-value / FDR</dt><dd>统计不确定性的控制指标；它帮助判断结果稳定程度，不能单独证明生物学机制。</dd>
-    <dt>STAT-DE / RWR</dt><dd>本项目用于排序的两类研究计算结果。它们帮助选择后续研究候选，不是临床评分。</dd>
+      <dt>STAT-DE / RWR</dt><dd>前者从疾病模型的表达信号开始排序；后者让该信号在固定知识网络中传播后再报告排序。它们构成“从数据到知识推理”的桥梁，用于选择后续靶点候选，不是临床评分。</dd>
     <dt>STRING</dt><dd>蛋白关联网络来源；“没有网络支持”意味着当前网络中证据有限，不代表基因没有作用。</dd>
   </dl></section>
 
   <section class="boundaryLayer" aria-label="Research interpretation boundary">
-    <div class="boundaryItem means"><div class="boundaryK">推荐用法</div><p>将结果作为阅读文献、设计后续验证和比较研究候选的起点。</p></div>
+    <div class="boundaryItem means"><div class="boundaryK">推荐用法</div><p>将结果作为疾病靶点发现早期的假设生成、文献阅读与后续验证设计的起点。</p></div>
     <div class="boundaryItem notMeans"><div class="boundaryK">不要这样用</div><p>不要用它诊断疾病、预测个人风险、决定用药或断言基因因果关系。</p></div>
     <div class="boundaryItem limits"><div class="boundaryK">隐私提示</div><p>AI 问答只问公开基因的研究证据；请不要输入姓名、病历、症状或其他个人健康信息。</p></div>
   </section>
