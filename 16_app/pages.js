@@ -1731,11 +1731,12 @@ const Pages = (() => {
       <section class="wbDecision panel"><h2 style="margin-top:0">${esc(zh ? '5. 现在能作出的研究判断' : '5. Research judgement you can make now')}</h2>
         <p>${esc(zh ? '该基因可作为“待进一步核验的研究候选”被记录，但当前页面不会把它自动升级为疾病靶点。是否进入后续研究，由你结合实验可行性、独立文献和额外数据决定。' : 'This gene can be recorded as a research candidate for further review, but this page never automatically upgrades it to a disease target. Whether it moves forward depends on your judgement of experimental feasibility, independent literature, and additional data.')}</p>
         <div class="wbGap"><b>${esc(zh ? '当前仍需补齐：' : 'What still needs to be filled:')}</b><ul>${(gaps.length ? gaps : [zh ? '仍需要独立实验和机制研究进行验证。' : 'Independent experimental and mechanistic validation is still required.']).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
-        <div class="toolbar">${Shortlist.button(g.i)}<a class="btnLink primary" href="#workspace/${g.i}">${esc(zh ? '在“我的研究”中继续整理' : 'Continue organizing in My Research')} →</a><a class="btnLink" href="#gene/${g.i}">${esc(zh ? '打开完整证据记录' : 'Open full evidence record')} →</a></div>
+        <div class="toolbar">${Shortlist.button(g.i)}<a class="btnLink primary" href="#workspace/${g.i}">${esc(zh ? '在“我的研究”中继续整理' : 'Continue organizing in My Research')} →</a><button type="button" class="btnLink wbBrief" data-wb-brief="${g.i}">${esc(zh ? '导出本基因审阅简报' : 'Export this review brief')}</button><a class="btnLink" href="#gene/${g.i}">${esc(zh ? '打开完整证据记录' : 'Open full evidence record')} →</a></div>
       </section>
       ${scientificBoundary(gaps.join(zh ? ' ' : '; '))}`;
     bindWorkbenchPicker(host);
     Shortlist.bind(host);
+    bindWorkbenchBrief(host, g, { pathwayN, pdN, signal, mptp, validation, gaps });
     Glossary.bind(host);
   }
 
@@ -1751,6 +1752,51 @@ const Pages = (() => {
     if (input) bindSearch(input, open);
     const button = host.querySelector('#workbenchOpen');
     if (button) button.onclick = () => open(DataService.search_genes(input ? input.value : '', 1)[0]);
+  }
+
+  /** A portable handoff record for a human research discussion. It deliberately has no
+   * score, target verdict, clinical instruction, or generative claim. The browser makes
+   * the file locally; no question, note, or personal data is sent anywhere. */
+  function bindWorkbenchBrief(host, g, evidence) {
+    const button = host.querySelector('[data-wb-brief]');
+    if (!button) return;
+    button.onclick = () => {
+      const zh = I18N.getLang() === 'zh';
+      const title = zh ? '# XunZi-PD 单基因审阅简报' : '# XunZi-PD single-gene review brief';
+      const lines = [
+        title,
+        '',
+        `- ${zh ? '基因' : 'Gene'}: ${g.symbol || g.gene_id}`,
+        `- Ensembl ID: ${g.gene_id}`,
+        `- ${zh ? '节点索引' : 'Node index'}: ${g.i}`,
+        `- ${zh ? '生成时间' : 'Generated'}: ${new Date().toISOString()}`,
+        '',
+        `## ${zh ? '当前冻结结果中的发现信号' : 'Discovery signal in the frozen result'}`,
+        `- ${evidence.signal}`,
+        `- ${evidence.mptp}`,
+        '',
+        `## ${zh ? '可用于解释的背景' : 'Context available for interpretation'}`,
+        `- ${zh ? `蛋白网络直接互作伙伴：${g.degree}` : `Direct protein-network partners: ${g.degree}`}`,
+        `- ${zh ? `通路/生物过程注释：${evidence.pathwayN}` : `Pathway/biological-process annotations: ${evidence.pathwayN}`}`,
+        `- ${zh ? `已加载 PD 遗传学关联记录：${evidence.pdN}` : `Loaded PD genetics association records: ${evidence.pdN}`}`,
+        `- ${evidence.validation}`,
+        '',
+        `## ${zh ? '仍需核验' : 'Still needs checking'}`,
+        ...(evidence.gaps.length ? evidence.gaps.map(x => `- ${x}`) : [`- ${zh ? '仍需要独立实验与机制研究验证。' : 'Independent experimental and mechanistic validation is still required.'}`]),
+        '',
+        `## ${zh ? '科研边界' : 'Research boundary'}`,
+        zh ? '- 这是对当前冻结结果的研究审阅记录，不构成临床诊断、疾病因果结论或已验证治疗靶点。'
+           : '- This is a research review record of the current frozen result. It is not a clinical diagnosis, a disease-causality conclusion, or a validated therapeutic target.',
+        zh ? '- 本项目是独立重建，不加载或复现已发表 XunZi 模型的 checkpoint、图掩码或排名。'
+           : '- This project is an independent reconstruction and does not load or reproduce published XunZi checkpoints, graph masks, or rankings.',
+      ];
+      const blob = new Blob([lines.join('\\n') + '\\n'], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = `xunzi-pd-review-${(g.symbol || g.gene_id).replace(/[^A-Za-z0-9._-]/g, '_')}.md`;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    };
   }
 
   function gene(host, i) {
