@@ -13,9 +13,29 @@
 </header>
 <main class="guide">
   <h1>从零读懂 XunZi-PD</h1>
-  <p class="lede">这是一份给第一次使用者的学习手册。你不需要懂 DESeq2、RWR 或 STRING；先用页面的自然语言解释和示例问题即可。</p>
+  <p class="lede">这是一份围绕“帕金森病候选基因研究”主题编写的学习手册。它先说明项目在研究什么，再讲如何读平台结果；你不需要预先懂 DESeq2、RWR 或 STRING。</p>
 
   <section class="note"><b>先记住一句话：</b>XunZi-PD 帮你整理“哪些基因值得进一步研究、现有证据说了什么、还缺什么”。它不是诊断工具，也不推荐治疗或药物。</section>
+
+  <h2>这个项目在研究什么</h2>
+  <section class="panel">
+    <p>帕金森病是一类影响脑功能的复杂疾病。它的发生与进展不能由单个基因、单个模型或一项实验完全解释。研究人员因此会把表达变化、蛋白关联、已知生物过程和公开 PD 研究资料并排查看，寻找<strong>值得继续验证的候选基因</strong>。</p>
+    <p>XunZi-PD 的问题不是“哪个基因已经证明导致帕金森病”，而是：<strong>在这一套固定研究数据中，哪些基因出现了值得后续研究的线索？这些线索来自哪里，又缺少什么？</strong></p>
+    <p>这是研究探索的第一步。候选基因需要由独立队列、功能实验和领域研究进一步检验，才可能支持更强的科学结论。</p>
+  </section>
+
+  <h2>证据从哪里来</h2>
+  <section class="three">
+    <article class="card"><div class="k">模型一</div><div class="v">MPTP</div><p>一种用于观察帕金森病相关变化的研究模型。本平台用它查看基因表达是否与对照不同；模型结果不直接等同于人体疾病。</p></article>
+    <article class="card"><div class="k">模型二</div><div class="v">PFF</div><p>另一种研究模型。把它与 MPTP 并列，是为了看同一基因的线索能否在不同研究背景下得到补充，而不是把两者简单相加。</p></article>
+    <article class="card"><div class="k">背景证据</div><div class="v">网络与通路</div><p>蛋白网络提示已有的关联信息；通路说明基因被注释到哪些生物过程；PD 资料显示公开参考来源中是否已有相关记录。</p></article>
+  </section>
+
+  <h2>平台怎样把线索整理成候选</h2>
+  <section class="panel">
+    <div class="pipeline"><div class="step"><div class="t">表达</div><div class="d">MPTP / PFF</div></div><div class="arrow">→</div><div class="step"><div class="t">排序</div><div class="d">研究优先级</div></div><div class="arrow">→</div><div class="step"><div class="t">网络</div><div class="d">蛋白关联</div></div><div class="arrow">→</div><div class="step"><div class="t">通路与 PD 资料</div><div class="d">已知背景</div></div><div class="arrow">→</div><div class="step"><div class="t">研究候选</div><div class="d">下一步验证</div></div></div>
+    <p>每一层都只能回答自己的问题：表达层告诉你“有没有测到变化”；网络层告诉你“当前网络里有没有关联”；通路层告诉你“被注释到哪些过程”。它们共同帮助排定研究顺序，但不会自动证明机制或因果关系。</p>
+  </section>
 
   <h2>三步完成第一次研究</h2>
   <section class="three">
@@ -64,6 +84,11 @@
     <div class="boundaryItem means"><div class="boundaryK">推荐用法</div><p>将结果作为阅读文献、设计后续验证和比较研究候选的起点。</p></div>
     <div class="boundaryItem notMeans"><div class="boundaryK">不要这样用</div><p>不要用它诊断疾病、预测个人风险、决定用药或断言基因因果关系。</p></div>
     <div class="boundaryItem limits"><div class="boundaryK">隐私提示</div><p>AI 问答只问公开基因的研究证据；请不要输入姓名、病历、症状或其他个人健康信息。</p></div>
+  </section>
+
+  <h2>继续学习</h2>
+  <section class="panel">
+    <p>想了解帕金森病的通用健康与公共卫生背景，请阅读世界卫生组织的 <a href="https://www.who.int/zh/news-room/fact-sheets/detail/parkinson-disease" target="_blank" rel="noopener noreferrer">帕金森病事实清单</a>。它与本平台互补：WHO 页面解释疾病与医疗照护背景；XunZi-PD 解释本项目的公开研究证据。两者都不能替代个人诊断或治疗建议。</p>
   </section>
 
   <p class="guideStart"><a class="guideButton" href="index.html#candidates">开始：打开候选基因 →</a> <a href="privacy.html">隐私与科研边界</a></p>
