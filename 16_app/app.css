@@ -156,6 +156,9 @@ svg .edge{pointer-events:none}
 .guideList li:last-child{border-bottom:0}
 .guideButton{display:inline-block;background:#24446e;border:1px solid #2f5d96;border-radius:7px;padding:8px 12px;color:#e6edf3;margin-right:12px}
 .guideStart{margin-top:18px}
+.guideToc{display:flex;flex-wrap:wrap;gap:7px 12px;align-items:center}
+.guideToc b{width:100%;color:#dbeaff}
+.guideToc a{font-size:12px;padding:3px 7px;background:var(--panel2);border:1px solid var(--line);border-radius:6px}
 
 /* ---------------- responsive ---------------- */
 @media(max-width:1080px){
