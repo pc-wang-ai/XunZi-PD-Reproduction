@@ -1,5 +1,7 @@
 /* Server-only DeepSeek Responses adapter. Never put a key or model name in browser code. */
-const MAX_ANSWER_CHARS = 1600;
+// Chinese answers contain far more characters per word than English. Keep a hard
+// bound, but leave enough room for a short Chinese evidence explanation.
+const MAX_ANSWER_CHARS = 3000;
 // A non-secret, reviewed production default. This avoids making a missing dashboard
 // variable silently disable a Worker whose model is already pinned in source control.
 export const DEFAULT_DEEPSEEK_MODEL = 'deepseek-flash';
@@ -32,7 +34,7 @@ export async function askEvidenceModel({ question, evidence, language, env, fetc
   const instructions = `You explain one frozen XunZi-PD research evidence record in ${language === 'zh' ? 'Chinese' : 'English'}.
 Use ONLY the supplied JSON evidence. Do not use tools, web search, outside knowledge, or unstated inference.
 Do not diagnose, discuss symptoms, treatment, drugs, prognosis, disease causality, or validated therapeutic targets.
-If evidence is missing, say that the loaded snapshot cannot answer it. Preserve gene symbols, identifiers, pathway IDs and study accessions exactly. Keep the answer under 180 words and end with the supplied research boundary.`;
+If evidence is missing, say that the loaded snapshot cannot answer it. Preserve gene symbols, identifiers, pathway IDs and study accessions exactly. Keep the answer concise: under 160 English words or 700 Chinese characters, and end with the supplied research boundary.`;
   // DeepSeek documents a Responses API compatible with this endpoint. No tools,
   // web search, file search, or browser capabilities are requested.
   const response = await fetchImpl('https://api.deepseek.com/responses', {
