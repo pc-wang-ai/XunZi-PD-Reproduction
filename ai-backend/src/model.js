@@ -47,6 +47,11 @@ If evidence is missing, say that the loaded snapshot cannot answer it. Preserve 
   let payload;
   try { payload = await response.json(); } catch { return { error: 'model_unavailable' }; }
   const answer = outputText(payload);
-  if (!answer || answer.length > MAX_ANSWER_CHARS) return { error: 'invalid_model_output' };
-  return { answer };
+  if (!answer) return { error: 'invalid_model_output' };
+  // The UI renders field citations and the fixed research boundary separately.
+  // Truncating an unexpectedly verbose model explanation is safer and more useful
+  // than discarding an otherwise valid evidence-only response.
+  return { answer: answer.length > MAX_ANSWER_CHARS
+    ? `${answer.slice(0, MAX_ANSWER_CHARS - 1).trimEnd()}…`
+    : answer };
 }
