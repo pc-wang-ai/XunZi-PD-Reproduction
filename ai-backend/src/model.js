@@ -1,5 +1,8 @@
 /* Server-only DeepSeek Responses adapter. Never put a key or model name in browser code. */
 const MAX_ANSWER_CHARS = 1600;
+// A non-secret, reviewed production default. This avoids making a missing dashboard
+// variable silently disable a Worker whose model is already pinned in source control.
+export const DEFAULT_DEEPSEEK_MODEL = 'deepseek-flash';
 
 function outputText(payload) {
   return (payload.output || []).flatMap(item => item.content || [])
@@ -12,7 +15,8 @@ export function isAllowedResearchQuestion(question) {
 }
 
 export async function askEvidenceModel({ question, evidence, language, env, fetchImpl = fetch }) {
-  if (!env.DEEPSEEK_API_KEY || !env.DEEPSEEK_MODEL) return { error: 'model_not_configured' };
+  if (!env.DEEPSEEK_API_KEY) return { error: 'model_not_configured' };
+  const model = env.DEEPSEEK_MODEL || DEFAULT_DEEPSEEK_MODEL;
   const context = {
     gene: evidence.gene,
     evidence: evidence.evidence,
@@ -30,7 +34,7 @@ If evidence is missing, say that the loaded snapshot cannot answer it. Preserve 
   const response = await fetchImpl('https://api.deepseek.com/responses', {
     method: 'POST',
     headers: { authorization: `Bearer ${env.DEEPSEEK_API_KEY}`, 'content-type': 'application/json' },
-    body: JSON.stringify({ model: env.DEEPSEEK_MODEL, store: false, max_output_tokens: 450, instructions,
+    body: JSON.stringify({ model, store: false, max_output_tokens: 450, instructions,
       input: `Question: ${question}\n\nFrozen evidence JSON:\n${JSON.stringify(context)}` }),
   });
   if (!response.ok) return { error: 'model_unavailable' };

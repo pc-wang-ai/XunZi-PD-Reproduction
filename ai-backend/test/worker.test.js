@@ -47,6 +47,14 @@ test('does not fetch evidence or call a model when AI configuration is incomplet
   assert.equal((await response.json()).error, 'model_not_configured');
 });
 
+test('reports ready with an explicit server-side key and the pinned default model', async () => {
+  const response = await worker.fetch(new Request('https://qa.example/health'), {
+    ...env, AI_ENABLED: 'true', DEEPSEEK_API_KEY: 'test-secret',
+  });
+  assert.equal(response.status, 200);
+  assert.equal((await response.json()).status, 'ready');
+});
+
 test('attaches backend-generated citations from a frozen evidence record', () => {
   const result = evidenceFor({
     byGene: new Map([['SNCA', {
@@ -85,4 +93,15 @@ test('model adapter is server-only, disables storage, and returns only model tex
   assert.match(request.headers.authorization, /^Bearer test-secret$/);
   assert.equal(isAllowedResearchQuestion('What happened in MPTP?'), true);
   assert.equal(isAllowedResearchQuestion('Tell me a joke'), false);
+});
+
+test('model adapter uses the reviewed default when no dashboard model variable exists', async () => {
+  let request;
+  await askEvidenceModel({
+    question: 'What happened in MPTP?', language: 'en',
+    evidence: { gene: { gene_id: 'ENSG00000145335', symbol: 'SNCA' }, evidence: [], pathway_membership: [], pd_reference: null, boundary: 'boundary', source_snapshot: {} },
+    env: { DEEPSEEK_API_KEY: 'test-secret' },
+    fetchImpl: async (_url, init) => { request = init; return new Response(JSON.stringify({ output: [{ content: [{ type: 'output_text', text: 'Evidence-only answer.' }] }] })); },
+  });
+  assert.equal(JSON.parse(request.body).model, 'deepseek-flash');
 });

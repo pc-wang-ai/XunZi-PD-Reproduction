@@ -86,7 +86,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === '/health' && request.method === 'GET') {
       const status = env.AI_ENABLED !== 'true' ? 'disabled'
-        : (!env.DEEPSEEK_API_KEY || !env.DEEPSEEK_MODEL ? 'not_ready' : 'ready');
+        : (!env.DEEPSEEK_API_KEY ? 'not_ready' : 'ready');
       return json({ status }, 200, c.headers);
     }
     if (url.pathname === '/v1/evidence' && request.method === 'POST') {
@@ -126,7 +126,7 @@ export default {
     }
     if (!isAllowedResearchQuestion(check.question)) return json(refusal('question_out_of_scope', check.language), 422, c.headers);
     if (env.AI_ENABLED !== 'true') return json({ error: 'ai_not_enabled' }, 503, c.headers);
-    if (!env.DEEPSEEK_API_KEY || !env.DEEPSEEK_MODEL) return json({ error: 'model_not_configured' }, 503, c.headers);
+    if (!env.DEEPSEEK_API_KEY) return json({ error: 'model_not_configured' }, 503, c.headers);
     let evidence;
     try { evidence = evidenceFor(await getSnapshot(), check.geneId); } catch { return json({ error: 'frozen_evidence_unavailable' }, 503, c.headers); }
     if (!evidence) return json({ status: 'insufficient_evidence', evidence: [], boundary: 'The frozen public evidence bundle has no record for that gene.' }, 404, c.headers);
