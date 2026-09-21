@@ -1,4 +1,4 @@
-/* Server-only DeepSeek Responses adapter. Never put a key or model name in browser code. */
+/* Server-only DeepSeek chat-completions adapter. Never put a key or model name in browser code. */
 // Chinese answers contain far more characters per word than English. Keep a hard
 // bound, but leave enough room for a short Chinese evidence explanation.
 const MAX_ANSWER_CHARS = 3000;
@@ -7,18 +7,11 @@ const MAX_ANSWER_CHARS = 3000;
 export const DEFAULT_DEEPSEEK_MODEL = 'deepseek-flash';
 
 function outputText(payload) {
-  // DeepSeek exposes the completed text through the Responses SDK's
-  // `output_text` convenience field. Prefer it, then retain the compatible
-  // structured-output parser for providers that omit the convenience field.
-  if (typeof payload.output_text === 'string' && payload.output_text.trim()) return payload.output_text.trim();
+  // The Chat Completions API returns the final answer in choices[0].message.content.
+  // Do not fall back to reasoning_content: only the final evidence answer may be shown.
   const choiceText = payload?.choices?.[0]?.message?.content;
   if (typeof choiceText === 'string' && choiceText.trim()) return choiceText.trim();
-  return (payload.output || [])
-    // Never surface a reasoning item. Only assistant/message content can become an answer.
-    .filter(item => !item.type || item.type === 'message' || item.role === 'assistant')
-    .flatMap(item => typeof item.content === 'string' ? [{ type: 'text', text: item.content }] : (item.content || []))
-    .filter(part => (part.type === 'output_text' || part.type === 'text') && typeof part.text === 'string')
-    .map(part => part.text).join('\n').trim();
+  return '';
 }
 
 export function isAllowedResearchQuestion(question) {
@@ -40,13 +33,17 @@ export async function askEvidenceModel({ question, evidence, language, env, fetc
 Use ONLY the supplied JSON evidence. Do not use tools, web search, outside knowledge, or unstated inference.
 Do not diagnose, discuss symptoms, treatment, drugs, prognosis, disease causality, or validated therapeutic targets.
 If evidence is missing, say that the loaded snapshot cannot answer it. Preserve gene symbols, identifiers, pathway IDs and study accessions exactly. Keep the answer concise: under 160 English words or 700 Chinese characters, and end with the supplied research boundary.`;
-  // DeepSeek documents a Responses API compatible with this endpoint. No tools,
-  // web search, file search, or browser capabilities are requested.
-  const response = await fetchImpl('https://api.deepseek.com/responses', {
+  // Use DeepSeek's stable Chat Completions interface. Thinking is explicitly
+  // disabled so a concise final answer is returned in message.content.
+  // No tools, web search, file search, or browser capabilities are requested.
+  const response = await fetchImpl('https://api.deepseek.com/chat/completions', {
     method: 'POST',
     headers: { authorization: `Bearer ${env.DEEPSEEK_API_KEY}`, 'content-type': 'application/json' },
-    body: JSON.stringify({ model, store: false, max_output_tokens: 450, instructions,
-      input: `Question: ${question}\n\nFrozen evidence JSON:\n${JSON.stringify(context)}` }),
+    body: JSON.stringify({ model, max_tokens: 550, thinking: { type: 'disabled' },
+      messages: [
+        { role: 'system', content: instructions },
+        { role: 'user', content: `Question: ${question}\n\nFrozen evidence JSON:\n${JSON.stringify(context)}` },
+      ], }),
   });
   if (!response.ok) return { error: 'model_unavailable' };
   let payload;

@@ -92,19 +92,19 @@ test('attaches backend-generated citations from a frozen evidence record', () =>
   assert.match(result.boundary, /does not establish/);
 });
 
-test('model adapter is server-only, disables storage, and returns only model text', async () => {
+test('model adapter is server-only, disables thinking, and returns only final model text', async () => {
   let request;
   const result = await askEvidenceModel({
     question: 'What happened in MPTP?', language: 'en',
     evidence: { gene: { gene_id: 'ENSG00000145335', symbol: 'SNCA' }, evidence: [], pathway_membership: [], pd_reference: null, boundary: 'boundary', source_snapshot: {} },
     env: { DEEPSEEK_API_KEY: 'test-secret', DEEPSEEK_MODEL: 'test-model' },
-    fetchImpl: async (url, init) => { request = { url, ...init }; return new Response(JSON.stringify({ output: [{ content: [{ type: 'output_text', text: 'Evidence-only answer. boundary' }] }] })); },
+    fetchImpl: async (url, init) => { request = { url, ...init }; return new Response(JSON.stringify({ choices: [{ message: { content: 'Evidence-only answer. boundary', reasoning_content: 'private reasoning' } }] })); },
   });
   assert.equal(result.answer, 'Evidence-only answer. boundary');
   const body = JSON.parse(request.body);
-  assert.equal(request.url, 'https://api.deepseek.com/responses');
+  assert.equal(request.url, 'https://api.deepseek.com/chat/completions');
   assert.equal(body.model, 'test-model');
-  assert.equal(body.store, false);
+  assert.deepEqual(body.thinking, { type: 'disabled' });
   assert.equal(body.tools, undefined);
   assert.match(request.headers.authorization, /^Bearer test-secret$/);
   assert.equal(isAllowedResearchQuestion('What happened in MPTP?'), true);
@@ -117,32 +117,29 @@ test('model adapter uses the reviewed default when no dashboard model variable e
     question: 'What happened in MPTP?', language: 'en',
     evidence: { gene: { gene_id: 'ENSG00000145335', symbol: 'SNCA' }, evidence: [], pathway_membership: [], pd_reference: null, boundary: 'boundary', source_snapshot: {} },
     env: { DEEPSEEK_API_KEY: 'test-secret' },
-    fetchImpl: async (_url, init) => { request = init; return new Response(JSON.stringify({ output: [{ content: [{ type: 'output_text', text: 'Evidence-only answer.' }] }] })); },
+    fetchImpl: async (_url, init) => { request = init; return new Response(JSON.stringify({ choices: [{ message: { content: 'Evidence-only answer.' } }] })); },
   });
   assert.equal(JSON.parse(request.body).model, 'deepseek-flash');
 });
 
-test('model adapter accepts the DeepSeek Responses output_text field', async () => {
+test('model adapter reads a DeepSeek chat-completions final answer', async () => {
   const result = await askEvidenceModel({
     question: 'What happened in MPTP?', language: 'en',
     evidence: { gene: { gene_id: 'ENSG00000145335', symbol: 'SNCA' }, evidence: [], pathway_membership: [], pd_reference: null, boundary: 'boundary', source_snapshot: {} },
     env: { DEEPSEEK_API_KEY: 'test-secret' },
-    fetchImpl: async () => new Response(JSON.stringify({ output_text: 'DeepSeek response text.' })),
+    fetchImpl: async () => new Response(JSON.stringify({ choices: [{ message: { content: 'DeepSeek response text.' } }] })),
   });
   assert.equal(result.answer, 'DeepSeek response text.');
 });
 
-test('model adapter accepts compatible text parts without exposing reasoning', async () => {
+test('model adapter never exposes a reasoning-only response', async () => {
   const result = await askEvidenceModel({
     question: 'What happened in MPTP?', language: 'en',
     evidence: { gene: { gene_id: 'ENSG00000145335', symbol: 'SNCA' }, evidence: [], pathway_membership: [], pd_reference: null, boundary: 'boundary', source_snapshot: {} },
     env: { DEEPSEEK_API_KEY: 'test-secret' },
-    fetchImpl: async () => new Response(JSON.stringify({ output: [
-      { type: 'reasoning', content: [{ type: 'reasoning_text', text: 'private reasoning' }] },
-      { type: 'message', content: [{ type: 'text', text: 'Compatible answer.' }] },
-    ] })),
+    fetchImpl: async () => new Response(JSON.stringify({ choices: [{ message: { content: null, reasoning_content: 'private reasoning' } }] })),
   });
-  assert.equal(result.answer, 'Compatible answer.');
+  assert.equal(result.error, 'invalid_model_output');
 });
 
 test('model adapter bounds an excessively long response', async () => {
@@ -150,7 +147,7 @@ test('model adapter bounds an excessively long response', async () => {
     question: 'What happened in MPTP?', language: 'en',
     evidence: { gene: { gene_id: 'ENSG00000145335', symbol: 'SNCA' }, evidence: [], pathway_membership: [], pd_reference: null, boundary: 'boundary', source_snapshot: {} },
     env: { DEEPSEEK_API_KEY: 'test-secret' },
-    fetchImpl: async () => new Response(JSON.stringify({ output_text: 'x'.repeat(3001) })),
+    fetchImpl: async () => new Response(JSON.stringify({ choices: [{ message: { content: 'x'.repeat(3001) } }] })),
   });
   assert.equal(result.answer.length, 3000);
   assert.match(result.answer, /…$/);
