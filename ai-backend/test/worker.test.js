@@ -105,3 +105,13 @@ test('model adapter uses the reviewed default when no dashboard model variable e
   });
   assert.equal(JSON.parse(request.body).model, 'deepseek-flash');
 });
+
+test('model adapter accepts the DeepSeek Responses output_text field', async () => {
+  const result = await askEvidenceModel({
+    question: 'What happened in MPTP?', language: 'en',
+    evidence: { gene: { gene_id: 'ENSG00000145335', symbol: 'SNCA' }, evidence: [], pathway_membership: [], pd_reference: null, boundary: 'boundary', source_snapshot: {} },
+    env: { DEEPSEEK_API_KEY: 'test-secret' },
+    fetchImpl: async () => new Response(JSON.stringify({ output_text: 'DeepSeek response text.' })),
+  });
+  assert.equal(result.answer, 'DeepSeek response text.');
+});

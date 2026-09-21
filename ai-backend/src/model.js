@@ -5,6 +5,10 @@ const MAX_ANSWER_CHARS = 1600;
 export const DEFAULT_DEEPSEEK_MODEL = 'deepseek-flash';
 
 function outputText(payload) {
+  // DeepSeek exposes the completed text through the Responses SDK's
+  // `output_text` convenience field. Prefer it, then retain the compatible
+  // structured-output parser for providers that omit the convenience field.
+  if (typeof payload.output_text === 'string' && payload.output_text.trim()) return payload.output_text.trim();
   return (payload.output || []).flatMap(item => item.content || [])
     .filter(part => part.type === 'output_text' && typeof part.text === 'string')
     .map(part => part.text).join('\n').trim();
