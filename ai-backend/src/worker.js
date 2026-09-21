@@ -106,6 +106,19 @@ export default {
         return json({ error: 'frozen_evidence_unavailable' }, 503, c.headers);
       }
     }
+    if (url.pathname === '/v1/feedback' && request.method === 'POST') {
+      if (!env.RATE_LIMITER) return json({ error: 'rate_limit_not_configured' }, 503, c.headers);
+      const limited = await env.RATE_LIMITER.limit({ key: await rateKey(request) });
+      if (!limited.success) return json({ error: 'rate_limited' }, 429, c.headers);
+      if (request.headers.get('content-type')?.split(';')[0] !== 'application/json') return json({ error: 'json_required' }, 415, c.headers);
+      let body;
+      try { body = await request.json(); } catch { return json({ error: 'invalid_json' }, 400, c.headers); }
+      if (typeof body?.helpful !== 'boolean') return json({ error: 'invalid_feedback' }, 400, c.headers);
+      // Deliberately log only the aggregate-friendly choice. Never include question,
+      // gene ID, notes, browser state, IP address, or any visitor-provided text.
+      console.log(`xunzi_pd_feedback:${body.helpful ? 'helpful' : 'not_helpful'}`);
+      return json({ status: 'feedback_recorded' }, 200, c.headers);
+    }
     if (url.pathname !== '/v1/answer' || request.method !== 'POST') {
       return json({ error: 'not_found' }, 404, c.headers);
     }

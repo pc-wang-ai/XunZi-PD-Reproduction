@@ -68,3 +68,9 @@ This repository contains only the static app and the minimum frozen, derived dat
 XunZi-PD demonstrates an AI-product design principle: make complex evidence navigable without concealing scientific uncertainty. The interface translates a fixed analysis into a guided, bilingual workflow while preserving source boundaries, technical detail for experts, local-only personal state, and explicit non-clinical safeguards.
 
 The optional AI evidence Q&A appears on a single-gene page only when its separately deployed backend is ready. It accepts only a short research question, selected public gene ID, and interface language; it retrieves a pinned evidence snapshot itself, returns backend-generated citations, and refuses medical or out-of-scope requests. The model key remains server-side and the feature fails closed when its runtime configuration is incomplete. Its privacy rules, citations, refusals, and deployment gate are documented in [AI_QA_SECURITY_DESIGN.md](docs/AI_QA_SECURITY_DESIGN.md).
+
+### Public AI evidence Q&A
+
+[Try it on a single-gene page](https://pc-wang-ai.github.io/XunZi-PD-Reproduction/16_app/#gene/0). The guided Q&A provides three one-click research questions for every gene, then separates the returned explanation into four readable parts: the evidence-based answer, field-level citations, current evidence gaps, and the scientific boundary. Visitors may optionally rate an answer as Helpful or Not helpful; that event contains only the boolean choice, never the question, gene ID, notes, or personal information.
+
+The Worker uses a server-side DeepSeek key, an immutable source snapshot verified by SHA-256, explicit browser-origin rules, per-IP rate limiting, and medical / prompt-injection refusals. It has no web search, file access, or clinical-decision capability. See the [security design](docs/AI_QA_SECURITY_DESIGN.md) and [public privacy notice](16_app/privacy.html).

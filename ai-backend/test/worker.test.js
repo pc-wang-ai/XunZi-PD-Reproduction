@@ -55,6 +55,22 @@ test('reports ready with an explicit server-side key and the pinned default mode
   assert.equal((await response.json()).status, 'ready');
 });
 
+test('accepts only a minimal anonymous helpfulness signal', async () => {
+  const feedback = new Request('https://qa.example/v1/feedback', {
+    method: 'POST', headers: { Origin: 'https://pc-wang-ai.github.io', 'content-type': 'application/json' },
+    body: JSON.stringify({ helpful: true }),
+  });
+  const response = await worker.fetch(feedback, env);
+  assert.equal(response.status, 200);
+  assert.equal((await response.json()).status, 'feedback_recorded');
+
+  const rejected = new Request('https://qa.example/v1/feedback', {
+    method: 'POST', headers: { Origin: 'https://pc-wang-ai.github.io', 'content-type': 'application/json' },
+    body: JSON.stringify({ helpful: 'yes', question: 'retain this' }),
+  });
+  assert.equal((await worker.fetch(rejected, env)).status, 400);
+});
+
 test('attaches backend-generated citations from a frozen evidence record', () => {
   const result = evidenceFor({
     byGene: new Map([['SNCA', {

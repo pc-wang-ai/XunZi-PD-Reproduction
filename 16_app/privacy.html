@@ -13,7 +13,7 @@
 </header>
 <main>
   <h1>隐私与科研边界</h1>
-  <p class="lede">最后更新：2026-09-20。XunZi-PD 是公开、冻结研究结果的浏览工具，不是医疗服务。</p>
+  <p class="lede">最后更新：2026-09-21。XunZi-PD 是公开、冻结研究结果的浏览工具，不是医疗服务。</p>
 
   <section class="panel"><h2>目前会发送什么</h2>
     <p>大部分页面在浏览器本地读取公开的冻结数据。只有你在单基因页面主动点击“核验证据与引用”时，浏览器才会向 XunZi-PD 的服务器发送<strong>当前公开的 gene ID</strong>，例如 <code>ENSG00000145335</code>。服务器据此从固定的公开数据快照读取并校验引用。</p>
@@ -26,6 +26,7 @@
       <li>不会重新运行 RNA-seq、重算排名或修改冻结的科学结果。</li>
       <li>不会提供诊断、治疗、用药建议或经过验证的治疗靶点结论。</li>
       <li>AI 问答只会在单基因页面显示“可用”状态后运行。此时会发送你主动输入的短研究问题、当前公开 gene ID 和界面语言；不会发送候选清单、笔记或浏览历史。请不要输入个人或健康信息。</li>
+      <li>回答后的“有帮助／没帮助”反馈只发送一个布尔选择，不发送问题、gene ID、笔记或自由文本；它用于查看匿名的整体帮助度。</li>
     </ul>
   </section>
 
@@ -42,7 +43,7 @@
   </section>
 
   <section class="panel"><h2>English summary</h2>
-    <p>Most XunZi-PD pages read public frozen data locally. Clicking “Verify evidence and citations” sends only the selected public gene ID to the server. When AI Q&amp;A is shown as available, submitting a question sends that short question, selected public gene ID, and interface language to the server-side research-evidence service. It does not send notes, shortlists, browsing history, or an API key. This research tool does not provide medical advice or establish causality or validated therapeutic targets.</p>
+    <p>Most XunZi-PD pages read public frozen data locally. Clicking “Verify evidence and citations” sends only the selected public gene ID to the server. When AI Q&amp;A is shown as available, submitting a question sends that short question, selected public gene ID, and interface language to the server-side research-evidence service. Its Helpful / Not helpful control sends only that boolean choice, not the question, gene ID, notes, shortlists, browsing history, or an API key. This research tool does not provide medical advice or establish causality or validated therapeutic targets.</p>
   </section>
 </main>
 </body>

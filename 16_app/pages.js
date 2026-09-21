@@ -1639,15 +1639,21 @@ const Pages = (() => {
     </section>`;
   }
 
-  function researchQa(g) {
+  function researchQa(g, limitationText) {
     const zh = I18N.getLang() === 'zh';
+    const examples = zh
+      ? ['它在 MPTP 模型中发生了什么？', '为什么它的排名值得关注？', '当前证据还缺什么？']
+      : ['What happened in the MPTP model?', 'Why is its ranking worth attention?', 'What evidence is still missing?'];
     return `<section class="researchQa beginnerOnly" aria-label="${esc(zh ? '研究证据问答' : 'Research evidence Q&A')}">
       <div class="summaryK">${esc(zh ? '研究证据问答' : 'Research evidence Q&A')}</div>
       <p class="qaAvailability">${esc(zh ? '正在检查服务状态…' : 'Checking service status…')}</p>
       <div class="qaForm" hidden>
         <label for="qaQuestion">${esc(zh ? '仅询问此基因的 MPTP、PFF、排名、网络、通路或 PD 参考证据。不要输入个人或健康信息。' : 'Ask only about this gene’s MPTP, PFF, ranking, network, pathway, or PD-reference evidence. Do not enter personal or health information.')}</label>
+        <div class="qaExamples" aria-label="${esc(zh ? '示例问题' : 'Example questions')}">
+          ${examples.map(question => `<button type="button" class="qaExample" data-qa-example="${esc(question)}">${esc(question)}</button>`).join('')}
+        </div>
         <textarea id="qaQuestion" maxlength="600" rows="3" placeholder="${esc(zh ? '例如：它在 MPTP 模型中发生了什么？' : 'For example: What happened in the MPTP model?')}"></textarea>
-        <button type="button" class="qaAsk">${esc(zh ? '询问研究证据' : 'Ask about research evidence')}</button>
+        <button type="button" class="qaAsk" data-qa-gap="${esc(limitationText)}">${esc(zh ? '询问研究证据' : 'Ask about research evidence')}</button>
       </div><div class="qaResult" role="status" aria-live="polite"></div>
     </section>`;
   }
@@ -1717,7 +1723,7 @@ const Pages = (() => {
       ${quickEvidenceGuide(g, pathwayN, ev, limitationText)}
 
       ${frozenEvidenceLookup(g)}
-      ${researchQa(g)}
+      ${researchQa(g, limitationText)}
 
       <details class="geneEvidenceDetails" ${beginner() ? '' : 'open'}>
       <summary class="beginnerOnly">${esc(zh ? '查看完整证据与技术详情' : 'View full evidence and technical details')}</summary>
@@ -1808,6 +1814,9 @@ const Pages = (() => {
         if (status.status === 'ready') { availability.textContent = zh ? '服务已就绪。' : 'Service is ready.'; form.hidden = false; }
         else availability.textContent = zh ? 'AI 问答尚未启用。可继续使用上方的非 AI 证据核验。' : 'AI Q&A is not enabled. You can still use the non-AI evidence check above.';
       }).catch(() => { availability.textContent = zh ? '暂时无法检查 AI 服务状态。' : 'AI service status is temporarily unavailable.'; });
+      qa.querySelectorAll('[data-qa-example]').forEach(button => {
+        button.onclick = () => { qa.querySelector('#qaQuestion').value = button.dataset.qaExample; qa.querySelector('#qaQuestion').focus(); };
+      });
       qa.querySelector('.qaAsk').onclick = async () => {
         const question = qa.querySelector('#qaQuestion').value.trim();
         if (!question) { result.textContent = zh ? '请先输入一个研究证据问题。' : 'Enter a research-evidence question first.'; return; }
@@ -1816,7 +1825,33 @@ const Pages = (() => {
           const response = await fetch(base + '/v1/answer', { method: 'POST', headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ gene_id: g.gene_id, question, language: zh ? 'zh' : 'en' }) });
           const body = await response.json();
-          result.textContent = body.answer || body.error || (zh ? '当前无法回答。' : 'Cannot answer right now.');
+          if (body.status === 'answered') {
+            const rawAnswer = String(body.answer || '').trim();
+            const boundary = String(body.boundary || '').trim();
+            const conclusion = boundary && rawAnswer.endsWith(boundary) ? rawAnswer.slice(0, -boundary.length).trim() : rawAnswer;
+            const citations = (body.evidence || []).slice(0, 8).map(item => `<li><b>${esc(item.label)}</b><span class="notranslate mono" translate="no">${esc(item.value)}</span></li>`).join('');
+            result.innerHTML = `<div class="qaAnswerCard">
+              <section><h3>${esc(zh ? '结论（仅限已加载证据）' : 'Answer from loaded evidence')}</h3><p>${esc(conclusion)}</p></section>
+              <section><h3>${esc(zh ? '对应证据引用' : 'Evidence citations')}</h3><ul>${citations || `<li>${esc(zh ? '当前记录没有可显示的字段引用。' : 'No field citations are available in this record.')}</li>`}</ul></section>
+              <section><h3>${esc(zh ? '当前还缺什么' : 'What is still missing')}</h3><p>${esc(ask.dataset.qaGap)}</p></section>
+              <section class="qaBoundary"><h3>${esc(zh ? '科研边界' : 'Research boundary')}</h3><p>${esc(boundary)}</p></section>
+              <div class="qaFeedback"><span>${esc(zh ? '这次回答有帮助吗？' : 'Was this answer helpful?')}</span>
+                <button type="button" data-qa-feedback="true">${esc(zh ? '有帮助' : 'Helpful')}</button>
+                <button type="button" data-qa-feedback="false">${esc(zh ? '没帮助' : 'Not helpful')}</button>
+                <small class="qaFeedbackStatus"></small></div>
+            </div>`;
+            result.querySelectorAll('[data-qa-feedback]').forEach(button => {
+              button.onclick = async () => {
+                const controls = result.querySelectorAll('[data-qa-feedback]'); controls.forEach(control => { control.disabled = true; });
+                const feedbackStatus = result.querySelector('.qaFeedbackStatus');
+                try {
+                  const feedback = await fetch(base + '/v1/feedback', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ helpful: button.dataset.qaFeedback === 'true' }) });
+                  if (!feedback.ok) throw new Error('feedback unavailable');
+                  feedbackStatus.textContent = zh ? '已记录匿名反馈，谢谢。' : 'Anonymous feedback recorded. Thank you.';
+                } catch { feedbackStatus.textContent = zh ? '暂时无法记录反馈。' : 'Feedback could not be recorded right now.'; }
+              };
+            });
+          } else result.textContent = body.answer || body.error || (zh ? '当前无法回答。' : 'Cannot answer right now.');
         } catch { result.textContent = zh ? '暂时无法访问问答服务。' : 'The Q&A service is temporarily unavailable.'; }
         finally { ask.disabled = false; }
       };
